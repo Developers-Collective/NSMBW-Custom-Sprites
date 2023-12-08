@@ -54,12 +54,14 @@ Before starting to add files, remove all the files related to your flipblock cod
 You can either replace the newer flipblock or add a new one (I recommend to replace it as it won't break your existing levels that use the newer's flip block)
 
 ### By replacing newer's Flip Block
+- Remove your `sprites/flipblock.png` file from your `sprites` folder if you have one
 - Take the content of `spritedata.xml` and replace the one from your `spritedata.xml` like every other sprites (replace XXX by the sprite ID)
 - Take the content of `sprites.py` and replace the one from your `sprites.py` like every other sprites (replace XXX by the sprite ID)
 - Add the images in the `sprites` folder into your `sprites` folder
 - Restart reggie to apply the changes
 
 ### Without replacing newer's Flip Block / As a new sprite
+- Remove your `sprites/flipblock.png` file from your `sprites` folder if you have one
 Before starting to add files, remove all the files related to your flipblock code if have some as it doesn't replace like in newer but it is added as a new actor/sprite slot (there should be a python class in `sprites.py` with its reference and an entry in `spritedata.xml`)
 
 - Add the content of `spritedata.xml` into your `spritedata.xml` like every other sprites (replace XXX by the sprite ID)
