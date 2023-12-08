@@ -1,4 +1,6 @@
 # Custom SFXs
+*by Asu, converted by Synel for Newer 1.3.X*
+*Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
 
 ## Kamek
 - Add `src/music.S` in the `src` folder
