@@ -12,8 +12,13 @@ This repository contains the source code for the custom sprites I made for New S
 
 
 ## Utilities
-<!-- TODO -->
+- [More SFX](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/More-SFX)
 
 
 ## Sprite List
-<!-- TODO -->
+- [Goombrat](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Goombrat)
+- [Signboard (with gravity)](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Signboard)
+- [Midway Flag (with gravity)](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MidwayFlag)
+- [Biddybud](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Biddybud)
+- [Draglet](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Draglet)
+- [Flip Block](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/FlipBlock)
