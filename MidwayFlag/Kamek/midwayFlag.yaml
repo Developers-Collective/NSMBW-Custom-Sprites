@@ -1,0 +1,37 @@
+--- # By Synel, helped by Nin0 (tysm <3)
+source_files: [../src/midwayFlag.cpp, ../src/midwayFlag.S]
+hooks:
+  - name: midwayFlagClassSize
+    type: patch
+    addr_pal: 0x807E2048
+    data: '3860050B' # 1248 + 1 + 1 + 1 + 8 + 32
+
+  - name: midwayFlagNewOnCreate
+    type: add_func_pointer
+    src_addr_pal: 0x80958518
+    target_func: 'midwayFlagNewOnCreate(daChukanPoint_c *)'
+
+  - name: midwayFlagNewOnExecute
+    type: add_func_pointer
+    src_addr_pal: 0x80958530
+    target_func: 'midwayFlagNewOnExecute(daChukanPoint_c *)'
+
+  - name: dontRemoveMyActivePhysics1
+    type: nop_insn
+    area_pal: 0x807E3000
+
+  - name: dontRemoveMyActivePhysics2
+    type: nop_insn
+    area_pal: 0x807E32A8
+
+  - name: powerUpSetItemKinopio1
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x807E2B78
+    target_func: 'midwayFlagSetItemKinopio(daChukanPoint_c *, dAcPy_c *)'
+
+  - name: powerUpSetItemKinopio2
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x807E2BDC
+    target_func: 'midwayFlagSetItemKinopio(daChukanPoint_c *, dAcPy_c *)'

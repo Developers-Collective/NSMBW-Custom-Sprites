@@ -1,0 +1,15 @@
+  <sprite id="XXX" name="Draglet" asmhacks="True" notes="A Draglet!">
+    <list nybble="6" title="Color">
+      <entry value="0">Normal</entry>
+    </list>
+    <list nybble="7" title="Projectile Ammo" comment="This determines how many projectiles the Draglet will shoot when following a player.">
+      <entry value="0">1 Projectile</entry>
+      <entry value="1">2 Projectiles</entry>
+      <entry value="2">3 Projectiles</entry>
+      <entry value="3">4 Projectiles</entry>
+      <entry value="4">5 Projectiles</entry>
+      <entry value="5">6 Projectiles</entry>
+      <entry value="6">7 Projectiles</entry>
+      <entry value="7">8 Projectiles</entry>
+    </list>
+  </sprite> <!-- #XXX: Draglet -->

@@ -1,0 +1,16 @@
+--- # By Synel
+#Replaces Actor 363 AC_KANBAN_ARROW (Sprite 310)
+
+
+source_files: [../src/signboard.cpp]
+hooks:
+  - name: SignboardBuild
+    type: add_func_pointer
+    src_addr_pal: 0x80961F40
+    target_func: 'dSignboard_c::build(void)'
+
+  - name: SignboardSpriteFileInfo
+    type: add_func_pointer
+    src_addr_pal: 0x8031b024
+    target_func: 'SignboardArcNameList'
+    # 0x8031AB4C + sprite num * 0x4 == offset

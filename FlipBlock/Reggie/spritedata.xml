@@ -1,0 +1,8 @@
+<sprites>
+  <sprite id="XXX" name="Flip Block / Rotating Block" notes="A yellow block with two eyes that cannot be destroyed. When struck, it will spin, allowing passage through it for a limited time.">
+    <list title="Color" nybble="6" comment="The color of the flipblock.">
+      <entry value="0">Normal</entry>
+    </list>
+    <value title="Width" nybble="5" comment="The width (+1) of the flipblock."/>
+  </sprite>
+</sprites>

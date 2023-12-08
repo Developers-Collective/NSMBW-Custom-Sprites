@@ -1,0 +1,40 @@
+<sprites>
+  <sprite id="XXX" name="Biddybud" asmhacks="True" notes="A Biddybud!">
+    <list nybble="3" title="SpriteTex Color">
+      <entry value="0">Normal</entry>
+    </list>
+    <list nybble="4" title="Color">
+      <entry value="0">Red</entry>
+      <entry value="1">Green</entry>
+      <entry value="2">Yellow</entry>
+      <entry value="3">Blue</entry>
+      <entry value="4">Pink</entry>
+    </list>
+    <value nybble="5-6" title="Group ID" comment="This pairs the sprite to a matching Group Controller for spawn synchronization with other Group controlled sprites."/>
+    <checkbox nybble="2.2" title="Face Right" comment="Start to the right" />
+    <value nybble="7-8" title="Walking Distance" comment="How far should it walk?" />
+    <value nybble="9" title="Speed" comment="Don't use speed 0!" />
+  </sprite> <!-- #XXX: Biddybud -->
+
+  <sprite id="YYY" name="Para-Biddybud" asmhacks="True" notes="A Para-Biddybud!">
+    <list nybble="3" title="SpriteTex Color">
+      <entry value="0">Normal</entry>
+    </list>
+    <list nybble="4" title="Color">
+      <entry value="0">Red</entry>
+      <entry value="1">Green</entry>
+      <entry value="2">Yellow</entry>
+      <entry value="3">Blue</entry>
+      <entry value="4">Pink</entry>
+    </list>
+    <value nybble="5-6" title="Group ID" comment="This pairs the sprite to a matching Group Controller for spawn synchronization with other Group controlled sprites."/>
+    <dualbox nybble="2.1" title1="Follow path" title2="Linear Movement" />
+    <dualbox nybble="2.2" title1="Left &amp; Right" title2="Up &amp; Down" requirednybble="2.1" requiredval="1" />
+    <checkbox nybble="2.3" title="Start Moving Right" comment="Start moving right" requirednybble="2.1-2.2" requiredval="2" />
+    <checkbox nybble="2.3" title="Start Moving Up" comment="Start moving up" requirednybble="2.1-2.2" requiredval="3" />
+    <value nybble="7" title="Flying Distance" comment="How far should it fly?" requirednybble="2.1" requiredval="1" />
+    <value nybble="8" title="Speed" comment="Don't use speed 0!" />
+    <value nybble="11-12" title="Path ID" requirednybble="2.1" requiredval="0" />
+    <value nybble="9-10" title="Start Node" comment="Current Node Num" requirednybble="2.1" requiredval="0" />
+  </sprite> <!-- #YYY: Para-Biddybud -->
+</sprites>

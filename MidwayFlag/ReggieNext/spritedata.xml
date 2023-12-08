@@ -1,0 +1,58 @@
+<sprite id="188" name="Midway Flag" notes="A flag that when touched by the player will mark their progress in the level and respawn them at this location when re-entering the level.">
+  <list nybble="6" title="Logo">
+    <entry value="0">Newer Logo</entry>
+    <entry value="1">Yoshi's Island</entry>
+    <entry value="2">Goldwood</entry>
+    <entry value="3">Desert</entry>
+    <entry value="4">Sewer</entry>
+    <entry value="5">Mushroom Peaks</entry>
+    <entry value="6">Mega-Mega</entry>
+    <entry value="7">Mini-Mini</entry>
+    <entry value="8">Cherry Blossom Valley</entry>
+    <entry value="9">Freezeflame Volcano</entry>
+    <entry value="10">Crystal Caverns</entry>
+    <entry value="11">Ghost Realm</entry>
+    <entry value="12">Winding Waterfall (Cliffs)</entry>
+    <entry value="13">Starry Mountain Skies</entry>
+    <entry value="14">Starry Skies</entry>
+    <entry value="15">Sky City</entry>
+    <!-- <entry value="16">Koopa Planet</entry>
+    <entry value="17">Koopa Core</entry> -->
+  </list>
+  <value nybble="7-8" title="Entrance ID" comment="This determines which Entrance the level will load the player into when they respawn." idtype="Entrance"/>
+  <dualbox nybble="5.1" title1="Load Facing Right" title2="Load Facing Left" comment="This determines which direction the players will face when they respawn."/>
+  <dualbox nybble="5.2" title1="1st Checkpoint" title2="2nd Checkpoint" comment="Once activated, the 1st checkpoint can not be deactivated by the 2nd checkpoint, and vise-versa."/>
+  <checkbox nybble="5.3" title="Enable Gravity" comment="When enabled, the midway will fall."/>
+  <checkbox nybble="5.4" title="Disable PowerUp" comment="When enabled, the midway will not give a mushroom when activated."/>
+  <value nybble="9-12" title="Rotation" comment="This determines which angle the midway will have."/>
+  <list nybble="9-12" title="Rotation Preset" comment="This determines which angle the midway will have.">
+    <entry value="0">0° / Facing Up</entry>
+    <entry value="2556">Gentle Upslope (Facing Up)</entry>
+    <entry value="4095">22.5°</entry>
+    <entry value="4837">Upslope (Facing Up)</entry>
+    <entry value="8190">45° / Steep Upslope (Facing Up)</entry>
+    <entry value="11633">Super Steep Upslope (Facing Up)</entry>
+    <entry value="12285">67.5°</entry>
+    <entry value="16380">90° / Facing Left</entry>
+    <entry value="20475">112.5°</entry>
+    <entry value="21127">Super Steep Downslope (Facing Down)</entry>
+    <entry value="24570">135° / Steep Downslope (Facing Down)</entry>
+    <entry value="27931">Downslope (Facing Down)</entry>
+    <entry value="28665">157.5°</entry>
+    <entry value="30212">Gentle Downslope (Facing Down)</entry>
+    <entry value="32760">180° / Facing Down</entry>
+    <entry value="35324">Gentle Upslope (Facing Down)</entry>
+    <entry value="36855">202.5°</entry>
+    <entry value="37605">Upslope (Facing Down)</entry>
+    <entry value="40950">225° / Steep Upslope (Facing Down)</entry>
+    <entry value="44393">Super Steep Upslope (Facing Down)</entry>
+    <entry value="45045">247.5°</entry>
+    <entry value="49140">270° / Facing Right</entry>
+    <entry value="53235">292.5°</entry>
+    <entry value="53887">Super Steep Downslope (Facing Up)</entry>
+    <entry value="57330">315° / Steep Downslope (Facing Up)</entry>
+    <entry value="60699">Downslope (Facing Up)</entry>
+    <entry value="61425">337.5°</entry>
+    <entry value="62980">Gentle Downslope (Facing Up)</entry>
+  </list>
+</sprite> <!-- #188: Midway Flag -->

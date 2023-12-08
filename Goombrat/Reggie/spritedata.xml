@@ -1,0 +1,5 @@
+  <sprite id="XXX" name="Goombrat" asmhacks="True" notes="A goomba that turns around when it reaches a ledge.">
+    <list nybble="6" title="Color">
+      <entry value="0">Normal</entry>
+    </list>
+  </sprite> <!-- #XXX: Goombrat -->

@@ -1,0 +1,29 @@
+  - name: SFXHax
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x801951D0
+    target_func: 'SFXHax'
+
+  - name: NewSFXHax
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80283CE0
+    target_func: 'NewSFXHax'
+
+  - name: LoadAllSFXs
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x802D4D50
+    target_func: 'LoadAllSFXs'
+
+  - name: YoshiSFXFix1
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8014FBAC
+    target_func: 'fuckingYoshiStuff(void)'
+
+  - name: YoshiSFXFix2
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8014FC6C
+    target_func: 'fuckingYoshiStuff(void)'

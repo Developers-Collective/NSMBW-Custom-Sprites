@@ -1,0 +1,53 @@
+  <sprite id="310" name="Signboard - Arrow" notes="A signboard with a red arrow on it, useful for suggesting a player travel in a specific direction.">
+    <list nybble="5" title="Color" comment="This determines the color of the signboard.">
+      <entry value="0">Normal</entry>
+      <entry value="1">Snow</entry>
+      <entry value="2">Stone</entry>
+      <entry value="3">Ghost</entry>
+    </list>
+    <list nybble="6" title="Direction" comment="This determines which direction the arrow will point in.">
+      <entry value="0">Right</entry>
+      <entry value="1">Up + Right</entry>
+      <entry value="2">Up</entry>
+      <entry value="3">Up + Left</entry>
+      <entry value="4">Left</entry>
+      <entry value="5">Down + Left</entry>
+      <entry value="6">Down</entry>
+      <entry value="7">Down + Right</entry>
+    </list>
+    <checkbox nybble="8.1" title="Enable Gravity" comment="When enabled, the Signboard won't fall."/>
+    <checkbox nybble="8.2" title="Place Behind Other Sprites" comment="When enabled, this changes the relative Z-Order of the Signboard placing it further behind other sprites."/>
+    <!-- <checkbox nybble="8.3" title="Move Slightly Horizontally (up to 0.125 tiles)" comment="When enabled, the Signboard will spawn up to 0.125 tile lower depending on its rotation. Usefull for spawning Signboards correctly on walls."/>
+    <checkbox nybble="8.4" title="Move Slightly Up (0.25 tiles)" comment="When enabled, the Signboard will spawn 0.25 tile higher. Usefull for spawning Signboards correctly on a sloping ceilings."/> -->
+    <value nybble="9-12" title="Rotation" comment="This determines which angle the Signboard will have."/>
+    <list nybble="9-12" title="Rotation Preset" comment="This determines which angle the Signboard will have.">
+      <entry value="0">0° / Facing Up</entry>
+      <entry value="2477">Gentle Upslope (Facing Up)</entry>
+      <entry value="4095">22.5°</entry>
+      <entry value="4747">Upslope (Facing Up)</entry>
+      <entry value="8190">45° / Steep Upslope (Facing Up)</entry>
+      <entry value="11633">Super Steep Upslope (Facing Up)</entry>
+      <entry value="12285">67.5°</entry>
+      <entry value="16380">90° / Facing Left</entry>
+      <entry value="20475">112.5°</entry>
+      <entry value="21127">Super Steep Downslope (Facing Down)</entry>
+      <entry value="24570">135° / Steep Downslope (Facing Down)</entry>
+      <entry value="28013">Downslope (Facing Down)</entry>
+      <entry value="28665">157.5°</entry>
+      <entry value="30283">Gentle Downslope (Facing Down)</entry>
+      <entry value="32760">180° / Facing Down</entry>
+      <entry value="35237">Gentle Upslope (Facing Down)</entry>
+      <entry value="36855">202.5°</entry>
+      <entry value="37507">Upslope (Facing Down)</entry>
+      <entry value="40950">225° / Steep Upslope (Facing Down)</entry>
+      <entry value="44393">Super Steep Upslope (Facing Down)</entry>
+      <entry value="45045">247.5°</entry>
+      <entry value="49140">270° / Facing Right</entry>
+      <entry value="53235">292.5°</entry>
+      <entry value="53887">Super Steep Downslope (Facing Up)</entry>
+      <entry value="57330">315° / Steep Downslope (Facing Up)</entry>
+      <entry value="60773">Downslope (Facing Up)</entry>
+      <entry value="61425">337.5°</entry>
+      <entry value="63043">Gentle Downslope (Facing Up)</entry>
+    </list>
+  </sprite> <!-- #310: Signboard - Arrow -->
