@@ -1,0 +1,34 @@
+<sprites>
+  <sprite id="32" name="Star Coin" notes="The Star Coin is a level-wide collectible. The player's goal is to collect all three to complete their savefile.">
+    <list title="Color" nybble="6" comment="This determines the color of the star coin.">
+      <entry value="0">Normal</entry>
+    </list>
+    <list title="Coin Number" nybble="10.3-10.4" comment="Multiple Star Coins with the same [Coin Number] can be placed. However, once one of them is collected, the duplicate entries will not load.">
+      <entry value="0">First Coin</entry>
+      <entry value="1">Second Coin</entry>
+      <entry value="2">Third Coin</entry>
+    </list>
+    <checkbox title="Place Behind Other Sprites" nybble="12" comment="When enabled, this changes the relative Z-Order of the Star Coin placing it further behind other sprites."/>
+    <list title="Z-Order" nybble="9">
+      <entry value="0">Above Layer 1</entry>
+      <entry value="1">Above Layer 2 (Behind Chainlink Fence)</entry>
+      <entry value="2">Further above Layer 1</entry>
+    </list>
+    <checkbox title="Falls when POW is Used" nybble="11.4" comment="The Star Coin will fall to the ground if a POW effect is triggered. If placed outside the Zone, the Star Coin will not spawn until the POW is hit."/>
+    <value title="Target Event ID" idtype="Target Event" nybble="1.2-2.4" comment="When the Star Coin is collected, the Target Event ID will be activated."/>
+    <dualbox title1="Triggers a Timed Event" title2="Permanently activates Target Event" requirednybble="1.2-2.4" requiredval="1" nybble="7.4"/>
+    <checkbox title="Unknown Flag 5 Mask 1" nybble="5" comment="ASM shows Nybble 5 might affect something."/>
+    <checkbox title="Move up and down on liquid surface" nybble="5" comment="If the Star Coin is placed submerged in zone-wide (poisoned) water or lava, the Star Coin will snap to the surface and move up and down there."/>
+    <checkbox title="Shrink bottom hitbox by half a tile" nybble="8"/>
+  </sprite>
+  <sprite id="49" name="Fake Star Coin" sizehacks="true" notes="This coin an appearance similar to a normal Star Coin, but when the player tries to collect it, it will vanish and disperse into 4 harmless Boos like a Fake Door.">
+    <dependency notes="A real Star Coin must be placed within the same Zone.">
+      <suggested sprite="155"/>
+      <suggested sprite="389"/>
+      <required sprite="32"/>
+    </dependency>
+    <list title="Color" nybble="6" comment="This determines the color of the star coin.">
+      <entry value="0">Normal</entry>
+    </list>
+  </sprite>
+</sprites>

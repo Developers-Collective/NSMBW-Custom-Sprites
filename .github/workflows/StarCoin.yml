@@ -1,0 +1,31 @@
+name: StarCoin
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - SpriteTex/StarCoin/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r StarCoin.zip SpriteTex/StarCoin
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: StarCoin
+          tag: StarCoin
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: SpriteTex/StarCoin/README.md
+          artifacts: StarCoin.zip
+          artifactContentType: application/zip

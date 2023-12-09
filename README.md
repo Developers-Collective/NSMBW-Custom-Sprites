@@ -33,7 +33,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/MoreSFX/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSFX">More SFX</a></summary>
   <p></p>
 
-    This utility allows you to add more sound effects to your custom sprites.
+This utility allows you to add more sound effects to your custom sprites.
 
 </details>
 
@@ -41,7 +41,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/MoreSprites/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites">More Sprites</a></summary>
   <p></p>
 
-    This utility allows you to add more sprites to the game without replacing existing ones.
+This utility allows you to add more sprites to the game without replacing existing ones.
 
 </details>
 
@@ -51,7 +51,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Layer0Lava/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Layer0Lava">Layer 0 Lava</a></summary>
   <p></p>
 
-    This utility allows you to place lava on layer 0, like water.
+This utility allows you to place lava on layer 0, like water.
 
 </details> -->
 
@@ -62,7 +62,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Goombrat/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Goombrat">Goombrat</a></summary>
   <p></p>
 
-    Goombrat can walk back and forth, like a Goomba, but turns around edges.
+Goombrat can walk back and forth, like a Goomba, but turns around edges.
 
 </details>
 
@@ -70,7 +70,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Signboard/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Signboard">Signboard (with gravity)</a></summary>
   <p></p>
 
-    Allows the signboard to fall when not on the ground.
+Allows the signboard to fall when not on the ground.
 
 </details>
 
@@ -78,7 +78,9 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/MidwayFlag/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MidwayFlag">Midway Flag (with gravity)</a></summary>
   <p></p>
 
-    Allows the midway flag to fall when not on the ground.
+Allows the midway flag to fall when not on the ground.
+
+<video src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/MidwayFlag/Gravity.mp4" controls title="Single Flip Block"></video>
 
 </details>
 
@@ -86,7 +88,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Biddybud/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Biddybud">Biddybud</a></summary>
   <p></p>
 
-    Biddybud and Para-Biddybud follow a path, in groups.
+Biddybud and Para-Biddybud follow a path, in groups.
 
 </details>
 
@@ -94,7 +96,7 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Draglet/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Draglet">Draglet</a></summary>
   <p></p>
 
-    Draglet from Super Mario 3D Land. It flies around and shoots fireballs when Mario is near.
+Draglet from Super Mario 3D Land. It flies around and shoots fireballs when Mario is near.
 
 </details>
 
@@ -102,17 +104,22 @@ If you want to use some of this code, be sure to credit the corresponding author
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/FlipBlock/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/FlipBlock">Flip Block</a></summary>
   <p></p>
 
-    Flip Blocks from Super Mario Bros. Wonder. It flips when Mario hits them.
+Flip Blocks from Super Mario Bros. Wonder. It flips when Mario hits them.
+
+<video src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/FlipBlock/FlipBlockSingle.mp4" controls title="Single Flip Block"></video>
+<video src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/FlipBlock/FlipBlockPyramid.mp4" controls title="Multiple Flip Blocks"></video>
 
 </details>
 
 
-<!-- ## Sprite Tex
+## Sprite Tex
 
 <details>
-  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/StarCoin/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/StarCoin">Star Coin</a></summary>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/SpriteTex/StarCoin/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/StarCoin">Star Coin</a></summary>
   <p></p>
 
-    Sprite Tex for the Star Coin.
+Sprite Tex for the Star Coin.
 
-</details> -->
+<img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/SpriteTex/StarCoin/Demo.png" />
+
+</details>
