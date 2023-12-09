@@ -22,7 +22,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: MidwayFlag
+          name: Midway Flag
           tag: MidwayFlag
           allowUpdates: true
           replacesArtifacts: true

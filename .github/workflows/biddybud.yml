@@ -22,7 +22,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: Biddybud
+          name: Biddybud & Para-Biddybud
           tag: Biddybud
           allowUpdates: true
           replacesArtifacts: true

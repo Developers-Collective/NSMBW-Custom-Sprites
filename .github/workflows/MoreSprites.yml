@@ -22,7 +22,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: More SFX
+          name: More Sprites
           tag: MoreSprites
           allowUpdates: true
           replacesArtifacts: true
