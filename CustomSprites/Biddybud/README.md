@@ -1,4 +1,4 @@
-# Biddybud v1.0.0
+# Biddybud & Para-Biddybud v1.0.0
 *by Nin0, updated by Synel*
 
 
