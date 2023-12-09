@@ -80,7 +80,9 @@ Allows the signboard to fall when not on the ground.
 
 Allows the midway flag to fall when not on the ground.
 
-<video src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/MidwayFlag/Gravity.mp4" controls title="Single Flip Block"></video>
+
+https://github.com/Synell/NSMBW-Custom-Sprites/assets/70210528/84dda543-da57-426c-b8ac-760b6d5c8352
+
 
 </details>
 
