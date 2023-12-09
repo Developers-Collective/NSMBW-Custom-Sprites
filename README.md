@@ -108,8 +108,12 @@ Draglet from Super Mario 3D Land. It flies around and shoots fireballs when Mari
 
 Flip Blocks from Super Mario Bros. Wonder. It flips when Mario hits them.
 
-<video src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/FlipBlock/FlipBlockSingle.mp4"></video>
-<video src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/FlipBlock/FlipBlockPyramid.mp4"></video>
+
+https://github.com/Synell/NSMBW-Custom-Sprites/assets/70210528/4ce1e7e5-289d-45e7-8424-a211ef7295ee
+
+
+https://github.com/Synell/NSMBW-Custom-Sprites/assets/70210528/0ea4f2e4-f8ee-48f0-b633-87376a66c731
+
 
 </details>
 
