@@ -1,4 +1,4 @@
-name: StarCoin
+name: Star Coin
 on:
   push:
     branches:
