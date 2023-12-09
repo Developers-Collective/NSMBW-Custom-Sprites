@@ -1,0 +1,31 @@
+name: MoreSFX
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/MoreSFX/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r MoreSFX.zip Utility/MoreSFX
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: More SFX
+          tag: MoreSFX
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/MoreSFX/README.md
+          artifacts: MoreSFX.zip
+          artifactContentType: application/zip

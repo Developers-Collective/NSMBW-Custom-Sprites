@@ -1,10 +1,10 @@
-name: More SFX
+name: Draglet
 on:
   push:
     branches:
       - main
     paths:
-      - Utility/More-SFX/**.*
+      - CustomSprites/Draglet/**.*
     tags:
       - '*'
 
@@ -16,16 +16,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compress
-        run: zip -r More-SFX.zip Utility/More-SFX
+        run: zip -r Draglet.zip CustomSprites/Draglet
 
       - name: Create / Edit Release
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: More SFX
-          tag: More-SFX
+          name: Draglet
+          tag: Draglet
           allowUpdates: true
           replacesArtifacts: true
-          bodyFile: Utility/More-SFX/README.md
-          artifacts: More-SFX.zip
+          bodyFile: CustomSprites/Draglet/README.md
+          artifacts: Draglet.zip
           artifactContentType: application/zip

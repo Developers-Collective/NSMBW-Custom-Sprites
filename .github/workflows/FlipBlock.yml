@@ -1,0 +1,31 @@
+name: FlipBlock
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/FlipBlock/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r FlipBlock.zip CustomSprites/FlipBlock
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: FlipBlock
+          tag: FlipBlock
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/FlipBlock/README.md
+          artifacts: FlipBlock.zip
+          artifactContentType: application/zip

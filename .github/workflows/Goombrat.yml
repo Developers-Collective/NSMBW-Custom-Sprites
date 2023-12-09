@@ -1,0 +1,31 @@
+name: Goombrat
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/Goombrat/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r Goombrat.zip CustomSprites/Goombrat
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Goombrat
+          tag: Goombrat
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/Goombrat/README.md
+          artifacts: Goombrat.zip
+          artifactContentType: application/zip
