@@ -1,4 +1,4 @@
-name: More SFX
+name: Biddybud
 on:
   push:
     branches:
@@ -22,7 +22,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: More SFX
+          name: Biddybud
           tag: Biddybud
           allowUpdates: true
           replacesArtifacts: true
