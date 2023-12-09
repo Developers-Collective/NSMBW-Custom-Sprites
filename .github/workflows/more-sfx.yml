@@ -14,8 +14,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Compress
         run: zip -r More-SFX.zip Utility/More-SFX
+
       - name: Create / Edit Release
         uses: ncipollo/release-action@v1
         with:
