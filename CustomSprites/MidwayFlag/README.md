@@ -31,3 +31,4 @@
 - B1 Gaming and Jacopo Plays for finding bugs and fixing minor issues with the reggie patch
 
 *Note: I needed to move settings so it's possible that your previous checkpoints aren't set to the exact same settings they had before.*
+
