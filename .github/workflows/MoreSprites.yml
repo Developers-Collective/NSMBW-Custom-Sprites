@@ -1,0 +1,31 @@
+name: MoreSprites
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/MoreSprites/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r MoreSprites.zip Utility/MoreSprites
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: More SFX
+          tag: MoreSprites
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/MoreSprites/README.md
+          artifacts: MoreSprites.zip
+          artifactContentType: application/zip
