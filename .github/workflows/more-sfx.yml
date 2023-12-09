@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Compress
-        run: zip -r More-SFX.zip CustomSprites/More-SFX
+        run: zip -r More-SFX.zip Utility/More-SFX
       - name: Create / Edit Release
         uses: ncipollo/release-action@v1
         with:
@@ -21,6 +21,6 @@ jobs:
           tag: More-SFX
           allowUpdates: true
           replacesArtifacts: true
-          bodyFile: CustomSprites/More-SFX/README.md
+          bodyFile: Utility/More-SFX/README.md
           artifacts: More-SFX.zip
           artifactContentType: application/zip
