@@ -1,4 +1,4 @@
-# Custom SFXs
+# More SFXs v1.0.0
 *by Asu, converted by Synel for Newer 1.3.X*
 
 *Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
