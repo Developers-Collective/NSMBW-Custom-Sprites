@@ -72,4 +72,3 @@ Before starting to add files, remove all the files related to your flipblock cod
 
 
 *If I forgot some stuff or if you find a bug, be free to let me know*
-
