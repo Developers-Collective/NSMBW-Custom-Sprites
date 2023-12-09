@@ -5,7 +5,7 @@
 ## Requirements
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- [Only if not replacing newer's Flip Block] More sprites code by Nin0 and how to use it (can be found here: https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds)
+- **[Only if not replacing newer's Flip Block]** More sprites code by AboodXD & Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites)
 - More SFX code by Asu (converted by Synel for Newer 1.3.X) and how to use it (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/More-SFX)
 
 
@@ -42,6 +42,11 @@ Before starting to add files, remove all the files related to your flipblock cod
 ```
 - Add the code for the "more sprite stuff" using `FlipBlock` both for the ProfileID and SpriteID
 - Compile your code
+
+PS: just in case I forget to do it myself, these functions have been renamed so revert them to what they were before if you want this to work:
+`Physics::Info::belowSensorCallback` is `otherCallback1`
+`Physics::Info::aboveSensorCallback` is `otherCallback2`
+`Physics::Info::adjacentSensorCallback` is `otherCallback3`
 
 
 ## Game
