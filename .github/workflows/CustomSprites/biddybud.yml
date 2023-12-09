@@ -1,0 +1,31 @@
+name: More SFX
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/Biddybud/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r Biddybud.zip CustomSprites/Biddybud
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: More SFX
+          tag: Biddybud
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/Biddybud/README.md
+          artifacts: Biddybud.zip
+          artifactContentType: application/zip
