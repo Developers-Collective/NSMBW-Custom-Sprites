@@ -2,9 +2,9 @@ name: More SFX
 on:
   push:
     branches:
-      - 'main'
+      - main
     paths:
-      - 'CustomSprites/More-SFX/**.*'
+      - CustomSprites/More-SFX/**.*
 
 jobs:
   build:
