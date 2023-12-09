@@ -37,8 +37,6 @@ If you want to use some of this code, be sure to credit the corresponding author
 
 </details>
 
---------------------
-
 <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/MoreSprites/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites">More Sprites</a></summary>
   <p></p>
@@ -68,8 +66,6 @@ If you want to use some of this code, be sure to credit the corresponding author
 
 </details>
 
---------------------
-
 <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Signboard/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Signboard">Signboard (with gravity)</a></summary>
   <p></p>
@@ -77,8 +73,6 @@ If you want to use some of this code, be sure to credit the corresponding author
     Allows the signboard to fall when not on the ground.
 
 </details>
-
---------------------
 
 <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/MidwayFlag/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MidwayFlag">Midway Flag (with gravity)</a></summary>
@@ -88,8 +82,6 @@ If you want to use some of this code, be sure to credit the corresponding author
 
 </details>
 
---------------------
-
 <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Biddybud/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Biddybud">Biddybud</a></summary>
   <p></p>
@@ -98,8 +90,6 @@ If you want to use some of this code, be sure to credit the corresponding author
 
 </details>
 
---------------------
-
 <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Draglet/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Draglet">Draglet</a></summary>
   <p></p>
@@ -107,8 +97,6 @@ If you want to use some of this code, be sure to credit the corresponding author
     Draglet from Super Mario 3D Land. It flies around and shoots fireballs when Mario is near.
 
 </details>
-
---------------------
 
 <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/FlipBlock/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/FlipBlock">Flip Block</a></summary>
