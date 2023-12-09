@@ -4,7 +4,7 @@
     <img alt="Compiler: CodeWarrior" src="https://img.shields.io/badge/Compiler-CodeWarrior-blue" />
   </a>
   <a href="https://doc.qt.io/qtforpython/index.html">
-    <img alt="Compatible: Newer 1.3.X and NSMBWer+" src="https://img.shields.io/badge/Compatible-Newer%201.3.X20|%20NSMBWer+-magenta" />
+    <img alt="Compatible: Newer 1.3.X and NSMBWer+" src="https://img.shields.io/badge/Compatible-Newer%201.3.X%20|%20NSMBWer+-magenta" />
   </a>
   <a href="https://github.com/Synell/OGE-Next/blob/master/LICENSE">
     <img alt="License: LGPL" src="https://img.shields.io/badge/License-LGPL-green" target="_blank" />
