@@ -1,1 +1,0 @@
-int hijackSFX(int SFXNum);

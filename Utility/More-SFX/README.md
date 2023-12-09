@@ -3,11 +3,13 @@
 *Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
 
 ## Kamek
-- Add `src/music.S` in the `src` folder
-- Open `src/music.cpp` and add its content at the end of your `src/music.cpp`
-- Open `src/music.h` and add its content **before** the `#endif /* MUSIC_H */` line
-- Open your `bugfixes.yaml` and reference `../src/music.S` in the `source_files` list, before `../src/music.cpp`
-- Open `bugfixes.yaml` and add its content at the end of your `bugfixes.yaml`
+- Add `include/asm_setup.S` in your `include` folder
+- Add the files from `src/k_stdlib/` into your `src/k_stdlib/` folder (if you don't have a `k_stdlib` folder, create one in your `src` folder)
+- Add `src/newSfx.cpp` in your `src` folder
+- Add `src/newSfx.h` in your `src` folder
+- Add `src/newSfx.S` in your `src` folder
+- Add `newSfx.yaml` in your `Kamek` folder
+- Don't forget to reference `newSfx.yaml` in `NewerProject.yaml` or whatever file you use to compile, **below** `bugfixes.yaml`
 - Add these addresses to your `kamek_pal.x`:
 ```
 	NewSFXTable = 0x80450000;
@@ -54,7 +56,7 @@ If you already have the .rwav:
 
 If you don't have a .rwav:
 - To create a .rwav, you must have a .wav audio file **with only one channel (only mono, not stereo)*.
-- Then, open `_TMP.brwsd` from the zip with brawlcrate (it comes from the brsar and will only be used to convert files bc of how brawlcrate works, so don't put it in your game files) and in `Audio`, right click on `Audio[0]`, then click on `Replace` and select your .wav file and click on `Okay` when you see the audio popup.
+- Then, open `_TMP.brwsd` from the zip with **brawlcrate** (it comes from the brsar and will only be used to convert files bc of how brawlcrate works, so don't put it in your game files) and in `Audio`, right click on `Audio[0]`, then click on `Replace` and select your .wav file and click on `Okay` when you see the audio popup.
 - Then, right click on `Audio[0]` and click on `Export`. Name your file when exporting, including the file extension (.rwav).
 - You can then close brawlcrate without saving.
 - Move your .rwav into the `Music/sfx/` folder.

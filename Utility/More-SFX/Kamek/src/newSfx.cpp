@@ -1,3 +1,8 @@
+#include <game.h>
+#include <sfx.h>
+#include "music.h"
+#include "fileload.h"
+
 const char* SFXNameList [] = {
 	"original",				// 1999, DON'T USE THIS ONE
 	// add more sfx here	// 2000
@@ -22,7 +27,6 @@ void loadAllSFXs() {
 	for(int sfxIndex = 0; sfxIndex < (sizeof(SFXNameList) - 1) / sizeof(SFXNameList[0]); sfxIndex++) {
 		FileHandle handle;
 
-		// OSReport("SFX > Loading %s...\n", SFXNameList[sfxIndex]);
 		char nameWithSound[80] = "";
 		snprintf(nameWithSound, 79, "/Sound/new/sfx/%s.rwav", SFXNameList[sfxIndex]);
 

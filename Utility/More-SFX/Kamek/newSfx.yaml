@@ -1,3 +1,6 @@
+--- # By Asu, converted by Synel for Newer 1.3.X
+source_files: [../src/newSfx.S, ../src/newSfx.cpp]
+hooks:
   - name: SFXHax
     type: branch_insn
     branch_type: b
