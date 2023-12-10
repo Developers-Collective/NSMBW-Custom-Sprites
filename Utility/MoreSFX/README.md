@@ -9,10 +9,12 @@
 - Add `src/newSfx.cpp` in your `src` folder
 - Add `src/newSfx.h` in your `src` folder
 - Add `src/newSfx.S` in your `src` folder
+- Add `include/asm_sfx.S` in your `include` folder
+- In `include/sfx.h`, add `#include <asm_sfx.S>` just **below** the `#include <common.h>` line
 - Add `newSfx.yaml` in your `Kamek` folder
 - Don't forget to reference `newSfx.yaml` in `NewerProject.yaml` or whatever file you use to compile, **below** `bugfixes.yaml`
 - Add these addresses to your `kamek_pal.x`:
-```
+```cpp
 	NewSFXTable = 0x80450000;
 	NewSFXIndexes = 0x80460000;
 	doneWithNewSFXHax = 0x80283CE4;
@@ -25,7 +27,7 @@
 
 ## Riivolution
 - Open your riivolution patch and remove these lines:
-```
+```xml
 		<!-- Inject Newer loader -->
 		<!-- EU --> <memory offset="0x80328478" value="80001800" original="8015BC60" />
 		<!-- US --> <memory offset="0x80328130" value="80001800" original="8015BB20" />
@@ -34,23 +36,35 @@
 		<!-- TW --> <memory offset="0x80333218" value="80001800" original="8015C060" />
 ```
 - Still in the patch file, replace `<memory offset="0x80001800" valuefile="Loader.bin" />` with these lines:
-```
+```xml
 		<memory offset="0x800046F0" valuefile="Loader.bin" />
 		<memory offset="0x8000406C" value="48000684" original="38000000" />
 ```
 
 ## Adding SFX
 First, add `original.rwav` into the `Music/sfx/` folder. (And don't edit it, it's here for a reason)
-To add SFX into the game, you need to do 2 things:
-- Reference a file in `src/music.cpp` in the `SFXNameList` list. If you want to add `aNewSFX.rwav`, your `SFXNameList` will look like this:
-```
+Les's say we want to add `aNewSFX.rwav` into the game.
+
+First, reference the filename without the extension in `src/music.cpp` in the `SFXNameList` list and add a comment next to it containing its ID just to prevent behing lost each time we add a new sfx. In our case, the last entry is `original`, with ID `1999` so our SFX will be ID `2000` (1999 + 1). So in our case, our `SFXNameList` will look like this:
+```cpp
 const char* SFXNameList [] = {
 	"original",
 	"aNewSFX",		//2000
 	NULL
 };
 ```
-If you already have the .rwav:
+Now we also need to reference the SFX in `include/asm_sfx.S` by adding this line:
+```cpp
+#define SFX_ZZZZZZZZZZZ XXXX
+```
+Where `ZZZZZZZZZZZ` is the name of the SFX (without the extension) and `XXXX` is the ID of the SFX. So in our case, it will look like this:
+```cpp
+#define SFX_A_NEW_SFX 2000
+```
+You can give it the name you want, but it's better to keep the same name as the SFX name and to respect the format `SFX_` + `NAME_OF_YOUR_SFX` (with each word of the SFX name in uppercase and separated by `_`).
+
+
+Now for the game part. If you already have the .rwav:
 - Add `aNewSFX.rwav` into the `Music/sfx/` folder
 
 *Note: every SFX must be a file ending with .rwav*
