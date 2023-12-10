@@ -18,7 +18,7 @@
 ```
 	doSearchNearPlayer__8dActor_cFP7Point2dP7Point2d = 0x80064790;
 ```
-- If you don't have a `sqrt` function in your `game.h`, add one this one below the `float pow(float x, float y);` one: `float sqrt(float x) { return pow(x, 0.5f); }`
+- If you don't have a `sqrt` function in your `game.h`, add it **below** the `float pow(float x, float y);` line: `float sqrt(float x) { return pow(x, 0.5f); }`
 - In `game.h`, add a forward declaration of `dAcPy_c` before the `dActor_c` class if that's not already the case
 - In `game.h`, add this method if you don't have it: `dAcPy_c* doSearchNearPlayer(Vec2 *distance, Vec2 *relative_pos);`
 - Reference the 3 new sfx like this in the sfx list (replace XXXX, YYYY and ZZZZ by the correct ids):
