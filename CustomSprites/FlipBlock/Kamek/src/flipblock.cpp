@@ -98,9 +98,9 @@ int daEnFlipBlock_c::onCreate() {
 	physicsInfo.x2 = 8 + sideOffset;
 	physicsInfo.y2 = -8;
 
-	physicsInfo.belowSensorCallback = &daEnBlockMain_c::OPhysicsCallback1;
-	physicsInfo.aboveSensorCallback = &daEnBlockMain_c::OPhysicsCallback2;
-	physicsInfo.adjacentSensorCallback = &daEnBlockMain_c::OPhysicsCallback3;
+	physicsInfo.otherCallback1 = &daEnBlockMain_c::OPhysicsCallback1;
+	physicsInfo.otherCallback2 = &daEnBlockMain_c::OPhysicsCallback2;
+	physicsInfo.otherCallback3 = &daEnBlockMain_c::OPhysicsCallback3;
 
 	physics.setup(this, &physicsInfo, 3, currentLayerID);
 	physics.flagsMaybe = 0x260;

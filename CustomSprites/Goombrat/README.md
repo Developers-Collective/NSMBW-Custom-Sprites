@@ -15,14 +15,6 @@
 - Add the code for the "more sprite stuff" using `Goombrat` for the ProfileID and SpriteID
 - Compile your code
 
-PS: just in case I forget to do it myself, these functions have been renamed so revert them to what they were before if you want this to work:
-`damagePlayer` is `_vf220`
-`playRegularStompSound` is `_vf260`
-`playSpinStompSound` is `_vf268`
-`playYoshiStompSound` is `_vf278`
-`visualDropKill` is `_vf148`
-`visualDropKillAndCoinJump` is `_vf14C`
-
 
 ## Game
 - Add the arc file into the `SpriteTex` folder

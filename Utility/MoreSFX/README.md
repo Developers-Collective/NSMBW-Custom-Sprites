@@ -10,9 +10,29 @@
 - Add `src/newSfx.h` in your `src` folder
 - Add `src/newSfx.S` in your `src` folder
 - Add `include/asm_sfx.S` in your `include` folder
-- In `include/sfx.h`, add `#include <asm_sfx.S>` just **below** the `#include <common.h>` line
 - Add `newSfx.yaml` in your `Kamek` folder
 - Don't forget to reference `newSfx.yaml` in `NewerProject.yaml` or whatever file you use to compile, **below** `bugfixes.yaml`
+- In `include/sfx.h`, add `#include <asm_sfx.S>` just **below** the `#include <common.h>` line
+- In `include/sfx.h`, add `#include <game.h>` just **below** the `#include <asm_sfx.S>` line
+- Then, add this function if it doesn't exist in the same file (before the `#endif` line):
+```cpp
+void playSoundDistance(nw4r::snd::SoundHandle handle, Vec3 pos, int id, float volume = 1.0, float pitch = 1.0, float distance = 500.0) {
+	ClassWithCameraInfo *cwci = ClassWithCameraInfo::instance;
+	if (cwci == 0) return;
+
+	Vec2 dist = {
+		cwci->screenCentreX - pos.x,
+		cwci->screenCentreY - pos.y
+	};
+	float v = max<float>(0.0, (1.0 - (sqrtf(dist.x * dist.x + dist.y * dist.y) / distance)) * 1.0);
+	if (v <= 0.0) return;
+	else if (v > 1.0) v = 1.0;
+
+	PlaySoundWithFunctionB4(SoundRelatedClass, &handle, id, 1);
+	handle.SetVolume(volume * v, 1);
+	if (pitch != 1.0) handle.SetPitch(pitch);
+}
+```
 - Add these addresses to your `kamek_pal.x`:
 ```cpp
 	NewSFXTable = 0x80450000;

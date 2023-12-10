@@ -27,11 +27,6 @@ You can either replace the newer flipblock or add a new one (I recommend to repl
 ```
 - Compile your code
 
-PS: just in case I forget to do it myself, these functions have been renamed so revert them to what they were before if you want this to work:
-`Physics::Info::belowSensorCallback` is `otherCallback1`
-`Physics::Info::aboveSensorCallback` is `otherCallback2`
-`Physics::Info::adjacentSensorCallback` is `otherCallback3`
-
 ### Without replacing newer's Flip Block / As a new sprite
 Before starting to add files, remove all the files related to your flipblock code if you have some as it doesn't replace like in newer but it is added as a new actor/sprite slot (the file should be `flipblock.yaml` and `flipblock.cpp`)
 - Add `src/flipblock.cpp` in your `src` folder
