@@ -1,5 +1,5 @@
 # Biddybud & Para-Biddybud v1.0.0
-*by Nin0, updated by Synel*
+*by Nin0 & Baddy, updated by Synel*
 
 
 ## Requirements

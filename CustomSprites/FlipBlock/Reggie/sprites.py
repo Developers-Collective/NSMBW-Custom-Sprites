@@ -15,10 +15,10 @@ class SpriteImage_Flipblock(SLib.SpriteImage_Static):  # XXX
         width = ((self.parent.spritedata[2] & 0xF0) >> 4) + 1
         color = self.parent.spritedata[2] & 0xF
 
-        left = ImageCache[f'FlipBlockLeft{color}']
-        middle = ImageCache[f'FlipBlockMiddle{color}']
-        eyes = ImageCache[f'FlipBlockEyes{color}']
-        right = ImageCache[f'FlipBlockRight{color}']
+        left = ImageCache[f'FlipBlockLeft{color}'] if ImageCache[f'FlipBlockLeft{color}'] else ImageCache[f'FlipBlockLeft0']
+        middle = ImageCache[f'FlipBlockMiddle{color}'] if ImageCache[f'FlipBlockMiddle{color}'] else ImageCache[f'FlipBlockMiddle0']
+        eyes = ImageCache[f'FlipBlockEyes{color}'] if ImageCache[f'FlipBlockEyes{color}'] else ImageCache[f'FlipBlockEyes0']
+        right = ImageCache[f'FlipBlockRight{color}'] if ImageCache[f'FlipBlockRight{color}'] else ImageCache[f'FlipBlockRight0']
 
         image = QtGui.QPixmap(width * 24, 24)
         image.fill(QtCore.Qt.transparent)
