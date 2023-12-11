@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - CustomSprites/PathController/**.*
+      - Utility/PathController/**.*
     tags:
       - '*'
 
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compress
-        run: zip -r PathController.zip CustomSprites/PathController
+        run: zip -r PathController.zip Utility/PathController
 
       - name: Create / Edit Release
         uses: ncipollo/release-action@v1
