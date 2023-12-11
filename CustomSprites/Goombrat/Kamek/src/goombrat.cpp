@@ -303,9 +303,8 @@ int daGoombrat_c::onCreate() {
 
 	allocator.link(-1, GameHeaps[0], 0, 0x20);
 
-	char* resName = "";
-	sprintf(resName, "g3d/t%02d.brres", color);
-	resName[strlen(resName)] = 0;
+	char resName[16];
+	getSpriteTexResName(resName, color);
 	this->resFile.data = getResource("kakibo", resName);
 
 	nw4r::g3d::ResMdl mdl = this->resFile.GetResMdl("kakibo");

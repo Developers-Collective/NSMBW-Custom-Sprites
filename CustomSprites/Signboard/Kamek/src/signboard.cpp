@@ -146,9 +146,8 @@ int dSignboard_c::onCreate() {
 	// Model creation
 	allocator.link(-1, GameHeaps[0], 0, 0x20);
 
-	char* resName = "";
-	sprintf(resName, "g3d/t%02d.brres", this->color);
-	resName[strlen(resName)] = 0;
+	char resName[16];
+	getSpriteTexResName(resName, color);
 	resFile.data = getResource("signboard", resName);
 	nw4r::g3d::ResMdl mdl = this->resFile.GetResMdl("signboard");
 	bodyModel.setup(mdl, &allocator, 0, 1, 0);

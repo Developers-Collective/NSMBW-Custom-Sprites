@@ -1,0 +1,31 @@
+name: SpriteDataUtils
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/SpriteDataUtils/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r SpriteDataUtils.zip CustomSprites/SpriteDataUtils
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Sprite Data Utils
+          tag: SpriteDataUtils
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/SpriteDataUtils/README.md
+          artifacts: SpriteDataUtils.zip
+          artifactContentType: application/zip

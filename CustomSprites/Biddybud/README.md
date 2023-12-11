@@ -8,6 +8,7 @@
 - More sprites code by AboodXD & Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites)
 - More SFX code by Asu (converted by Synel for Newer 1.3.X) and how to use it (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSFX)
 - Path Controller code by Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/PathController)
+- SpriteDataUtils by RedStoneMatt and Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils)
 
 
 ## Kamek
