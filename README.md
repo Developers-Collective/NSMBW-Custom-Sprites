@@ -65,7 +65,7 @@ This utility contains a set of tools to help you create sprite data.
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/RotatingActivePhysics/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/RotatingActivePhysics">Rotating Active Physics</a></summary>
   <p></p>
 
-This utility contains a set of tools to help you create sprite data.
+This utility is used to create rotating active physics for your custom sprites.
 
 </details>
 
