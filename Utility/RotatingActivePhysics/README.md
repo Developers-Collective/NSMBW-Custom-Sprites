@@ -1,4 +1,4 @@
-# Path Controller v0.8.2
+# Rotating Active Physics v0.8.2
 *by Synel*
 
 ## Kamek
