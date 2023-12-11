@@ -63,7 +63,7 @@ void RotatingActivePhysics::initWithStruct(dActor_c *owner, const ActivePhysics:
 
     // Build the trapezoid collider
     this->aPhysics.initWithStruct(owner, info);
-    this->aPhysics.colliderType = ActivePhysics::VerticalTrapezoid;
+    this->aPhysics.collisionCheckType = ActivePhysics::VERTICAL_TRAPEZOID;
 }
 
 void RotatingActivePhysics::setRotation(u16 rotation) {
@@ -99,37 +99,37 @@ void RotatingActivePhysics::setRotation(u16 rotation) {
     Vec2 bottomRight = rotateVec((Vec2){ this->info.xDistToEdge, -this->info.yDistToEdge }, newRot);
 
     // Apply the new distances to edges
-    if (this->aPhysics.colliderType == ActivePhysics::HorizontalTrapezoid) {
+    if (this->aPhysics.collisionCheckType == ActivePhysics::HORIZONTAL_TRAPEZOID) {
         // If the trapezoid is horizontal and the rotation is between 45 and 135 degrees or 225 and 315, we need to invert the X values
         if (newRot >= 0x2000 && newRot < 0xA000) {
-            this->aPhysics.trapezoidTopLeft = -topLeft.x;
-            this->aPhysics.trapezoidTopRight = -topRight.x;
-            this->aPhysics.trapezoidBottomLeft = -bottomLeft.x;
-            this->aPhysics.trapezoidBottomRight = -bottomRight.x;
+            this->aPhysics.trpValue0 = -topLeft.x;
+            this->aPhysics.trpValue1 = -topRight.x;
+            this->aPhysics.trpValue2 = -bottomLeft.x;
+            this->aPhysics.trpValue3 = -bottomRight.x;
         }
         // Otherwise, we don't need to invert the X values
         else {
-            this->aPhysics.trapezoidTopLeft = topLeft.x;
-            this->aPhysics.trapezoidTopRight = topRight.x;
-            this->aPhysics.trapezoidBottomLeft = bottomLeft.x;
-            this->aPhysics.trapezoidBottomRight = bottomRight.x;
+            this->aPhysics.trpValue0 = topLeft.x;
+            this->aPhysics.trpValue1 = topRight.x;
+            this->aPhysics.trpValue2 = bottomLeft.x;
+            this->aPhysics.trpValue3 = bottomRight.x;
         }
     }
     else {
         // In all cases, we need to exchange the Y values between the corners as the trapezoid is vertical
         // If the trapezoid is vertical and the rotation is between 45 and 135 degrees or 225 and 315, we don't need to invert the Y values
         if (newRot >= 0x2000 && newRot < 0xA000) {
-            this->aPhysics.trapezoidTopLeft = topRight.y;
-            this->aPhysics.trapezoidTopRight = topLeft.y;
-            this->aPhysics.trapezoidBottomLeft = bottomRight.y;
-            this->aPhysics.trapezoidBottomRight = bottomLeft.y;
+            this->aPhysics.trpValue0 = topRight.y;
+            this->aPhysics.trpValue1 = topLeft.y;
+            this->aPhysics.trpValue2 = bottomRight.y;
+            this->aPhysics.trpValue3 = bottomLeft.y;
         }
         // Otherwise, we need to invert the Y values
         else {
-            this->aPhysics.trapezoidTopLeft = -topRight.y;
-            this->aPhysics.trapezoidTopRight = -topLeft.y;
-            this->aPhysics.trapezoidBottomLeft = -bottomRight.y;
-            this->aPhysics.trapezoidBottomRight = -bottomLeft.y;
+            this->aPhysics.trpValue0 = -topRight.y;
+            this->aPhysics.trpValue1 = -topLeft.y;
+            this->aPhysics.trpValue2 = -bottomRight.y;
+            this->aPhysics.trpValue3 = -bottomLeft.y;
         }
     }
 }
@@ -137,18 +137,18 @@ void RotatingActivePhysics::setRotation(u16 rotation) {
 void RotatingActivePhysics::setDirection(u16 rotation) {
     // If the rotation is between 45 and 135 degrees or 225 and 315, the trapezoid is vertical
     if (rotation >= 0x2000 && rotation <= 0x6000) {
-        this->aPhysics.colliderType = ActivePhysics::VerticalTrapezoid;
+        this->aPhysics.collisionCheckType = ActivePhysics::VERTICAL_TRAPEZOID;
         this->aPhysics.info.xDistToEdge = this->info.yDistToEdge;
         this->aPhysics.info.yDistToEdge = this->info.xDistToEdge;
     }
     else if (rotation >= 0xA000 && rotation <= 0xE000) {
-        this->aPhysics.colliderType = ActivePhysics::VerticalTrapezoid;
+        this->aPhysics.collisionCheckType = ActivePhysics::VERTICAL_TRAPEZOID;
         this->aPhysics.info.xDistToEdge = this->info.yDistToEdge;
         this->aPhysics.info.yDistToEdge = this->info.xDistToEdge;
     }
     // Otherwise, the trapezoid is horizontal
     else {
-        this->aPhysics.colliderType = ActivePhysics::HorizontalTrapezoid;
+        this->aPhysics.collisionCheckType = ActivePhysics::HORIZONTAL_TRAPEZOID;
         this->aPhysics.info.xDistToEdge = this->info.xDistToEdge;
         this->aPhysics.info.yDistToEdge = this->info.yDistToEdge;
     }
