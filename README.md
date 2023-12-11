@@ -45,9 +45,23 @@ This utility allows you to add more sprites to the game without replacing existi
 
 </details>
 
-<!-- --------------------
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/PathController/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/PathController">Path Controller</a></summary>
+  <p></p>
+
+This utility allows you to use path controlled sprites.
+
+</details>
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/SpriteDataUtils/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils">Sprite Data Utils</a></summary>
+  <p></p>
+
+This utility contains a set of tools to help you create sprite data.
+
+</details>
+
+<!-- <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Layer0Lava/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Layer0Lava">Layer 0 Lava</a></summary>
   <p></p>
 
