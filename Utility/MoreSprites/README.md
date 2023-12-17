@@ -9,7 +9,7 @@
 - Add `src/profile.cpp` in your `src` folder
 - Add `src/profileid.h` in your `src` folder
 - Add `src/profile.S` in your `src` folder
-- Add `newSfx.yaml` in your `Kamek` folder
+- Add `profile.yaml` in your `Kamek` folder
 - Add `include/profile.h` in your `include` folder
 - Add `include/asm_profiles.S` in your `include` folder
 - Don't forget to reference `profile.yaml` in `NewerProject.yaml` or whatever file you use to compile
