@@ -23,6 +23,8 @@
 ```
 - Compile your code
 
+*Note that this code will not compile until you add your first new sprite, due to the list being empty if no custom sprites are found.*
+
 ## Add a new sprite
 Let's say you want to add a sprite with a class named `dMySprite_c` in a file named `mySprite.cpp` with a filelist named `MySpriteFileList`.
 

@@ -356,8 +356,8 @@ void daEnPataTenten_c::executePlaysound() {
 void daEnPataTenten_c::playsound(int id) {
 	ClassWithCameraInfo *cwci = ClassWithCameraInfo::instance;
 	Vec2 dist = {
-		cwci->screenCenterX - this->pos.x,
-		cwci->screenCenterY - this->pos.y
+		cwci->screenCentreX - this->pos.x,
+		cwci->screenCentreY - this->pos.y
 	};
 	float volume = max<float>(0.0, (1.0 - (sqrtf(dist.x * dist.x + dist.y * dist.y) / 500.0)) * 1.0);
 	if (volume <= 0.0) return;

@@ -36,3 +36,14 @@ union {
 	};
 };
 ```
+
+Now, still in `include/game.h`, under the `float floor(float x);` line, add this:
+```cpp
+float pow(float x, float y);
+float sqrt(float x) { return pow(x, 0.5f); }
+```
+
+Add these addresses to your `kamek_pal.x`:
+```cpp
+pow = 0x802E5894;
+```
