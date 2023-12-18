@@ -1,0 +1,31 @@
+name: RotatingActivePhysics
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/RotatingActivePhysics/**.*
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r RotatingActivePhysics.zip Utility/RotatingActivePhysics
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Rotating Active Physics
+          tag: RotatingActivePhysics
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/RotatingActivePhysics/README.md
+          artifacts: RotatingActivePhysics.zip
+          artifactContentType: application/zip

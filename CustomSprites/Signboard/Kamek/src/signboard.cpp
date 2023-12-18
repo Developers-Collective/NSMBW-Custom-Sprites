@@ -13,6 +13,7 @@ class dSignboard_c : public dEn_c {
 	int onDelete();
 	int onExecute();
 	int onDraw();
+	void kill();
 
 	mHeapAllocator_c allocator;
 	nw4r::g3d::ResFile resFile;
@@ -128,6 +129,8 @@ void dSignboard_c::bindAnimChr_and_setUpdateRate(const char* name, int unk, floa
 	this->bodyModel.bindAnim(&this->chrAnimation, unk2);
 	this->chrAnimation.setUpdateRate(rate);
 }
+
+void dSignboard_c::kill() { }
 
 int dSignboard_c::onCreate() {
 	this->color = this->settings >> 28 & 0xF;

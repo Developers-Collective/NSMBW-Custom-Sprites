@@ -1,5 +1,5 @@
 # Sprite Data Utils v1.0.0
-*by RedStoneMatt & Synel*
+*by RedStoneMatt, Synel & Nin0*
 
 ## Kamek
 Open `include/game.h` and add this function at the end of the file (before the `#endif` line):
