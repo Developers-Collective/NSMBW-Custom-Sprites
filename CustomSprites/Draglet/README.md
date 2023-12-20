@@ -1,4 +1,4 @@
-# Draglet v1.0.1
+# Draglet v1.0.2
 *by Synel, model imported by G4L & Zementblock*
 
 
@@ -15,8 +15,9 @@
 - Add `meragon.yaml` in your `Kamek` folder
 - Reference the `meragon.yaml` in your `NewerProject.yaml`
 - Add the code for the "more sprite stuff" using `Meragon` for the ProfileID and SpriteID
-- Add this address to your `kamek_pal.x`:
+- Add these addresses to your `kamek_pal.x`:
 ```
+	GetParent__7fBase_cFv = 0x801626D0;
 	doSearchNearPlayer__8dActor_cFP7Point2dP7Point2d = 0x80064790;
 ```
 - If you don't have a `sqrt` function in your `game.h`, add it **below** the `float pow(float x, float y);` line: `float sqrt(float x) { return pow(x, 0.5f); }`
