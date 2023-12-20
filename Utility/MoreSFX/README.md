@@ -1,4 +1,4 @@
-# More SFXs v1.2.0
+# More SFXs v1.2.1
 *by Asu, converted by Synel for Newer 1.3.X*
 
 *Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
@@ -82,7 +82,7 @@ void setSoundDistance(nw4r::snd::SoundHandle* handle, Vec3 pos, float volume = 1
 First, add `original.rwav` into the `Music/sfx/` folder. (And don't edit it, it's here for a reason)
 Les's say we want to add `aNewSFX.rwav` into the game.
 
-First, reference the filename without the extension in `src/music.cpp` in the `SFXNameList` list and add a comment next to it containing its ID just to prevent behing lost each time we add a new sfx. In our case, the last entry is `original`, with ID `1999` so our SFX will be ID `2000` (1999 + 1). So in our case, our `SFXNameList` will look like this:
+First, reference the filename without the extension in `src/newSfx.cpp` in the `SFXNameList` list and add a comment next to it containing its ID just to prevent behing lost each time we add a new sfx. In our case, the last entry is `original`, with ID `1999` so our SFX will be ID `2000` (1999 + 1). So in our case, our `SFXNameList` will look like this:
 ```cpp
 const char* SFXNameList [] = {
 	"original",
