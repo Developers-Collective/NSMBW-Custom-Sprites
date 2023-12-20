@@ -381,7 +381,7 @@ void daMeragon_c::executeWaitPlaysound() {
 
 	switch (this->sfxTimer) {
 		case 2:
-			playSoundDistance(this->handle, this->pos, SFX_MERAGON_WING, 0.25);
+			playSoundDistance(&this->handle, this->pos, SFX_MERAGON_WING, 0.25);
 			break;
 	}
 
@@ -518,7 +518,7 @@ void daMeragon_c::endState_Turn() { }
 ///////////////
 void daMeragon_c::beginState_Shoot() {
     bindAnimChr_and_setUpdateRate("fire_start", 1, 0.0, 0.5);
-	playSoundDistance(this->handle, this->pos, SFX_MERAGON_FIRE_START);
+	playSoundDistance(&this->handle, this->pos, SFX_MERAGON_FIRE_START);
 	this->timer = -1;
 	this->sfxTimer = 0;
 	for (int i = 0; i < this->fireballCount; i++) {
@@ -537,7 +537,7 @@ void daMeragon_c::executeState_Shoot() {
 		this->executeWaitPlaysound();
 
 		bindAnimChr_and_setUpdateRate(this->timer == 0 ? "fire_end" : "fire", 1, 0.0, 1.0);
-		playSoundDistance(this->handle, this->pos, SFX_MERAGON_FIRE);
+		playSoundDistance(&this->handle, this->pos, SFX_MERAGON_FIRE);
         this->animationChr.setCurrentFrame(0.0);
 
 		this->fireballs[this->fireballCount] = createChild(PAKKUN_FIREBALL, this, 0x0, &this->pos, 0, this->currentLayerID);
