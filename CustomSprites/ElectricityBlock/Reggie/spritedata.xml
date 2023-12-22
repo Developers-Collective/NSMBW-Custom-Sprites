@@ -1,0 +1,24 @@
+<sprites>
+  <sprite id="XXX" name="Electricity Block" notes="Sends and receives electricity.">
+    <list title="Color" nybble="6" comment="The color of the block.">
+      <entry value="0">Normal</entry>
+    </list>
+    <list title="Send Type" requirednybble="3-4" requiredval="1-255" nybble="5.3-5.4" comment="Which event should trigger the electricity.">
+      <entry value="0">Each x amount of time</entry>
+      <entry value="1">When receiving electricity</entry>
+      <entry value="2">When Event ID is triggered</entry>
+      <entry value="3">Constant state</entry>
+    </list>
+    <dualbox title1="Starts Off" title2="Starts On" requirednybble="5.3-5.4,3-4" requiredval="0,1-255" nybble="5.2" comment="Is the electricity turned on when spawned ?"/>
+    <dualbox title1="On when Event, Off otherwise" title2="Off when Event, On otherwise" requirednybble="5.3-5.4,3-4" requiredval="2,1-255" nybble="5.2"/>
+    <value title="Time Offset" requirednybble="5.3-5.4,3-4" requiredval="0-1,1-255" nybble="9-10" comment="When triggered, how much time should it wait before send electricity.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+    <value title="Time Offset" requirednybble="5.3-5.4,3-4" requiredval="2,1-255" nybble="9-10" comment="When triggered, how much time should it wait before send electricity.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s&lt;br/&gt;&lt;br/&gt;During this time, electricity sparks are displayed to indicate it'll turn on.&lt;br/&gt;If you want it to be the same delay as the other types, then set this value to 5."/>
+    <value title="Time Activated" requirednybble="5.3-5.4,3-4" requiredval="0-1,1-255" nybble="7-8" comment="Once activated, when does it need to be turned off.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+    <value title="Time Deactivated" requirednybble="5.3-5.4,3-4" requiredval="0,1-255" nybble="11-12" comment="Once deactivated, when does it need to be turned on.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+    <value title="Triggering Event ID" idtype="Triggering Event" requirednybble="5.3-5.4,3-4" requiredval="2,1-255" nybble="11-12"/>
+    <dualbox title1="Always Off" title2="Always On" requirednybble="5.3-5.4,3-4" requiredval="3,1-255" nybble="5.2" comment="Is the electricity turned on ?"/>
+    <value title="Sending Electricity ID" idtype="Electricity ID" nybble="3-4" comment="On which ID shoud it listen to."/>
+    <value title="Receiving Electricity ID" idtype="Electricity ID" nybble="1-2" comment="On which ID shoud it listen to."/>
+    <checkbox title="Invisible" nybble="5.1" comment="This sprite will be invisible. The block physics will also not be here."/>
+  </sprite>
+</sprites>

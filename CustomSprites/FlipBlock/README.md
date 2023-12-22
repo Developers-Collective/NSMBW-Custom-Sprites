@@ -44,11 +44,6 @@ Before starting to add files, remove all the files related to your flipblock cod
 - Add the code for the "more sprite stuff" using `FlipBlock` both for the ProfileID and SpriteID
 - Compile your code
 
-PS: just in case I forget to do it myself, these functions have been renamed so revert them to what they were before if you want this to work:
-`Physics::Info::belowSensorCallback` is `otherCallback1`
-`Physics::Info::aboveSensorCallback` is `otherCallback2`
-`Physics::Info::adjacentSensorCallback` is `otherCallback3`
-
 
 ## Game
 - Remove the `block_rotate.arc` file from your `SpriteTex` folder if you have one

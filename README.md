@@ -69,6 +69,14 @@ This utility is used to create rotating active physics for your custom sprites.
 
 </details>
 
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Light/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Light">Light & Light Path</a></summary>
+  <p></p>
+
+This utility is used to create light in the darkness. It also allows you to create light paths.
+
+</details>
+
 <!-- <details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Layer0Lava/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Layer0Lava">Layer 0 Lava</a></summary>
   <p></p>
@@ -136,6 +144,14 @@ https://github.com/Synell/NSMBW-Custom-Sprites/assets/70210528/4ce1e7e5-289d-45e
 
 https://github.com/Synell/NSMBW-Custom-Sprites/assets/70210528/0ea4f2e4-f8ee-48f0-b633-87376a66c731
 
+
+</details>
+
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/BlockElectricity/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/BlockElectricity">Electricity Block</a></summary>
+  <p></p>
+
+Electricity Block from Super Mario Bros. Wonder. It shoots electricity.
 
 </details>
 
