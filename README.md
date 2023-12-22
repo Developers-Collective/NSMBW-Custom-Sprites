@@ -151,7 +151,7 @@ https://github.com/Synell/NSMBW-Custom-Sprites/assets/70210528/0ea4f2e4-f8ee-48f
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/BlockElectricity/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/BlockElectricity">Electricity Block</a></summary>
   <p></p>
 
-Electricity Block from Super Mario Bros. Wonder. It shoots electricity.
+Electricity Block from Super Mario Bros. Wonder that shoots electricity.
 
 </details>
 
