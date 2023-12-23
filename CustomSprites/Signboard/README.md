@@ -24,6 +24,7 @@
 - Add the content of `spritedata.xml` into your `spritedata.xml` like every other sprites
 - Add the content of `sprites.py` into your `sprites.py` like every other sprites
 	> ⚠️ and don't forget to reference the new class in the list at the end ⚠️
+- Add `import math` at the top of your `sprites.py` file if it doesn't exist
 - Add the images in the `sprites` folder into your `sprites` folder
 - Restart reggie to apply the changes
 

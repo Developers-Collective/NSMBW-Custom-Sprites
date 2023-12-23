@@ -14,10 +14,11 @@
 - Don't forget to reference `midwayFlag.yaml` in `NewerProject.yaml` or whatever file you use to compile
 
 ## Reggie Next Installation
-- In your `<your_reggie_next_location>/reggiedata/patches/<your_mod_name>/spritedata.xml` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/spritedata.xml` (DON'T REPLACE THE FILE)
-- In your `<your_reggie_next_location>/reggiedata/patches/<your_mod_name>/sprites.py` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/sprites.py`(DON'T REPLACE THE FILE)
-- In your `<your_reggie_next_location>/reggiedata/patches/<your_mod_name>/sprites.py` file, add this line at the top at the file if it doesn't exist: `import math`
-- In your `<your_reggie_next_location>/reggiedata/patches/<your_mod_name>/sprites/` folder, add the images from `ReggieNext/sprites/` and replace them if they already exist
+- In your `spritedata.xml` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/spritedata.xml` (DON'T REPLACE THE FILE)
+- In your `sprites.py` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/sprites.py`(DON'T REPLACE THE FILE)
+- Add `import math` at the top of your `sprites.py` file if it doesn't exist
+- In your `sprites.py` file, add this line at the top at the file if it doesn't exist: `import math`
+- In your `sprites/` folder, add the images from `ReggieNext/sprites/` and replace them if they already exist
 - Restart Reggie Next
 
 ## Missing functionalities
