@@ -7,7 +7,6 @@
 #include "lightPath.h"
 
 const char *BlockElectricityFileList[] = {"block_electricity", 0};
-const Actors BlockElectricityActorID = adjustID(BlockElectricity);
 const u8 BlockElectricityPrepareTime = 30;
 
 class daEnBlockElectricity_c : public daEnBlockMain_c {
@@ -162,7 +161,7 @@ bool daEnBlockElectricity_c::setReceiveFromObjects()
 	obj = (daEnBlockElectricity_c *)0x0;
 	int sendCount = 0;
 
-	while (obj = (daEnBlockElectricity_c *)fBase_c::search(BlockElectricityActorID, (fBase_c *)obj)) {
+	while (obj = (daEnBlockElectricity_c *)fBase_c::searchByProfileId(ProfileId::BlockElectricity, (fBase_c *)obj)) {
 		if (obj->senderID != this->receiverID) continue;
 
 		receiveFrom = obj;

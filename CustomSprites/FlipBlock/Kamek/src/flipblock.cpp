@@ -271,7 +271,7 @@ bool daEnFlipBlock_c::playerOverlaps() {
 	Vec myBL = {pos.x - 8.0f, pos.y - 8.0f, 0.0f};
 	Vec myTR = {pos.x + 8.0f, pos.y + 8.0f, 0.0f};
 
-	while ((player = (dStageActor_c*)fBase_c::search(PLAYER, player)) != 0) {
+	while ((player = (dStageActor_c*)fBase_c::searchByProfileId(ProfileId::PLAYER, player)) != 0) {
 		float centerX = player->pos.x + player->aPhysics.info.xDistToCenter;
 		float centerY = player->pos.y + player->aPhysics.info.yDistToCenter;
 
