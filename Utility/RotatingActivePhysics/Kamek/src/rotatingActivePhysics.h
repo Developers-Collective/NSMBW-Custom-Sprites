@@ -1,4 +1,5 @@
-#ifndef ROTATINGACTIVEPHYSICS_H
+#ifndef __ROTATINGACTIVEPHYSICS_H
+#define __ROTATINGACTIVEPHYSICS_H
 
 #include <game.h>
 
@@ -154,4 +155,4 @@ void RotatingActivePhysics::setDirection(u16 rotation) {
     }
 }
 
-#endif // ROTATINGACTIVEPHYSICS_H
+#endif // __ROTATINGACTIVEPHYSICS_H
