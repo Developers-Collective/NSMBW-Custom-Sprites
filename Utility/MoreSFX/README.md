@@ -1,4 +1,4 @@
-# More SFXs v1.2.1
+# More SFXs v1.2.2
 *by Asu, converted by Synel for Newer 1.3.X*
 
 *Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
@@ -7,6 +7,14 @@
 - Add `include/asm_setup.S` in your `include` folder
 - Add the files from `src/k_stdlib/` into your `src/k_stdlib/` folder (if you don't have a `k_stdlib` folder, create one in your `src` folder)
 - Add `src/newSfx.cpp` in your `src` folder
+- If you're **not** using Newer as base (so Vanilla or NSMBWer+), change this line in `src/newSfx.cpp`:
+```cpp
+snprintf(nameWithSound, 79, "/Sound/new/sfx/%s.rwav", SFXNameList[sfxIndex]);
+```
+to this:
+```cpp
+snprintf(nameWithSound, 79, "/Sound/stream/sfx/%s.rwav", SFXNameList[sfxIndex]);
+```
 - Add `src/newSfx.h` in your `src` folder
 - Add `src/newSfx.S` in your `src` folder
 - Add `include/asm_sfx.S` in your `include` folder
