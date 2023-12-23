@@ -1,17 +1,16 @@
-# Better Midway Flag v0.9.4 (by Synel)
+# Better Midway Flag v0.9.5 (by Synel)
 
 ## Game / Code Installation
 - Copy the files from the `Kamek` folder into your `Kamek` folder (if some files already exist, find a way to merge them lol)
 - Add these lines to your `Kamek/kamek_pal.x`:
-	```
+```cpp
 	midwayFlagOnCreate = 0x807e2130;
 	midwayFlagOnExecute = 0x807e2410;
 	midwayFlagPowerUp = 0x807e2ca0;
 	StateID_Wait__15daChukanPoint_c = 0x80997d98;
 	StateID_SeaWait__15daChukanPoint_c = 0x80997e18;
 	continueOriginalCheckWater = 0x80075274;
-	```
-	*Note: check that some of these addresses dont't already exist in your .x (to avoid duplicates, otherwise your game will crash)*
+```
 - Don't forget to reference `midwayFlag.yaml` in `NewerProject.yaml` or whatever file you use to compile
 
 ## Reggie Next Installation

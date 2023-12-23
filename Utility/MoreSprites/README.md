@@ -1,4 +1,4 @@
-# More Sprites v1.0.0
+# More Sprites v1.0.1
 *by AboodXD, updated by Nin0*
 
 *Original code can be found here: https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds*
@@ -13,8 +13,19 @@
 - Add `include/profile.h` in your `include` folder
 - Add `include/asm_profiles.S` in your `include` folder
 - Don't forget to reference `profile.yaml` in `NewerProject.yaml` or whatever file you use to compile
-- Add these addresses to your `kamek_pal.x`:
+- In you're using newer, in your `include/game.h`, replace this line in the `fBase_c` class:
+```cpp
+	u16 name;
 ```
+with this:
+```cpp
+union {
+	u16 name;
+	u16 profileId;
+};
+```
+- Add these addresses to your `kamek_pal.x`:
+```cpp
 	originalSprites = 0x8030a340;
 	originalProfiles = 0x8076a748;
 	ObjectProfileList = 0x8042a698;

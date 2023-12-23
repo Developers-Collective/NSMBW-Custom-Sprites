@@ -16,11 +16,11 @@ extern "C" void midwayFlagPowerUp(daChukanPoint_c* self, dAcPy_c* player); // 0x
 
 
 void midwayFlagCollisionCallback(ActivePhysics *one, ActivePhysics *two) {
-	// OSReport("Collision callback called! %s %s\n", one->owner->name_string, two->owner->name_string);
+	// OSReport("Collision callback called! %s %s\n", one->owner->profileId_string, two->owner->profileId_string);
 	daChukanPoint_c* self = (daChukanPoint_c*)one->owner;
 	dStageActor_c* other = (dStageActor_c*)two->owner;
 
-	switch (other->name) {
+	switch (other->profileId) {
 		case EN_JUMPDAI:
 			if (!self->enableGravity) break;
 

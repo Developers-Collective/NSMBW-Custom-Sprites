@@ -101,7 +101,7 @@ CREATE_STATE(daGoombrat_c, DieStomp);
 // Collision Functions
 ////////////////////////
 void daGoombrat_c::spriteCollision(ActivePhysics *apThis, ActivePhysics *apOther) {
-	u16 name = ((dEn_c*)apOther->owner)->name;
+	u16 name = ((dEn_c*)apOther->owner)->profileId;
 
 	if (name == EN_COIN || name == EN_EATCOIN || name == AC_BLOCK_COIN || name == EN_COIN_JUGEM || name == EN_COIN_ANGLE
 		|| name == EN_COIN_JUMP || name == EN_COIN_FLOOR || name == EN_COIN_VOLT || name == EN_COIN_WIND

@@ -98,14 +98,14 @@ void dEnBlockPath_c::beginState_Init() {
 		}
 
 		if ((rail->nodeCount - ignoreLastNodesCount) < currentNodeNum + 1) {
-			OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->name, pathID);
+			OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->profileId, pathID);
 			changeToDone = true;
 		} else if ((rail->nodeCount - ignoreLastNodesCount) == currentNodeNum + 1) {
 			if(loop) {
 				nextNode = &course->railNode[rail->startNode];
 				currentNodeNum = -1;
 			} else {
-				OSReport("Sprite %d > WARNING: Started on End Node on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Started on End Node on Path %d\n", this->profileId, pathID);
 				this->pos.x = currentNode->xPos + offset.x;
 				this->pos.y = (-currentNode->yPos) + offset.y;
 				changeToDone = true;
@@ -133,7 +133,7 @@ void dEnBlockPath_c::beginState_Init() {
 
 		stepsDone = 0;
 	} else {
-		OSReport("Sprite %d > WARNING: No Matching Path found (Path: %d)\n", this->name, pathID);
+		OSReport("Sprite %d > WARNING: No Matching Path found (Path: %d)\n", this->profileId, pathID);
 		changeToDone = true;
 	}
 }
@@ -159,7 +159,7 @@ void dEnBlockPath_c::executeState_FollowPath() {
 			if (waitForPlayer == 1) {
 				waitForPlayer = 0;
 			} else if (waitForPlayer > 2) {
-				OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->profileId, pathID);
 				doStateChange(&StateID_Done);
 			}
 
@@ -207,7 +207,7 @@ void dEnBlockPath_c::executeState_FollowPath() {
 					stepsDone = 0;
 				}
 			} else if ((rail->nodeCount - ignoreLastNodesCount) < currentNodeNum) {
-				OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->profileId, pathID);
 				doStateChange(&StateID_Done);
 			} else {
 				dx = nextNode->xPos - currentNode->xPos;
@@ -262,7 +262,7 @@ void dEnBlockPath_c::executeState_FollowPath() {
 				this->pos.y += stepVector.y;
 			}
 		} else {
-			OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->name, pathID);
+			OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->profileId, pathID);
 			doStateChange(&StateID_Done);
 		}
 	}
@@ -383,14 +383,14 @@ void dEnPath_c::beginState_Init() {
 		}
 
 		if ((rail->nodeCount - ignoreLastNodesCount) < currentNodeNum + 1) {
-			OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->name, pathID);
+			OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->profileId, pathID);
 			changeToDone = true;
 		} else if ((rail->nodeCount - ignoreLastNodesCount) == currentNodeNum + 1) {
 			if(loop) {
 				nextNode = &course->railNode[rail->startNode];
 				currentNodeNum = -1;
 			} else {
-				OSReport("Sprite %d > WARNING: Started on End Node on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Started on End Node on Path %d\n", this->profileId, pathID);
 				this->pos.x = currentNode->xPos + offset.x;
 				this->pos.y = (-currentNode->yPos) + offset.y;
 				changeToDone = true;
@@ -418,7 +418,7 @@ void dEnPath_c::beginState_Init() {
 
 		stepsDone = 0;
 	} else {
-		OSReport("Sprite %d > WARNING: No Matching Path found (Path: %d)\n", this->name, pathID);
+		OSReport("Sprite %d > WARNING: No Matching Path found (Path: %d)\n", this->profileId, pathID);
 		changeToDone = true;
 	}
 }
@@ -444,7 +444,7 @@ void dEnPath_c::executeState_FollowPath() {
 			if (waitForPlayer == 1) {
 				waitForPlayer = 0;
 			} else if (waitForPlayer > 2) {
-				OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->profileId, pathID);
 				doStateChange(&StateID_Done);
 			}
 
@@ -492,7 +492,7 @@ void dEnPath_c::executeState_FollowPath() {
 					stepsDone = 0;
 				}
 			} else if ((rail->nodeCount - ignoreLastNodesCount) < currentNodeNum) {
-				OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->profileId, pathID);
 				doStateChange(&StateID_Done);
 			} else {
 				dx = nextNode->xPos - currentNode->xPos;
@@ -547,7 +547,7 @@ void dEnPath_c::executeState_FollowPath() {
 				this->pos.y += stepVector.y;
 			}
 		} else {
-			OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->name, pathID);
+			OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->profileId, pathID);
 			doStateChange(&StateID_Done);
 		}
 	}
@@ -661,14 +661,14 @@ void dPath_c::beginState_Init() {
 		}
 
 		if ((rail->nodeCount - ignoreLastNodesCount) < currentNodeNum + 1) {
-			OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->name, pathID);
+			OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->profileId, pathID);
 			changeToDone = true;
 		} else if ((rail->nodeCount - ignoreLastNodesCount) == currentNodeNum + 1) {
 			if(loop) {
 				nextNode = &course->railNode[rail->startNode];
 				currentNodeNum = -1;
 			} else {
-				OSReport("Sprite %d > WARNING: Started on End Node on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Started on End Node on Path %d\n", this->profileId, pathID);
 				this->pos.x = currentNode->xPos + offset.x;
 				this->pos.y = (-currentNode->yPos) + offset.y;
 				changeToDone = true;
@@ -692,7 +692,7 @@ void dPath_c::beginState_Init() {
 
 		stepsDone = 0;
 	} else {
-		OSReport("Sprite %d > WARNING: No Matching Path found (Path: %d)\n", this->name, pathID);
+		OSReport("Sprite %d > WARNING: No Matching Path found (Path: %d)\n", this->profileId, pathID);
 		changeToDone = true;
 	}
 }
@@ -716,7 +716,7 @@ void dPath_c::executeState_FollowPath() {
 			if (waitForPlayer == 1) {
 				waitForPlayer = 0;
 			} else if (waitForPlayer > 2) {
-				OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->profileId, pathID);
 				acState.setState(&StateID_Done);
 			}
 
@@ -759,7 +759,7 @@ void dPath_c::executeState_FollowPath() {
 					stepsDone = 0;
 				}
 			} else if ((rail->nodeCount - ignoreLastNodesCount) < currentNodeNum) {
-				OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->name, pathID);
+				OSReport("Sprite %d > WARNING: Surpased Node Count on Path %d\n", this->profileId, pathID);
 				acState.setState(&StateID_Done);
 			} else {
 				dx = nextNode->xPos - currentNode->xPos;
@@ -809,7 +809,7 @@ void dPath_c::executeState_FollowPath() {
 				this->pos.y += stepVector.y;
 			}
 		} else {
-			OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->name, pathID);
+			OSReport("Sprite %d > WARNING: Undefined Wait for Player Setting on Path %d\n", this->profileId, pathID);
 			acState.setState(&StateID_Done);
 		}
 	}
