@@ -14,6 +14,7 @@ class dSignboard_c : public dEn_c {
 	int onExecute();
 	int onDraw();
 	void kill();
+	void powBlockActivated(bool isNotMPGP);
 
 	mHeapAllocator_c allocator;
 	nw4r::g3d::ResFile resFile;
@@ -131,6 +132,7 @@ void dSignboard_c::bindAnimChr_and_setUpdateRate(const char* name, int unk, floa
 }
 
 void dSignboard_c::kill() { }
+void dSignboard_c::powBlockActivated(bool isNotMPGP) { }
 
 int dSignboard_c::onCreate() {
 	this->color = this->settings >> 28 & 0xF;
