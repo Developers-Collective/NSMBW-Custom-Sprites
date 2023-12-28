@@ -19,7 +19,7 @@ This repository contains the source code for the custom sprites I made for New S
 If you want to use some of this code, be sure to credit the corresponding author(s) and to follow the instructions in the `README.md` file in the extracted folder.
 
 
-# Requirements
+## Requirements
 
 - Know how to read a tutorial (trust me, it's a lot harder than you think for most people).
 - Ability to find knowledge when necessary on the [wiki](https://horizon.miraheze.org/wiki/Main_Page).
