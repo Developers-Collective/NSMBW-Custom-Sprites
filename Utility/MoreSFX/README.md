@@ -1,4 +1,4 @@
-# More SFXs v1.2.2
+# More SFXs v1.3.0
 *by Asu, converted by Synel for Newer 1.3.X*
 
 *Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
@@ -64,6 +64,14 @@ void setSoundDistance(nw4r::snd::SoundHandle* handle, Vec3 pos, float volume = 1
 	NewSFXIndexes = 0x80460000;
 	doneWithNewSFXHax = 0x80283CE4;
 	PlaySoundWithFunctionB4_2 = 0x801951E4;
+```
+- In `exceptionHandler.cpp`, replace this line:
+```cpp
+const u32 dlcode = 0x80DFBCC0;
+```
+with this:
+```cpp
+const u32 dlcode = 0x80D26040;
 ```
 - Compile your code
 
