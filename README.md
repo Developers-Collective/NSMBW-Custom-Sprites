@@ -19,6 +19,12 @@ This repository contains the source code for the custom sprites I made for New S
 If you want to use some of this code, be sure to credit the corresponding author(s) and to follow the instructions in the `README.md` file in the extracted folder.
 
 
+## Requirements
+
+- Know how to read a tutorial (trust me, it's a lot harder than you think for most people).
+- Ability to find knowledge when necessary on the [wiki](https://horizon.miraheze.org/wiki/Main_Page).
+
+
 ## How to use
 
 1. Download the sprite you want to use from the [releases](https://github.com/Synell/NSMBW-Custom-Sprites/releases) page.
