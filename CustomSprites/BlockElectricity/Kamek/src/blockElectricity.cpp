@@ -109,7 +109,7 @@ dActor_c *daEnBlockElectricity_c::build() {
 	return c;
 }
 
-const SpriteData BlockElectricitySpriteData = { ProfileId::BlockElectricity, 8, -8, 0, 0, 0xFFFFFFFF, 0xFFFFFFFF, 0, 0, 0, 0, 0 };
+const SpriteData BlockElectricitySpriteData = { ProfileId::BlockElectricity, 8, -8, 0, 0, 0xFFFFFFFF, 0xFFFFFFFF, 0, 0, 0, 0, 0xA };
 Profile BlockElectricityProfile(&daEnBlockElectricity_c::build, SpriteId::BlockElectricity, &BlockElectricitySpriteData, ProfileId::BlockElectricity, ProfileId::BlockElectricity, "BlockElectricity", BlockElectricityFileList, 0);
 
 
@@ -485,7 +485,9 @@ void daEnBlockElectricity_c::endState_WaitForPreparation() { }
 void daEnBlockElectricity_c::beginState_ElectricityPreparation() {
 	timer = 0;
 
-	for (int i = 0; i < sendToCount; i++) sendTo[i]->triggerPreparation();
+	for (int i = 0; i < sendToCount; i++) {
+		if (sendTo[i] != 0) sendTo[i]->triggerPreparation();
+	}
 }
 
 void daEnBlockElectricity_c::executeState_ElectricityPreparation() {

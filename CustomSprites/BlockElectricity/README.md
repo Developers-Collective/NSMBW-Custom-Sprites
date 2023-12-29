@@ -1,4 +1,4 @@
-# Electricity Block v1.0.0
+# Electricity Block v1.0.2
 *by Synel*
 
 
