@@ -161,6 +161,14 @@ Electricity Block from Super Mario Bros. Wonder that shoots electricity.
 
 </details>
 
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Komboo/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Komboo">Komboo</a></summary>
+  <p></p>
+
+A walking giant kelp-like creatures with eyes. Their name is likely a reference to kombu, a variety of seaweed used extensively in Japanese cuisine.
+
+</details>
+
 
 ## Sprite Tex
 
