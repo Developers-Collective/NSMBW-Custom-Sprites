@@ -43,11 +43,11 @@ void daKonbu_c::spriteCollision(ActivePhysics *apThis, ActivePhysics *apOther) {
 }
 
 void daKonbu_c::playerCollision(ActivePhysics *apThis, ActivePhysics *apOther) {
-	this->damagePlayer(apOther->owner);
+	this->_vf220(apOther->owner);
 }
 
 void daKonbu_c::yoshiCollision(ActivePhysics *apThis, ActivePhysics *apOther) {
-	this->damagePlayer(apOther->owner);
+	this->_vf220(apOther->owner);
 }
 bool daKonbu_c::collisionCatD_Drill(ActivePhysics *apThis, ActivePhysics *apOther) {
 	PlaySound(this, SE_EMY_DOWN);
@@ -56,7 +56,7 @@ bool daKonbu_c::collisionCatD_Drill(ActivePhysics *apThis, ActivePhysics *apOthe
 	return true;
 }
 bool daKonbu_c::collisionCat7_GroundPound(ActivePhysics *apThis, ActivePhysics *apOther) {
-	this->damagePlayer(apOther->owner);
+	this->_vf220(apOther->owner);
 	return false;
 }
 bool daKonbu_c::collisionCat7_GroundPoundYoshi(ActivePhysics *apThis, ActivePhysics *apOther) {
