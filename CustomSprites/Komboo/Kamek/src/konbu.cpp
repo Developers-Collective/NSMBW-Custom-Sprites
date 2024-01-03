@@ -255,11 +255,11 @@ int daKonbu_c::onCreate() {
 	HitMeBaby.xDistToEdge = 8.0;
 	HitMeBaby.yDistToEdge = this->isBig ? 58.0 : 28.0;
 
-	HitMeBaby.category = 0x3;
-	HitMeBaby.attack = 0x0;
-	HitMeBaby.categoryBitfield = 0x6F;
-	HitMeBaby.attackBitfield = 0xffbafffe;
-	HitMeBaby.miscFlags = 0;
+	HitMeBaby.category1 = 0x3;
+	HitMeBaby.category2 = 0x0;
+	HitMeBaby.bitfield1 = 0x6F;
+	HitMeBaby.bitfield2 = 0xffbafffe;
+	HitMeBaby.unkShort1C = 0;
 	HitMeBaby.callback = &dEn_c::collisionCallback;
 
 	this->aPhysics.initWithStruct(this, &HitMeBaby);

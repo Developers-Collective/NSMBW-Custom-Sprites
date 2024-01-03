@@ -1,4 +1,4 @@
-# Komboo v1.0.1
+# Komboo v1.0.2
 *by Synel*
 
 
