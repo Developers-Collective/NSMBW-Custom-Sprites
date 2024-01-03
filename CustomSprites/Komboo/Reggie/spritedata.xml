@@ -1,0 +1,18 @@
+  <sprite id="XXX" name="Komboo" notes="A walking giant kelp-like creatures with eyes.&lt;/br&gt;Their name is likely a reference to kombu, a variety of seaweed used extensively in Japanese cuisine.">
+    <list title="SpriteTex Color" nybble="5" comment="The color group to use.">
+      <entry value="0">Normal</entry>
+    </list>
+    <list title="Color" nybble="6.1-6.2" comment="The color of the Komboo.">
+      <entry value="0">Green</entry>
+      <entry value="1">Purple</entry>
+      <entry value="2">Yellow</entry>
+    </list>
+    <dualbox title1="Small" title2="Big" nybble="6.3" comment="Determines if the Komboo will be small or big."/>
+  </sprite>
+  <sprite id="YYY" name="Komboo Spawner" notes="If the player swims to this spawning point, Komboos will emerge and start walking in a swaying motion towards the player with their four legs so their bodies can hit him accordingly, and attempt to swarm the player.">
+    <list title="Color" nybble="5" comment="The color of the group.">
+      <entry value="0">Normal</entry>
+    </list>
+    <dualbox title1="Small" title2="Big" nybble="6.3" comment="Determines if the Komboos will be small or big."/>
+    <value title="Spawn Count" nybble="7" comment="How many Komboos are allowed to spawn."/>
+  </sprite>

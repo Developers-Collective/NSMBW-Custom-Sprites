@@ -1,0 +1,33 @@
+name: Komboo
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/Komboo/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r Komboo.zip CustomSprites/Komboo
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Komboo
+          tag: Komboo
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/Komboo/README.md
+          artifacts: Komboo.zip
+          artifactContentType: application/zip
