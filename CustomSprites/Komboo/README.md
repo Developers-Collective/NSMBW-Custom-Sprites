@@ -1,4 +1,4 @@
-# Komboo v1.0.2
+# Komboo v1.0.3
 *by Synel*
 
 
@@ -10,6 +10,7 @@
 
 
 ## Kamek
+- If you already have a `Kamek/src/checkWater.S` file, remove the reference to this file in your `Kamek/konbu.yaml` file
 - Add `src/konbu.h`, `src/konbu.cpp`, `src/konbuSpawner.cpp` in your `src` folder
 - Add `konbu.yaml` in your `Kamek` folder
 - Reference the `konbu.yaml` in your `NewerProject.yaml`

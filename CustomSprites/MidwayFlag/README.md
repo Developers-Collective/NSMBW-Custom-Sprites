@@ -1,7 +1,8 @@
-# Better Midway Flag v0.9.5 (by Synel)
+# Better Midway Flag v0.9.6 (by Synel)
 
 ## Game / Code Installation
-- Copy the files from the `Kamek` folder into your `Kamek` folder (if some files already exist, find a way to merge them lol)
+- If you already have a `Kamek/src/checkWater.S` file, remove the reference to this file in your `Kamek/midwayFlag.yaml` file
+- Copy the files from the `Kamek` folder into your `Kamek` folder (if some files already exist, find a way to merge them)
 - Add these lines to your `Kamek/kamek_pal.x`:
 ```cpp
 	midwayFlagOnCreate = 0x807e2130;
@@ -12,6 +13,7 @@
 	continueOriginalCheckWater = 0x80075274;
 ```
 - Don't forget to reference `midwayFlag.yaml` in `NewerProject.yaml` or whatever file you use to compile
+- Compile your code
 
 ## Reggie Next Installation
 - In your `spritedata.xml` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/spritedata.xml` (DON'T REPLACE THE FILE)
