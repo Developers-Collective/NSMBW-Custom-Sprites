@@ -1,7 +1,7 @@
 # More Sprites v1.1.0
 *by AboodXD, updated by Nin0*
 
-*Original code can be found here: https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds*
+*Original code can be found on the [New Super Mario Lost Worlds](https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds) repo*
 
 ## Kamek
 - Add `include/asm_setup.S` in your `include` folder

@@ -3,7 +3,7 @@
 
 
 ## Requirements
-- CheckWater by Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater)
+- [Check Water](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater) by Nin0
 
 
 ## Kamek / Game

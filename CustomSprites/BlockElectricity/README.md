@@ -6,11 +6,11 @@
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Knowledge about how to add GFX to the game
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- More sprites code by AboodXD & Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites)
-- More SFX code by Asu (converted by Synel for Newer 1.3.X) and how to use it (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSFX)
-- SpriteDataUtils by RedStoneMatt and Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils)
-- Rotating Active Physics code by Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/RotatingActivePhysics)
-- Light & Light Path code by Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Light)
+- [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
+- [More SFX](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSFX) by Asu (converted by Synel for Newer 1.3.X) and how to use it
+- [Sprite Data Utils](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt and Synel
+- [Rotating Active Physics](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/RotatingActivePhysics) by Synel
+- [Light & Light Path](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Light) by Synel
 
 ## Kamek
 - Add `src/blockElectricity.cpp` in your `src` folder
