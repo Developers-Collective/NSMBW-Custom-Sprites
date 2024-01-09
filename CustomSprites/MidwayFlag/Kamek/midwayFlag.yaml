@@ -1,5 +1,5 @@
 --- # By Synel, helped by Nin0 (tysm <3)
-source_files: [../src/midwayFlag.cpp, ../src/checkWater.S]
+source_files: [../src/midwayFlag.cpp]
 hooks:
   - name: midwayFlagClassSize
     type: patch

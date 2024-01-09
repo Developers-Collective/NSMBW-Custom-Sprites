@@ -1,6 +1,12 @@
-# Better Midway Flag v0.9.6 (by Synel)
+# Better Midway Flag v0.9.7
+*by Synel*
 
-## Game / Code Installation
+
+## Requirements
+- CheckWater by Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater)
+
+
+## Kamek / Game
 - If you already have a `Kamek/src/checkWater.S` file, remove the reference to this file in your `Kamek/midwayFlag.yaml` file
 - Copy the files from the `Kamek` folder into your `Kamek` folder (if some files already exist, find a way to merge them)
 - Add these lines to your `Kamek/kamek_pal.x`:
@@ -15,7 +21,7 @@
 - Don't forget to reference `midwayFlag.yaml` in `NewerProject.yaml` or whatever file you use to compile
 - Compile your code
 
-## Reggie Next Installation
+## Reggie Next
 - In your `spritedata.xml` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/spritedata.xml` (DON'T REPLACE THE FILE)
 - In your `sprites.py` file, replace the code of the Midway Flag (188) with the code from `ReggieNext/sprites.py`(DON'T REPLACE THE FILE)
 - Add `import math` at the top of your `sprites.py` file if it doesn't exist
@@ -23,7 +29,7 @@
 - In your `sprites/` folder, add the images from `ReggieNext/sprites/` and replace them if they already exist
 - Restart Reggie Next
 
-## Missing functionalities
+## Missing features
 - Bouncy cloud collision
 - Spring block collision
 - Maybe more things if I get some ideas

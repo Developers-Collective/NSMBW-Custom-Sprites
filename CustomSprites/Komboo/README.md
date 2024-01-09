@@ -1,4 +1,4 @@
-# Komboo v1.0.3
+# Komboo v1.0.4
 *by Synel*
 
 
@@ -7,6 +7,7 @@
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
 - More sprites code by AboodXD & Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites)
 - SpriteDataUtils by RedStoneMatt & Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils)
+- CheckWater by Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater)
 
 
 ## Kamek
