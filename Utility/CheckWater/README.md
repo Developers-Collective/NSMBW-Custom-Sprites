@@ -1,5 +1,5 @@
 # Check Water v1.0.0
-*by Synel*
+*by Nin0*
 
 
 ## Kamek
