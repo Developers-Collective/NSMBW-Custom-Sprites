@@ -1,15 +1,17 @@
-# Komboo v1.0.2
+# Komboo v1.0.4
 *by Synel*
 
 
 ## Requirements
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- More sprites code by AboodXD & Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites)
-- SpriteDataUtils by RedStoneMatt & Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils)
+- [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
+- [Sprite Data Utils](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt & Synel
+- [Check Water](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater) by Nin0
 
 
 ## Kamek
+- If you already have a `Kamek/src/checkWater.S` file, remove the reference to this file in your `Kamek/konbu.yaml` file
 - Add `src/konbu.h`, `src/konbu.cpp`, `src/konbuSpawner.cpp` in your `src` folder
 - Add `konbu.yaml` in your `Kamek` folder
 - Reference the `konbu.yaml` in your `NewerProject.yaml`

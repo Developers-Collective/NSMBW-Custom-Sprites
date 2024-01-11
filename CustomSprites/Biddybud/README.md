@@ -5,10 +5,10 @@
 ## Requirements
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- More sprites code by AboodXD & Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites)
-- More SFX code by Asu (converted by Synel for Newer 1.3.X) and how to use it (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSFX)
-- Path Controller code by Nin0 (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/PathController)
-- SpriteDataUtils by RedStoneMatt and Synel (can be found here: https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils)
+- [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
+- [More SFX](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSFX) by Asu (converted by Synel for Newer 1.3.X) and how to use it
+- [Path Controller](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/PathController) by Nin0
+- [Sprite Data Utils](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt and Synel
 
 
 ## Kamek

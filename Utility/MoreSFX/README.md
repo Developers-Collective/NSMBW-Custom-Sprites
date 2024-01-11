@@ -1,7 +1,7 @@
 # More SFXs v1.3.1
 *by Asu, converted by Synel for Newer 1.3.X*
 
-*Orginal code for 1.2.X can be found here: https://github.com/Asu-chan/NSMBWThePranksterComets*
+*Orginal code for 1.2.X can be found on the [NSMBW: The Prankster Comets](https://github.com/Asu-chan/NSMBWThePranksterComets) repo*
 
 ## Kamek
 - Add `include/asm_setup.S` in your `include` folder
