@@ -1,11 +1,10 @@
-# More Sprites v1.1.0
+# More Sprites v1.1.1
 *by AboodXD, updated by Nin0*
 
 *Original code can be found here: https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds*
 
 ## Kamek
 - Add `include/asm_setup.S` in your `include` folder
-- Add the files from `src/k_stdlib/` into your `src/k_stdlib/` folder (if you don't have a `k_stdlib` folder, create one in your `src` folder)
 - Add `src/profile.cpp` in your `src` folder
 - Add `src/profileid.h` in your `src` folder
 - Add `src/profile.S` in your `src` folder
