@@ -36,19 +36,19 @@ If you want to use some of this code, be sure to credit the corresponding author
 ## Utilities
 
 <details>
-  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Light/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Light">Light & Light Path</a></summary>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/CheckWater/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater">Check Water</a></summary>
   <p></p>
 
-This utility is used to create light in the darkness. It also allows you to create light paths.
+This utility is used to check if a sprite is in a liquid or not and to get the liquid type.
 
 </details>
 
 
 <details>
-  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/CheckWater/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater">Check Water</a></summary>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Light/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Light">Light & Light Path</a></summary>
   <p></p>
 
-This utility is used to check if a sprite is in a liquid or not and to get the liquid type.
+This utility is used to create light in the darkness. It also allows you to create light paths.
 
 </details>
 
