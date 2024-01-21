@@ -15,7 +15,7 @@
       <entry value="6">Down</entry>
       <entry value="7">Down + Right</entry>
     </list>
-    <checkbox nybble="8.1" title="Enable Gravity" comment="When enabled, the Signboard won't fall."/>
+    <checkbox nybble="8.1" title="Enable Gravity" comment="When enabled, the Signboard will fall."/>
     <checkbox nybble="8.2" title="Place Behind Other Sprites" comment="When enabled, this changes the relative Z-Order of the Signboard placing it further behind other sprites."/>
     <!-- <checkbox nybble="8.3" title="Move Slightly Horizontally (up to 0.125 tiles)" comment="When enabled, the Signboard will spawn up to 0.125 tile lower depending on its rotation. Usefull for spawning Signboards correctly on walls."/>
     <checkbox nybble="8.4" title="Move Slightly Up (0.25 tiles)" comment="When enabled, the Signboard will spawn 0.25 tile higher. Usefull for spawning Signboards correctly on a sloping ceilings."/> -->
