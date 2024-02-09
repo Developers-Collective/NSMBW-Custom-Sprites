@@ -29,14 +29,6 @@ If you want to use some of this code, be sure to credit the corresponding author
 > Please credit the corresponding author(s) when using their sprite(s) / feature(s). The author(s) are found on top of their corresponding `readme.md` file.
 
 
-## How to use
-
-1. Download the sprite you want to use from the [releases](https://github.com/Synell/NSMBW-Custom-Sprites/releases) page.
-2. Extract the archive.
-3. Follow the instructions in the `README.md` file in the extracted folder.
-4. Enjoy!
-
-
 ## Before Continuing
 
 > [!WARNING]\
@@ -44,6 +36,14 @@ If you want to use some of this code, be sure to credit the corresponding author
 
 > [!NOTE]\
 > It is recommended to keep track of the sprite / feature version(s) you're using so you can update when an update and / or a bugfix releases.
+
+
+## How to use
+
+1. Download the sprite you want to use from the [releases](https://github.com/Synell/NSMBW-Custom-Sprites/releases) page or in the list below.
+2. Extract the archive.
+3. Follow the instructions in the `README.md` file in the extracted folder.
+4. Enjoy!
 
 
 ## Utilities
