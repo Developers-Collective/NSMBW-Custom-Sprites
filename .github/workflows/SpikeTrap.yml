@@ -1,0 +1,33 @@
+name: SpikeTrap
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/SpikeTrap/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r SpikeTrap.zip CustomSprites/SpikeTrap
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: SpikeTrap
+          tag: SpikeTrap
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/SpikeTrap/README.md
+          artifacts: SpikeTrap.zip
+          artifactContentType: application/zip

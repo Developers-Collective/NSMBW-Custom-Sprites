@@ -1,0 +1,57 @@
+<sprite id="XXX" name="Spike Trap" notes="A spike that comes out from the ground to damage every player who would adventure too far.&lt;br/&gt;The position of this preview is when the trap is activated.">
+	<list title="Size" nybble="1.1-1.2">
+		<entry value="0">Small</entry>
+		<entry value="1">Medium</entry>
+		<entry value="2">Big</entry>
+	</list>
+	<list title="Color" nybble="2">
+		<entry value="0">Normal</entry>
+	</list>
+	<checkbox title="Disable SFX" nybble="1.3"/>
+	<value title="Rotation" nybble="3-4" comment="This determines which angle the spike trap will have."/>
+	<list title="Rotation Preset" nybble="3-4" comment="This determines which angle the spike trap will have.">
+		<entry value="0">0° / Facing Up</entry>
+		<entry value="9">Gentle Upslope (Facing Up)</entry>
+		<entry value="15">22.5°</entry>
+		<entry value="18">Upslope (Facing Up)</entry>
+		<entry value="31">45° / Steep Upslope (Facing Up)</entry>
+		<entry value="45">Super Steep Upslope (Facing Up)</entry>
+		<entry value="47">67.5°</entry>
+		<entry value="63">90° / Facing Left</entry>
+		<entry value="79">112.5°</entry>
+		<entry value="82">Super Steep Downslope (Facing Down)</entry>
+		<entry value="95">135° / Steep Downslope (Facing Down)</entry>
+		<entry value="108">Downslope (Facing Down)</entry>
+		<entry value="111">157.5°</entry>
+		<entry value="117">Gentle Downslope (Facing Down)</entry>
+		<entry value="127">180° / Facing Down</entry>
+		<entry value="137">Gentle Upslope (Facing Down)</entry>
+		<entry value="143">202.5°</entry>
+		<entry value="146">Upslope (Facing Down)</entry>
+		<entry value="159">225° / Steep Upslope (Facing Down)</entry>
+		<entry value="172">Super Steep Upslope (Facing Down)</entry>
+		<entry value="175">247.5°</entry>
+		<entry value="191">270° / Facing Right</entry>
+		<entry value="207">292.5°</entry>
+		<entry value="209">Super Steep Downslope (Facing Up)</entry>
+		<entry value="223">315° / Steep Downslope (Facing Up)</entry>
+		<entry value="236">Downslope (Facing Up)</entry>
+		<entry value="239">337.5°</entry>
+		<entry value="245">Gentle Downslope (Facing Up)</entry>
+	</list>
+	<value title="Group ID" idtype="Group" nybble="5-6" comment="This pairs the spike trap to a matching Group Controller for spawn synchronization with other Group controlled sprites."/>
+	<list title="Activation Type" nybble="7.1-7.2" comment="Which event should trigger the trap.">
+		<entry value="0">Each x amount of time</entry>
+		<entry value="1">When Event ID is triggered</entry>
+		<entry value="2">When Event ID is not triggered</entry>
+		<entry value="3">Always Activated</entry>
+	</list>
+	<value title="Time Offset" requirednybble="7.1-7.2" requiredval="0" nybble="7.3-8.4" comment="When triggered, how much time should it wait before activating.&lt;br/&gt;1 = 6 ticks = 1/10s | 10 = 1s"/>
+	<value title="Time Activated" requirednybble="7.1-7.2" requiredval="0" nybble="9-10" comment="Once activated, when does it need to be turned off.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+	<value title="Time Deactivated" requirednybble="7.1-7.2" requiredval="0" nybble="11-12" comment="Once deactivated, when does it need to be turned on.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+	<value title="Triggering Event ID" idtype="Triggering Event" requirednybble="7.1-7.2" requiredval="1-2" nybble="7.3-8.4"/>
+	<value title="Activation Time Offset" requirednybble="7.1-7.2" requiredval="1" nybble="9-10" comment="Once the event is activated, when does it need to be turned on.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+	<value title="Deactivation Time Offset" requirednybble="7.1-7.2" requiredval="1" nybble="11-12" comment="Once the event is deactivated, when does it need to be turned off.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+	<value title="Activation Time Offset" requirednybble="7.1-7.2" requiredval="2" nybble="9-10" comment="Once the event is deactivated, when does it need to be turned on.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+	<value title="Deactivation Time Offset" requirednybble="7.1-7.2" requiredval="2" nybble="11-12" comment="Once the event is activated, when does it need to be turned off.&lt;br/&gt;1 = 3 ticks = 1/20s | 20 = 1s"/>
+</sprite>

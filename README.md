@@ -186,6 +186,15 @@ Allows the signboard to fall when not on the ground.
 </details>
 
 
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/SpikeTrap/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpikeTrap">Spike Trap</a></summary>
+  <p></p>
+
+A spike that comes out from the ground to damage every player who would adventure too far.
+
+</details>
+
+
 ## Sprite Tex
 
 <details>
