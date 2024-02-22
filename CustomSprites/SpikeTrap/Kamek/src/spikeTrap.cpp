@@ -88,7 +88,7 @@ static void SpikeTrapPhysBelowCB1(daSpikeTrap_c *one, dStageActor_c *two) {
     if (two->stageActorType != 1 && two->stageActorType != 2)
 		return;
 
-	one->damagePlayer(two);
+	one->_vf220(two);
 
     if (one->pos_delta.y > 0.0f)
         HurtMarioBecauseOfBeingSquashed(two, one, 1);
@@ -100,7 +100,7 @@ static void SpikeTrapPhysAboveCB1(daSpikeTrap_c *one, dStageActor_c *two) {
     if (two->stageActorType != 1 && two->stageActorType != 2)
 		return;
 
-	one->damagePlayer(two);
+	one->_vf220(two);
 
     if (one->pos_delta.y < 0.0f)
         HurtMarioBecauseOfBeingSquashed(two, one, 2);
@@ -112,7 +112,7 @@ static void SpikeTrapPhysAjdCB1(daSpikeTrap_c *one, dStageActor_c *two, bool unk
     if (two->stageActorType != 1 && two->stageActorType != 2)
 		return;
 
-	one->damagePlayer(two);
+	one->_vf220(two);
 
     if (unkMaybeNotBool) {
         if (one->pos_delta.x > 0.0f)
@@ -228,9 +228,9 @@ int daSpikeTrap_c::onCreate() {
 	colliderInfo.y1 = 4.0;
 	colliderInfo.x2 = 7.5;
 	colliderInfo.y2 = -8.0 - (size == 0 ? 0.0 : 16.0);
-	colliderInfo.belowSensorCallback = &SpikeTrapPhysBelowCB1;
-	colliderInfo.aboveSensorCallback = &SpikeTrapPhysAboveCB1;
-	colliderInfo.adjacentSensorCallback = &SpikeTrapPhysAjdCB1;
+	colliderInfo.otherCallback1 = &SpikeTrapPhysBelowCB1;
+	colliderInfo.otherCallback2 = &SpikeTrapPhysAboveCB1;
+	colliderInfo.otherCallback3 = &SpikeTrapPhysAjdCB1;
 	physics.setup(this, &colliderInfo, 3, currentLayerID, 0);
 	physics.flagsMaybe = 0x260;
 	physics.callback1 = (void*)&SpikeTrapPhysBelowCB2;

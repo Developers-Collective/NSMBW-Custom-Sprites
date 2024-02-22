@@ -11,9 +11,9 @@
 
 
 ## Kamek
-- Add `src/spike_trap.cpp` in your `src` folder
-- Add `spike_trap.yaml` in your `Kamek` folder
-- Reference the `spike_trap.yaml` in your `NewerProject.yaml`
+- Add `src/spikeTrap.cpp` in your `src` folder
+- Add `spikeTrap.yaml` in your `Kamek` folder
+- Reference the `spikeTrap.yaml` in your `NewerProject.yaml`
 - Add the code for the "more sprite stuff" using `SpikeTrap` for the ProfileID and SpriteID
 - Reference the new sfx like this in the sfx list (replace XXXX by the correct id):
 ```cpp
