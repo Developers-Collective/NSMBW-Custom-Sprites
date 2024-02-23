@@ -40,7 +40,7 @@
 
 ## Game
 - Add the arc file into the `SpriteTex` folder
-- Add the rwav file into your `Music/sfx` folder if using Newer **OR** `Sound/stream/sfx` folder if using NSMBWer
+- Add the rwav file into your `Music/sfx` folder if using Newer **OR** `Sound/sfx/new` folder if using NSMBWer
 
 
 ## Reggie

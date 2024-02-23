@@ -30,7 +30,7 @@
 
 ## Game
 - Add the arc file into the `SpriteTex` folder
-- Add the rwav file into your `Music/sfx` folder if using Newer **OR** `Sound/stream/sfx` folder if using NSMBWer
+- Add the rwav file into your `Music/sfx` folder if using Newer **OR** `Sound/sfx/new` folder if using NSMBWer
 - Add the effects from the `Effects/.breff` folder into your `Effect/effect_wnmario.breff` file
 - Add the effect textures from the `Effects/.breft` folder into your `Effect/effect_wnmario.breft` file (IA8)
 
