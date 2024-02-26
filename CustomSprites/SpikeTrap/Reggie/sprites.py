@@ -19,10 +19,10 @@ class SpriteImage_SpikeTrap(SLib.SpriteImage_StaticMultiple):  # XXX
         s = f'SpikeTrap{("SML"[size]).upper()}{color}'
         image = ImageCache[s] if ImageCache[s] else ImageCache[f'SpikeTrapS0']
 
-        new_image = image.transformed(QtGui.QTransform().rotate(rot_deg))
+        new_image = image.transformed(QtGui.QTransform().rotate(-rot_deg))
         self.image = new_image
 
-        direction = (math.cos(math.radians(rot_deg + 90)), math.sin(math.radians(rot_deg + 90)))
+        direction = (math.cos(math.radians(-rot_deg + 90)), math.sin(math.radians(-rot_deg + 90)))
 
         self.offset = (
             8 + (-new_image.width() / 3) + (direction[0] * 8 if size > 0 else 0),
