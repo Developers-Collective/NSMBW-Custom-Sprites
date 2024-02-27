@@ -1,8 +1,9 @@
-# Check Water v1.0.0
+# Check Water v1.0.1
 *by Nin0*
 
 
 ## Kamek
+- Add `include/asm_setup.S` in your `include` folder
 - Add `src/checkWater.S` in your `src` folder
 - Add `/checkWater.yaml` in your `Kamek` folder
 - Reference the `checkWater.yaml` in your `NewerProject.yaml`

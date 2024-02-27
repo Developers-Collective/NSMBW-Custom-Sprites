@@ -1,3 +1,5 @@
+#include <asm_setup.S>
+
 .text
 
 .extern continueOriginalCheckWater
