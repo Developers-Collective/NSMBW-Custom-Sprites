@@ -5,6 +5,7 @@
 #include <sfx.h>
 #include <stage.h>
 #include "midwayFlag.h"
+#include <dInfo_c.h>
 
 extern "C" bool midwayFlagOnCreate(daChukanPoint_c* self); // 0x807e2130
 extern "C" int midwayFlagOnExecute(daChukanPoint_c* self); // 0x807e24c0
@@ -57,6 +58,8 @@ bool midwayFlagNewOnCreate(daChukanPoint_c* self) {
     self->settings = color << 24 | entranceID << 16 | loadFacingLeft << 4 | secondCheckpoint; // Needed more bits so I need to do this
 
     bool ret = midwayFlagOnCreate(self);
+	if (dInfo_c::mGameFlag & 0x10 != 0) return ret;
+
 	self->activePhysicsCallback = self->aPhysics.info.callback;
 	self->aPhysics.info.callback = midwayFlagCollisionCallback;
 	self->aPhysics.info.category1 = 0x3;

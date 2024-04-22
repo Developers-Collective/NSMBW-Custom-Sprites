@@ -1,4 +1,4 @@
-# Better Midway Flag v0.9.7
+# Better Midway Flag v0.9.8
 *by Synel*
 
 
@@ -17,6 +17,7 @@
 	StateID_Wait__15daChukanPoint_c = 0x80997d98;
 	StateID_SeaWait__15daChukanPoint_c = 0x80997e18;
 	continueOriginalCheckWater = 0x80075274;
+	mGameFlag__7dInfo_c = 0x8042a260;
 ```
 - Don't forget to reference `midwayFlag.yaml` in `NewerProject.yaml` or whatever file you use to compile
 - Compile your code
@@ -37,5 +38,6 @@
 ## Special Thanks
 - Nin0 for the help <3
 - B1 Gaming and Jacopo Plays for finding bugs and fixing minor issues with the reggie patch
+- Ryguy for finding the source of the bug where the midway crashes coin battle
 
 *Note: I needed to move settings so it's possible that your previous checkpoints aren't set to the exact same settings they had before.*
