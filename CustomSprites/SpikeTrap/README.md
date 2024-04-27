@@ -1,4 +1,4 @@
-# Spike Trap v1.0.1
+# Spike Trap v1.0.2
 *by Synel*
 
 

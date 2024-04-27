@@ -238,8 +238,8 @@ int daSpikeTrap_c::onCreate() {
 	physics.callback3 = (void*)&SpikeTrapPhysAdjCB2;
 	physics.setPtrToRotation(&rot.z);
 
-	this->pos.x -= 14.0 * dir.x;
-	this->pos.y -= 14.0 * dir.y;
+	this->pos.x -= 13.0 * dir.x;
+	this->pos.y -= 13.0 * dir.y;
 	this->pos.z = -300.0;
 
 	this->basePos.x = this->pos.x;
@@ -376,8 +376,8 @@ void daSpikeTrap_c::beginState_Attack() {
 	if (!this->disableSFX) playSoundDistance(&this->handle, this->pos, SFX_SPIKE_TRAP, 1.0, 1.0, 500.0);
 
 	if (this->type == STAlwaysActivated) {
-		this->pos.x = this->basePos.x + (this->dir.x * 16.0);
-		this->pos.y = this->basePos.y + (this->dir.y * 16.0);
+		this->pos.x = this->basePos.x + (this->dir.x * 14.0);
+		this->pos.y = this->basePos.y + (this->dir.y * 14.0);
 	}
 }
 void daSpikeTrap_c::executeState_Attack() {
@@ -386,8 +386,8 @@ void daSpikeTrap_c::executeState_Attack() {
 		this->pos.y = this->basePos.y + (this->dir.y * 4.0) + (this->dir.y * (this->timer / 5.0) * 12.0);
 	}
 	else if (this->timer == 5) {
-		this->pos.x = this->basePos.x + (this->dir.x * 16.0);
-		this->pos.y = this->basePos.y + (this->dir.y * 16.0);
+		this->pos.x = this->basePos.x + (this->dir.x * 14.0);
+		this->pos.y = this->basePos.y + (this->dir.y * 14.0);
 	}
 
 	switch (this->type) {
