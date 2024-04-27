@@ -247,11 +247,7 @@ void daMeragon_c::hitCallbackHandler(ActivePhysics *apThis, ActivePhysics *apOth
 		meragon->fireballs[index] = 0;
 		meragon->hitCallbacks[index] = 0;
 
-		if (
-			meragon->acState.getCurrentState() != meragon->getAttackHitState() &&
-			meragon->acState.getCurrentState() != &meragon->StateID_DieStomp &&
-			meragon->acState.getCurrentState() != &meragon->StateID_DieSmoke
-		)
+		if (meragon->acState.getCurrentState() != meragon->getAttackHitState() && meragon->aPhysics.isLinkedIntoList)
 			meragon->doStateChange(meragon->getAttackHitState());
 	}
 }
