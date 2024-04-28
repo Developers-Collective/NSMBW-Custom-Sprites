@@ -1,0 +1,33 @@
+name: GroupControllerFix
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/GroupControllerFix/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r GroupControllerFix.zip Utility/GroupControllerFix
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Check Water
+          tag: GroupControllerFix
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/GroupControllerFix/README.md
+          artifacts: GroupControllerFix.zip
+          artifactContentType: application/zip

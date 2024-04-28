@@ -1,0 +1,17 @@
+--- # By Synel
+source_files: [../src/groupController.cpp]
+hooks:
+  - name: groupControllerClassSize
+    type: patch
+    addr_pal: 0x807fc758
+    data: '38600399' # 398 + 1
+
+  - name: groupControllerNewOnCreate
+    type: add_func_pointer
+    src_addr_pal: 0x8095ccec
+    target_func: 'groupControllerNewOnCreate(GroupController *)'
+
+  - name: groupControllerNewOnExecute
+    type: add_func_pointer
+    src_addr_pal: 0x8095cd04
+    target_func: 'groupControllerNewOnExecute(GroupController *)'

@@ -58,6 +58,15 @@ This utility is used to check if a sprite is in a liquid or not and to get the l
 
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/GroupControllerFix/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/GroupControllerFix">Group Controller Fix</a></summary>
+  <p></p>
+
+When you have a sprite that uses the Group Controller, it won't spawn at all if its Group Controller is already loaded (e.g. being near the player spawn camera view). This utility fixes this issue by delaying the Group Controller onCreate method by one frame, which is enough to make the sprite behave correctly, as the global Group List is loaded at the end of the first frame (so after the loaded onCreate methods).
+
+</details>
+
+
+<details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Light/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Light">Light & Light Path</a></summary>
   <p></p>
 
