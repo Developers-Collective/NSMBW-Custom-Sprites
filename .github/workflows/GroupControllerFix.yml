@@ -24,7 +24,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: Check Water
+          name: Group Controller Fix
           tag: GroupControllerFix
           allowUpdates: true
           replacesArtifacts: true
