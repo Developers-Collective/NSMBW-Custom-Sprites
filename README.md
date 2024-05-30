@@ -140,6 +140,15 @@ Biddybud and Para-Biddybud follow a path, in groups.
 
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/CoinStack/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CoinStack">Coin Stack</a></summary>
+  <p></p>
+
+A stack of 5 coins.
+
+</details>
+
+
+<details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Goombrat/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/Goombrat">Goombrat</a></summary>
   <p></p>
 
@@ -153,6 +162,15 @@ Goombrat can walk back and forth, like a Goomba, but turns around edges.
   <p></p>
 
 Draglet from Super Mario 3D Land. It flies around and shoots fireballs when Mario is near.
+
+</details>
+
+
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/DryBones/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/DryBones">Dry Bones & Para Bones</a></summary>
+  <p></p>
+
+A skeletal Koopa Troopa that cannot die from being stomped on.
 
 </details>
 

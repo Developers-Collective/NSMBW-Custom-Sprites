@@ -1,0 +1,9 @@
+<sprite id="XXX" name="Coin Stack" notes="A stack of 5 coins. You can stack coin stacks by placing multiple on top of each others.">
+	<dualbox title1="Random Rotation (Y Axis)" title2="Static Rotation (Y Axis)" nybble="5.3" comment="Determines if the rotation (Y axis) should be static or random."/>
+	<list title="Rotation (Y Axis)" requirednybble="5.3" requiredval="1" nybble="5.1-5.2" comment="Sets the rotation of the stack to add some variation.">
+		<entry value="0">0°</entry>
+		<entry value="1">90°</entry>
+		<entry value="2">180°</entry>
+		<entry value="3">270°</entry>
+	</list>
+</sprite>

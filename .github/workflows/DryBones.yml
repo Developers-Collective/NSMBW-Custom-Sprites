@@ -1,0 +1,33 @@
+name: DryBones
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/DryBones/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r DryBones.zip CustomSprites/DryBones
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Dry Bones & Para Bones
+          tag: DryBones
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/DryBones/README.md
+          artifacts: DryBones.zip
+          artifactContentType: application/zip

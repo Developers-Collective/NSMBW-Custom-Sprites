@@ -1,0 +1,24 @@
+<sprite id="XXX" name="Dry Bones" notes="A skeletal Koopa Troopa that cannot die from being stomped on. It will also not walk off of platforms.">
+	<list title="Color" nybble="5">
+		<entry value="0">Normal</entry>
+	</list>
+	<list title="Size" nybble="6.1-6.2">
+		<entry value="0">Small</entry>
+		<entry value="1">Medium</entry>
+		<entry value="2">Big</entry>
+	</list>
+</sprite>
+<sprite id="YYY" name="Parabones / Flying Dry Bones" notes="A skeletal Para Troopa that cannot die from being stomped on. It will also chase every player who would adventure too close to it.">
+	<list title="Color" nybble="5">
+		<entry value="0">Normal</entry>
+	</list>
+	<list title="Size" nybble="6.1-6.2">
+		<entry value="0">Small</entry>
+		<entry value="1">Medium</entry>
+		<entry value="2">Big</entry>
+	</list>
+	<dualbox title1="Moves Horizontally" title2="Moves Vertically" nybble="6.3"/>
+	<dualbox title1="Starts going Right" title2="Starts going Left" requirednybble="6.3" requiredval="0" nybble="6.4"/>
+	<dualbox title1="Starts going Up" title2="Starts going Down" requirednybble="6.3" requiredval="1" nybble="6.4"/>
+	<value title="Distance" nybble="7-8"/>
+</sprite>
