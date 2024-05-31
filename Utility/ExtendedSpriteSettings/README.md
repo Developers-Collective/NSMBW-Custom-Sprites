@@ -360,4 +360,4 @@ However, I'd recommend making a new sprite using the [More sprites](https://gith
 
 --------------------------------------------
 
-If there is a compilation or a game problem, tell me, maybe I forgot something somewhere.
+If there is a compilation or a game problem, tell Synel or Nin0, maybe we forgot something somewhere.
