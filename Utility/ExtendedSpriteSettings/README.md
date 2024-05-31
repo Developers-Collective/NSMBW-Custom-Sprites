@@ -257,7 +257,7 @@ public:
 > For now, reggie has not approved the pull request, so you won't be able to use this feature with the official version of Reggie. However, you can use this [custom version of Reggie](https://github.com/Synell/Reggie-Next/tree/sprite-settings) to use this feature while waiting for the official version to be updated.
 
 > [!WARNING]\
-> Opening old levels with the new version of Reggie will work fine. However, levels created or saved with the new version of Reggie will not work with old versions of Reggie.
+> Opening old levels with the new version of Reggie will work fine. However, levels created or saved with the new version of Reggie will not work with old versions of Reggie if they contain extended sprites. If they don't contain extended sprites, they should work fine with old versions of Reggie.
 
 #### XML
 
@@ -285,6 +285,12 @@ If you want to use the `requirednybble` and `requiredvalue` attributes, you shou
 
 > [!NOTE]\
 > The multi-value format stays the same (e.g. `<value nybble="1" block="2" requirednybble="1,2" requiredvalue="1,0" requiredblock="0,1">`)
+
+You should then see the extended settings in the sprite settings window in Reggie:\
+<img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/ExtendedSpriteSettings/ExtendedSpriteSettings.png" />
+
+For comparison, here is the old sprite settings window in Reggie:\
+<img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/ExtendedSpriteSettings/VanillaSpriteSettings.png" />
 
 
 #### Python
