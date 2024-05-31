@@ -58,6 +58,15 @@ This utility is used to check if a sprite is in a liquid or not and to get the l
 
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/ExtendedSpriteSettings/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/ExtendedSpriteSettings">Extended Sprite Settings</a></summary>
+  <p></p>
+
+This utility is used to add more settings to your custom sprites.
+
+</details>
+
+
+<details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/GroupControllerFix/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/GroupControllerFix">Group Controller Fix</a></summary>
   <p></p>
 

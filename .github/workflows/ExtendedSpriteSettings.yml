@@ -1,0 +1,33 @@
+name: ExtendedSpriteSettings
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/ExtendedSpriteSettings/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r ExtendedSpriteSettings.zip Utility/ExtendedSpriteSettings
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Extended Sprite Settings
+          tag: ExtendedSpriteSettings
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/ExtendedSpriteSettings/README.md
+          artifacts: ExtendedSpriteSettings.zip
+          artifactContentType: application/zip

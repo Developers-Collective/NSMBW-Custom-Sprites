@@ -1,0 +1,3 @@
+--- # By Synel & Nin0, The Better Actor Spawner is based on Chickensaver's ActorSpawner
+source_files: [../src/betterActorSpawner.cpp, ../src/extendedSettingTempBlockRemover.cpp]
+hooks: []

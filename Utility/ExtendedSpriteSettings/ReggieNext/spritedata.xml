@@ -1,0 +1,30 @@
+<sprite id="XXX" name="Better Actor Spawner" asmhacks="true" notes="Use this to spawn any actor into the game! Anything spawned by the Actor Spawner will need to be respawned each time the player changes Zones.&lt;br/&gt;&lt;font color=&quot;#dd4f2e&quot;&gt;Note: This sprite only spawns non-extended sprites.&lt;/font&gt;" phonebook="Actors" extended="true">
+	<value title="Triggering Event ID" idtype="Triggering Event" nybble="1.1-2.4" comment="When this event is activated, the Actor Spawner will create the specified actor at its location."/>
+	<external title="Actor ID" type="actors" nybble="1.1-3.4" comment="Enter the Actor ID of the actor you wish to spawn here. If you don't know the ID, use the selection box." block="1"/>
+	<checkbox title="Multi-Spawn Mode" nybble="4.4" comment="When checked, the Actor Spawner will not keep track of the actors it spawns, meaning the event can be toggled on and off to spawn more actors." block="1"/>
+	<checkbox title="Respawn Automatically" requirednybble="4.4" requiredval="0" requiredblock="1" nybble="4.1" comment="When checked, the Actor Spawner will automatically respawn the actor if it is deleted or missing." block="1"/>
+	<checkbox title="Despawn Without Event" requirednybble="4.4" requiredval="0" requiredblock="1" nybble="4.2" comment="When checked, the Actor Spawner will despawn the actor it spawned when its event is turned off." block="1"/>
+	<checkbox title="Save Despawn Position" requirednybble="4.2,4.4" requiredval="1,0" requiredblock="1,1" nybble="4.3" comment="When checked, when the Actor Spawner despawns an actor due to its event being turned off it will move to the position the actor was just in. If the event is turned back on, the new actor will be spawned at that position." block="1"/>
+	<list title="Spawn Delay" requirednybble="4.4" requiredval="1" requiredblock="1" nybble="3.1-3.4" comment="When not set to Manual, this option will cause the Actor Spawner to wait the specified number of frames after initially spawning an actor before spawning another one. The event will stay on the whole time." comment2="When set to Manual, this option will cause the Actor Spawner to disable its triggering event after spawning an actor so that it can be manually turned back on." advancedcomment="Using Manual will not work when trying to use two Actor Spawners triggered by the same event, because one will disable the event before the other can execute.">
+		<entry value="0">Manual (Infinite Delay)</entry>
+		<entry value="1">1 Frame</entry>
+		<entry value="2">10 Frames</entry>
+		<entry value="3">20 Frames</entry>
+		<entry value="4">30 Frames (0.5 Seconds)</entry>
+		<entry value="5">60 Frames (1 Second)</entry>
+		<entry value="6">90 Frames (1.5 Seconds)</entry>
+		<entry value="7">120 Frames (2 Seconds)</entry>
+		<entry value="8">150 Frames (2.5 Seconds)</entry>
+		<entry value="9">180 Frames (3 Seconds)</entry>
+		<entry value="10">210 Frames (3.5 Seconds)</entry>
+		<entry value="11">240 Frames (4 Seconds)</entry>
+		<entry value="12">270 Frames (4.5 Seconds)</entry>
+		<entry value="13">300 Frames (5 Seconds)</entry>
+		<entry value="14">330 Frames (5.5 Seconds)</entry>
+		<entry value="15">360 Frames (6 Seconds)</entry>
+	</list>
+	<dualbox title1="Normal Actor" title2="Extended Actor" nybble="4.1" comment="Normal actors are the ones which use nybbles 5 to 12.&lt;br/&gt;Extended actors are the ones which use blocks instead of the classic nybbles."/>
+	<hexvalue title="Nybbles 1 to 4" nybble="5-8" comment="Edit the values for nybbles 1 to 4 in the spawned actor." block="1"/>
+	<hexvalue title="Nybbles 5 to 12" requirednybble="4.1" requiredval="0" requiredblock="0" nybble="1-8" comment="Edit the values for nybbles 5 to 12 in the spawned actor." block="2"/>
+	<dynamicblockvalues title="Blocks" requirednybble="4.1" requiredval="1" requiredblock="0" block="2"/>
+</sprite>
