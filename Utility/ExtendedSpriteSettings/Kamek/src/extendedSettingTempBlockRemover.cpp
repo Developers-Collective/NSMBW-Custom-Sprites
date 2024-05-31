@@ -28,10 +28,10 @@ Profile ExtendedSettingTempBlockRemoverProfile(&daExtendedSettingTempBlockRemove
 
 int daExtendedSettingTempBlockRemover_c::onCreate() {
 	// These fucking rects do something for the tile rect
-	visibleAreaSizeDoubled.x = 99999.0f;
-	visibleAreaSizeDoubled.y = 99999.0f;
-	visibleAreaOffset.x = 0.0f;
-	visibleAreaOffset.y = 16.0f;
+	spriteSomeRectX = 28.0f;
+	spriteSomeRectY = 32.0f;
+	_320 = 0.0f;
+	_324 = 16.0f;
 
 	this->timer = 0;
 
