@@ -257,41 +257,44 @@ public:
 > For now, reggie has not approved the pull request, so you won't be able to use this feature with the official version of Reggie. However, you can use this [custom version of Reggie](https://github.com/Synell/Reggie-Next/tree/sprite-settings) to use this feature while waiting for the official version to be updated.
 
 > [!WARNING]\
-> Opening old levels with the new version of Reggie will work fine. However, levels created or saved with the new version of Reggie will not work with the old version of Reggie.
+> Opening old levels with the new version of Reggie will work fine. However, levels created or saved with the new version of Reggie will not work with old versions of Reggie.
 
 #### XML
 
 In the `sprite` tag, set the `extended` attribute to `true` to enable the extended settings (e.g. `<sprite id="XXX" extended="true">`)
 
 > [!NOTE]\
-> The max number of blocks is **very high (4,294,967,295)** so we can say it's unlimited (even if the wii will crash way before you'll reach this number in real situations but that's an other subject).
+> The max number of blocks is **very high (4,294,967,296 in theory)** so we can say it's unlimited (even if the wii will crash way before you could even reach this number in real situations but that's an other subject).
 
-Each block has 8 nybbles (4 bytes) that you can use to store settings. The number of blocks used by your sprite is automatically calculated by Reggie. You can add as many blocks as you need. (Also avoid skipping blocks, it's not a good idea, as it will waste memory if you don't use them all)
+Each block has 8 nybbles (4 bytes) that you can use to store additional settings. The number of blocks used by your sprite is automatically calculated by Reggie. You can add as many blocks as you need.
 
-Then, for every setting you want to add, add a `block` attribute to the `setting` tag (e.g. `<value nybble="1" block="2">`)
+> [!IMPORTANT]\
+> Avoid skipping blocks, it's not a good idea, as it will waste memory if you don't use them all.
+
+Then, for every setting you want to add, add a `block` attribute to your setting tag (e.g. `<value nybble="1" block="2">`)
 
 > [!NOTE]\
 > To access the nybbles 1 to 4 and 13 to 16, use 0 as the block value (e.g. `<value nybble="1" block="0">`)
 
 > [!IMPORTANT]\
-> **Don't use nybbles 5 to 12 of block 0, they are reserved for the game**
+> **If your sprite is extended, don't use nybbles 5 to 12 of block 0, they are reserved by this feature**
 
 *You can check out the Better Actor Spawner's `spritedata.xml` for an example*
 
 If you want to use the `requirednybble` and `requiredvalue` attributes, you should use the `requiredblock` attribute to specify the block to check (e.g. `<value nybble="1" block="2" requirednybble="1" requiredvalue="1" requiredblock="0">`)
 
 > [!NOTE]\
-> Note that the multi-value format stays the same (e.g. `<value nybble="1" block="2" requirednybble="1,2" requiredvalue="1,0" requiredblock="0,1">`)
+> The multi-value format stays the same (e.g. `<value nybble="1" block="2" requirednybble="1,2" requiredvalue="1,0" requiredblock="0,1">`)
 
 
 #### Python
 
-The old method of getting the settings is still available for non-extended sprites or to access nybbles 1 to 4 and 13 to 16, so like this:
+The old method of getting the settings is still available for non-extended sprites OR can be used to access nybbles 1 to 4 and 13 to 16 for extended sprites:
 ```python
 # Get the first 4 bits (from the right) of the second byte, so nybble 4
 self.parent.spritedata[1] & 0xF
 ```
-However, to access the extended settings, you can use the `blocks` property like this:
+However, to access the extended settings, you can use the `blocks` property:
 ```python
 # Get the first 4 bits (from the right) of the second byte of the third block, so nybble 4 of block 3
 self.parent.spritedata.blocks[2][1] & 0xF
@@ -300,11 +303,11 @@ self.parent.spritedata.blocks[2][1] & 0xF
 
 > [!NOTE]\
 > **Quick reminder**\
-> Indexes start at 0, so the first block is at index 0, the second block is at index 1, etc. Same goes for the bytes object, the first byte is at index 0, the second byte is at index 1, etc.
+> In Python and C++, indexes start at 0 (not 1), so the first block is at index 0, the second block is at index 1, etc. Same goes for the bytes object, the first byte is at index 0, the second byte is at index 1, etc.
 
 ### Kamek
 
-When creating a new sprite, you can access the block settings using the `getBlockSettings` method like this:
+When creating a new sprite, you can access the block settings using the `getBlockSettings` method:
 ```cpp
 u32 firstBlock = this->getBlockSettings(0); // Get the settings of the first block
 u32 secondBlock = this->getBlockSettings(1); // Get the settings of the second block
@@ -315,7 +318,12 @@ u32 secondBlock = this->getBlockSettings(1); // Get the settings of the second b
 > If the block ID is invalid (out of range), the method will return 0
 
 > [!IMPORTANT]\
-> When using an extended sprite, don't use the `settings` member, as it's not something you should use anymore as it's used by the game
+> When using an extended sprite, don't use the `settings` member, as it's not something you should use anymore as it's used by the extended settings. Use the `getBlockSettings` method instead.
+
+If, for some reason, you need to get the amount of blocks used by the sprite, you can use the `getBlockSettingCount` method:
+```cpp
+u32 blockCount = this->getBlockSettingCount(); // Get the amount of blocks used by the sprite
+```
 
 
 ### Q&A
