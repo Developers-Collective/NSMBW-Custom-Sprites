@@ -1,4 +1,4 @@
-# Sprite Data Utils v1.0.0
+# Sprite Data Utils v1.0.1
 *by RedStoneMatt, Synel & Nin0*
 
 ## Kamek
@@ -41,6 +41,12 @@ Now, still in `include/game.h`, under the `float floor(float x);` line, add this
 ```cpp
 float pow(float x, float y);
 float sqrt(float x) { return pow(x, 0.5f); }
+```
+
+Still in `include/game.h` add these methods after the `int MakeRandomNumberForTiles(int count);` line:
+```cpp
+int RandInt(int min, int max) { return MakeRandomNumber(max - min) + min; }
+float RandFloat(float min, float max) { return ((float)MakeRandomNumber(10000) / 10000.0f) * (max - min) + min; }
 ```
 
 Add these addresses to your `kamek_pal.x`:

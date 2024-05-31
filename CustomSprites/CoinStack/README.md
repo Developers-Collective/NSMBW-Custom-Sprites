@@ -13,7 +13,7 @@
 - Add `src/coinStack.cpp` in your `src` folder
 - Add `coinStack.yaml` in your `Kamek` folder
 - Reference the `coinStack.yaml` in your `NewerProject.yaml`
-- Add the code for the "more sprite stuff" using `coinStack` for the ProfileID and SpriteID
+- Add the code for the "more sprite stuff" using `CoinStack` for the ProfileID and SpriteID
 - Add these lines to your `Kamek/kamek_pal.x`:
 ```cpp
 	daPyMng_c_incCoin = 0x80060250;

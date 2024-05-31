@@ -254,7 +254,7 @@ public:
 ### Reggie
 
 > [!NOTE]\
-> For now, reggie has not approved the pull request, so you won't be able to use this feature with the official version of Reggie. However, you can use this [custom version of Reggie](https://github.com/Synell/Reggie-Next/tree/sprite-settings) to use this feature while waiting for the official version to be updated.
+> For now, reggie's repo owners didn't approve the pull request, so you won't be able to use this feature with the official version of Reggie. However, you can use this [custom version of Reggie](https://github.com/Synell/Reggie-Next/tree/sprite-settings) to use this feature while waiting for the official version to be updated.
 
 > [!WARNING]\
 > Opening old levels with the new version of Reggie will work fine. However, levels created or saved with the new version of Reggie will not work with old versions of Reggie if they contain extended sprites. If they don't contain extended sprites, they should work fine with old versions of Reggie.
