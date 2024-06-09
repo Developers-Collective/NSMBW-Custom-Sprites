@@ -1,4 +1,4 @@
-# Extended Sprite Settings v1.1.0
+# Extended Sprite Settings v1.1.1
 *by Nin0 & Synel*
 
 

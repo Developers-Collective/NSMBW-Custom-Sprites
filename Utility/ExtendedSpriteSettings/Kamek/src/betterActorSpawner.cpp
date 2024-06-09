@@ -101,17 +101,19 @@ s32 dBetterActorSpawner_c::onCreate() {
     this->doMultiSpawning = (this->getBlockSettings(0) >> 16) & 0x1; // Grab [Block 1] Nybble 8 bit 4.
     this->isExtended = (this->eventId1 >> 3) & 0x1; // Grab [Block 0] Nybble 4 bit 1.
 
-    #if defined(REGION_K) || defined(REGION_W) // Adjust actor id
-        if (this->spawnedId > 701) {
-            this->spawnedId = this->spawnedId + 2;
+    int adjust = 0;
+    #if defined(REGION_C) // Adjust actor id
+        if (this->spawnedId > 620) {
+            adjust += 2;
         }
     #endif
 
-    #if defined(REGION_C) // Adjust actor id
-        if (this->spawnedId > 703) {
-            this->spawnedId = this->spawnedId + 2;
+    #if defined(REGION_K) || defined(REGION_W) || defined(REGION_C)// Adjust actor id
+        if (this->spawnedId > 701) {
+            adjust += 2;
         }
     #endif
+    this->spawnedId += adjust;
 
     this->spawnDelay = (eventId1 >> 4) & 0xF; // Grab [Block 0] Nybble 3.
     switch (this->spawnDelay) { 
