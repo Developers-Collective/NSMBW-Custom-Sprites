@@ -149,6 +149,15 @@ Biddybud and Para-Biddybud follow a path, in groups.
 
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/CameraScrollLimiter/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CameraScrollLimiter">Camera Scroll Limiter</a></summary>
+  <p></p>
+
+Smooth camera scroll limiter that unlocks the camera if the player gets too close to it while permeable.
+
+</details>
+
+
+<details>
   <summary><img src="https://raw.githubusercontent.com/Synell/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/CoinStack/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CoinStack">Coin Stack</a></summary>
   <p></p>
 

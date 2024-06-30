@@ -1,0 +1,33 @@
+name: CameraScrollLimiter
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/CameraScrollLimiter/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r CameraScrollLimiter.zip CustomSprites/CameraScrollLimiter
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Camera Scroll Limiter
+          tag: CameraScrollLimiter
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/CameraScrollLimiter/README.md
+          artifacts: CameraScrollLimiter.zip
+          artifactContentType: application/zip

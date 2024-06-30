@@ -1,0 +1,11 @@
+<sprite id="XXX" name="Camera Scroll Limiter" notes="Smooth camera scroll limiter that unlocks the camera if the player gets too close to it while permeable.">
+	<list title="Behaviour" nybble="5.3-5.4" comment="On which side the camera should stay on.">
+		<entry value="0">Camera Stays on Top</entry>
+		<entry value="1">Camera Stay on Bottom</entry>
+		<entry value="2">Camera Stay on Left</entry>
+		<entry value="3">Camera Stay on Right</entry>
+	</list>
+	<dualbox title1="Permeable" title2="Block Camera" nybble="5.2" comment="Permeable means that it won't block the camera if at least one player gets close and / or go through the limit."/>
+	<value title="Distance" nybble="6-8" comment="Value is in tiles.&lt;br/&gt;Distance = Value + 1"/>
+	<value title="Speed" nybble="9-10" comment="Value x 0.05&lt;br/&gt;0 = 4.0 (default speed)&lt;br/&gt;1 = 0.05&lt;br/&gt;5 = 0.25&lt;br/&gt;10 = 0.5&lt;br/&gt;20 = 1.0&lt;br/&gt;40 = 2.0&lt;br/&gt;Etc."/>
+</sprite>

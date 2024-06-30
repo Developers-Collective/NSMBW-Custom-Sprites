@@ -1,0 +1,8 @@
+--- # By Synel & CLF78
+source_files: [../src/cameraScrollLimiter.cpp, ../src/limitLineFixes.S]
+hooks:
+  - name: FixLRScrollLimiterBorders
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8015620C
+    target_func: 'FixLRScrollLimiterBorders'
