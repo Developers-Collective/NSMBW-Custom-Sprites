@@ -1,4 +1,4 @@
-# Camera Scroll Limiter v1.0.0
+# Camera Scroll Limiter v1.0.1
 *by Synel & CLF78*
 
 
@@ -18,8 +18,8 @@
 - Add `src/limitLineFixes.S` and `src/cameraScrollLimiter.cpp` in your `src` folder
 - Add `/cameraScrollLimiter.yaml` in your `Kamek` folder
 - Reference the `cameraScrollLimiter.yaml` in your `NewerProject.yaml`
-- In `include/game.h`, 
-- Add this function (under `float floor(float x);`) if it doesn't exist:
+- Add the code for the "more sprite stuff" using `CameraScrollLimiter` for the ProfileID and SpriteID
+- In `include/game.h`, add this function (under `float floor(float x);`) if it doesn't exist:
 ```cpp
 int sign(float x) { return (int)(x > 0) - (int)(x < 0); }
 ```
