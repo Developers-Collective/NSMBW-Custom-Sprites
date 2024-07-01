@@ -10,6 +10,7 @@
 > Known issues:
 > - When the camera tries to zoom out just after the level loaded, the camera can shake weirdly during the zoom.
 > - Stacking multiple of these with the same settings with a distance ≤ to the camera view can make the camera not understand which one has the priority.
+> - Using "Normal", "X Tracking Only", "Y Tracking Only", "X Expanding Only" or "Y Expanding Only" as the rendering camera setting does some weird shaking effects for some reason
 > 
 > These issues may be fixed in the future
 
