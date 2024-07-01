@@ -1,4 +1,4 @@
-# Camera Scroll Limiter v1.0.1
+# Camera Scroll Limiter v1.0.2
 *by Synel & CLF78*
 
 
@@ -14,11 +14,22 @@
 > These issues may be fixed in the future
 
 
+## Requirements
+- Knowledge about how to install this kind of stuff (at least the basics)
+- Knowledge about how to add GFX to the game
+- Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
+- [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
+
+
 ## Kamek
 - Add `src/limitLineFixes.S` and `src/cameraScrollLimiter.cpp` in your `src` folder
 - Add `/cameraScrollLimiter.yaml` in your `Kamek` folder
 - Reference the `cameraScrollLimiter.yaml` in your `NewerProject.yaml`
 - Add the code for the "more sprite stuff" using `CameraScrollLimiter` for the ProfileID and SpriteID
+- Add these addresses to your `kamek_pal.x`:
+```cpp
+getZoneByID__9dCourse_cFUcP5mRect = 0x8008e410;
+```
 - In `include/game.h`, add this function (under `float floor(float x);`) if it doesn't exist:
 ```cpp
 int sign(float x) { return (int)(x > 0) - (int)(x < 0); }
