@@ -5,7 +5,7 @@
 ## Requirements
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- [Sprite Data Utils](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt and Synel
+- [Sprite Data Utils](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt and Synel
 
 
 ## Kamek
