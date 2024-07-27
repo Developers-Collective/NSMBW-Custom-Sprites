@@ -5,8 +5,8 @@
 ## Requirements
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
-- [Sprite Data Utils](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt and Synel
+- [More sprites](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
+- [Sprite Data Utils](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt and Synel
 
 
 ## Kamek
@@ -368,7 +368,7 @@ Yes, you can. You can use the `createExtended` and `createExtendedChild` methods
 
 Yes, you can. You can use the extended settings when replacing a vanilla sprite as if it was a custom sprite.
 
-However, I'd recommend making a new sprite using the [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) feature from AboodXD & Nin0 to avoid replacing vanilla sprites.
+However, I'd recommend making a new sprite using the [More sprites](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/MoreSprites) feature from AboodXD & Nin0 to avoid replacing vanilla sprites.
 
 
 

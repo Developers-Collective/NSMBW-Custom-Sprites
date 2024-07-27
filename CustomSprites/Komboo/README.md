@@ -5,9 +5,9 @@
 ## Requirements
 - Knowledge about how to install this kind of stuff (at least the basics)
 - Kamek 1.3.X (changes may have to be made for Newer 1.2.X)
-- [More sprites](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
-- [Sprite Data Utils](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt & Synel
-- [Check Water](https://github.com/Synell/NSMBW-Custom-Sprites/releases/tag/CheckWater) by Nin0
+- [More sprites](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/MoreSprites) by AboodXD & Nin0
+- [Sprite Data Utils](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/SpriteDataUtils) by RedStoneMatt & Synel
+- [Check Water](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/CheckWater) by Nin0
 
 
 ## Kamek
