@@ -123,7 +123,7 @@ Now for the game part. If you already have the .rwav:
 
 If you don't have a .rwav:
 - To create a .rwav, you must have a .wav audio file **with only one channel (only mono, not stereo)**.
-- Then, open `_TMP.brwsd` from the zip with **brawlcrate** (it comes from the brsar and will only be used to convert files bc of how brawlcrate works, so don't put it in your game files) and in `Audio`, right click on `Audio[0]`, then click on `Replace` and select your .wav file and click on `Okay` when you see the audio popup.
+- Then, open `_TMP.brwsd` from the zip with **brawlcrate** (it comes from the brsar and will only be used to convert files because of how brawlcrate works, so don't put it in your game files) and in `Audio`, right click on `Audio[0]`, then click on `Replace` and select your .wav file and click on `Okay` when you see the audio popup.
 > *Note: If you can't open `_TMP.brwsd`, then use `_TMPFull.brwsd` instead. It's the same file, but with a lot of audio files. It's bigger, but it works.*
 - Then, right click on `Audio[0]` and click on `Export`. Name your file when exporting, including the file extension (.rwav).
 - You can then close brawlcrate without saving.
