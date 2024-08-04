@@ -46,6 +46,11 @@ If you want to use some of this code, be sure to credit the corresponding author
 4. Enjoy!
 
 
+> [!NOTE]\
+> Don't hesitate to check out some other repos if you can't find what you need here ;)
+> - [wakanameko's NSMBW Custom Sprites](https://github.com/wakanameko/NSMBW-Custom-Sprites)
+
+
 ## Utilities
 
 <details>
