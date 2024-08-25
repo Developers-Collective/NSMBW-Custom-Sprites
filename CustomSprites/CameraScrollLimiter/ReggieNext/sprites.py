@@ -24,20 +24,16 @@ class SpriteImage_CameraScrollLimiter(SLib.SpriteImage_StaticMultiple):  # XXX
             image_painter.drawPixmap(24 * i, 0, ImageCache[s])
             image_painter.end()
 
-        match side:
-            case 0: # Top
-                pass
+        if side == 1: # Bottom
+            img = img.transformed(QtGui.QTransform().rotate(180))
+            img = img.transformed(QtGui.QTransform().scale(-1, 1))
 
-            case 1: # Bottom
-                img = img.transformed(QtGui.QTransform().rotate(180))
-                img = img.transformed(QtGui.QTransform().scale(-1, 1))
+        elif side == 2: # Left
+            img = img.transformed(QtGui.QTransform().rotate(-90))
+            img = img.transformed(QtGui.QTransform().scale(1, -1))
 
-            case 2: # Left
-                img = img.transformed(QtGui.QTransform().rotate(-90))
-                img = img.transformed(QtGui.QTransform().scale(1, -1))
-
-            case 3: # Right
-                img = img.transformed(QtGui.QTransform().rotate(90))
+        elif side == 3: # Right
+            img = img.transformed(QtGui.QTransform().rotate(90))
 
         self.image = img
 
