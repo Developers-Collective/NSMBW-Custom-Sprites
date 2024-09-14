@@ -1,4 +1,4 @@
-# Extended Sprite Settings v1.1.1
+# Extended Sprite Settings v1.2.0
 *by Nin0 & Synel*
 
 
@@ -90,7 +90,7 @@ namespace ExtendedSettingTempBlocks
 		return ExtendedSettings[slot];
 	}
 
-	dCourse_c::spriteSetting_s* setSlot(u8 slot, u32 settingBlocks[]) {
+	dCourse_c::spriteSetting_s* setSlot(u8 slot, u32 settingBlocks[], u32 blockCount) {
 		if (slot >= SettingsSize) {
 			OSReport("Invalid slot %d\n", slot);
 			return 0;
@@ -101,11 +101,9 @@ namespace ExtendedSettingTempBlocks
 			return 0;
 		}
 
-		u32 size = sizeof(settingBlocks);
-
-		dCourse_c::spriteSetting_s* data = (dCourse_c::spriteSetting_s*)new u8[size + 4];
-		data->amountOf4Bytes = size;
-		memcpy(data->settings, settingBlocks, size);
+		dCourse_c::spriteSetting_s* data = (dCourse_c::spriteSetting_s*)(new u8[blockCount + 1]);
+		data->amountOf4Bytes = blockCount;
+		memcpy(data->settings, settingBlocks, blockCount * 4);
 
 		ExtendedSettings[slot] = data;
 		UsedSettings |= 1 << slot;
@@ -185,7 +183,7 @@ public:
 	}
 
 
-	static dStageActor_c *createExtended(u16 type, u32 settingBlocks[], VEC3 *pos, S16Vec *rot, u8 layer) {
+	static dStageActor_c *createExtended(u16 type, u32 settingBlocks[], u32 blockCount, VEC3 *pos, S16Vec *rot, u8 layer) {
 		dCourse_c *area = dCourseFull_c::instance->get(GetAreaNum());
 
 		u8 nextSlot = ExtendedSettingTempBlocks::getNextUnusedSlot();
@@ -194,7 +192,7 @@ public:
 			return 0;
 		}
 
-		u32 settings = (u32)ExtendedSettingTempBlocks::setSlot(nextSlot, settingBlocks);
+		u32 settings = (u32)ExtendedSettingTempBlocks::setSlot(nextSlot, settingBlocks, blockCount);
 
 		dStageActor_c *actor = dStageActor_c::create(
 			type,
@@ -206,7 +204,7 @@ public:
 
 		return actor;
 	}
-	static dStageActor_c *createExtendedChild(u16 type, dStageActor_c *parent, u32 settingBlocks[], VEC3 *pos, S16Vec *rot, u8 layer) {
+	static dStageActor_c *createExtendedChild(u16 type, dStageActor_c *parent, u32 settingBlocks[], u32 blockCount, VEC3 *pos, S16Vec *rot, u8 layer) {
 		dCourse_c *area = dCourseFull_c::instance->get(GetAreaNum());
 
 		u8 nextSlot = ExtendedSettingTempBlocks::getNextUnusedSlot();
@@ -218,7 +216,7 @@ public:
 		dStageActor_c *actor = dStageActor_c::createChild(
 			type,
 			parent,
-			(u32)ExtendedSettingTempBlocks::setSlot(nextSlot, settingBlocks),
+			(u32)ExtendedSettingTempBlocks::setSlot(nextSlot, settingBlocks, blockCount),
 			pos,
 			rot,
 			layer
@@ -227,11 +225,11 @@ public:
 		return actor;
 	}
 
-	static dStageActor_c *createExtended(Actors type, u32 settingBlocks[], VEC3 *pos, S16Vec *rot, u8 layer) {
-		return dStageActor_c::createExtended((u16)type, settingBlocks, pos, rot, layer);
+	static dStageActor_c *createExtended(Actors type, u32 settingBlocks[], u32 blockCount, VEC3 *pos, S16Vec *rot, u8 layer) {
+		return dStageActor_c::createExtended((u16)type, settingBlocks, blockCount, pos, rot, layer);
 	}
-	static dStageActor_c *createExtendedChild(Actors type, dStageActor_c *parent, u32 settingBlocks[], VEC3 *pos, S16Vec *rot, u8 layer) {
-		return dStageActor_c::createExtendedChild((u16)type, parent, settingBlocks, pos, rot, layer);
+	static dStageActor_c *createExtendedChild(Actors type, dStageActor_c *parent, u32 settingBlocks[], u32 blockCount, VEC3 *pos, S16Vec *rot, u8 layer) {
+		return dStageActor_c::createExtendedChild((u16)type, parent, settingBlocks, blockCount, pos, rot, layer);
 	}
 ```
 
@@ -374,4 +372,23 @@ However, I'd recommend making a new sprite using the [More sprites](https://gith
 
 --------------------------------------------
 
-If there is a compilation or a game problem, tell Synel or Nin0, maybe we forgot something somewhere.
+If there is a compilation or a game problem, ask Synel or Nin0, maybe we forgot something somewhere.
+
+
+
+## Remaining bugs
+
+- In the `createExtended` function, the game sometimes decides to change values randomly after leaving the function for no reason => Shouldn't happen
+
+
+## Changelog
+
+### v1.2.0
+
+#### Hotfix
+- Using more than 1 block for the `createExtended` function only copy 1 block
+
+
+### v1.0
+
+Official Release

@@ -214,6 +214,7 @@ dStageActor_c* dBetterActorSpawner_c::spawnActor() {
             (Actors) this->spawnedId,
             extendedSettings,
             &(this->pos),
+            extendedSettingsCount,
             0, 0
         );
 
