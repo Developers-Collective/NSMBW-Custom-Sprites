@@ -376,11 +376,6 @@ If there is a compilation or a game problem, ask Synel or Nin0, maybe we forgot 
 
 
 
-## Remaining bugs
-
-- In the `createExtended` function, the game sometimes decides to change values randomly after leaving the function for no reason => Shouldn't happen
-
-
 ## Changelog
 
 ### v1.2.1
