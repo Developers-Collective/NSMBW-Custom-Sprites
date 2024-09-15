@@ -1,4 +1,4 @@
-# Extended Sprite Settings v1.2.0
+# Extended Sprite Settings v1.2.1
 *by Nin0 & Synel*
 
 
@@ -101,7 +101,7 @@ namespace ExtendedSettingTempBlocks
 			return 0;
 		}
 
-		dCourse_c::spriteSetting_s* data = (dCourse_c::spriteSetting_s*)(new u8[blockCount + 1]);
+		dCourse_c::spriteSetting_s* data = (dCourse_c::spriteSetting_s*)(new u32[blockCount + 1]);
 		data->amountOf4Bytes = blockCount;
 		memcpy(data->settings, settingBlocks, blockCount * 4);
 
@@ -252,7 +252,7 @@ public:
 ### Reggie
 
 > [!NOTE]\
-> For now, reggie's repo owners didn't approve the pull request, so you won't be able to use this feature with the official version of Reggie. However, you can use this [custom version of Reggie](https://github.com/Synell/Reggie-Next/tree/sprite-settings) to use this feature while waiting for the official version to be updated.
+> Reggie's repo owners didn't approve the pull request (for dumb reasons, don't ask why), so you won't be able to use this feature with the *"official"* version of Reggie. However, you can use this [custom version of Reggie](https://github.com/Developers-Collective/Reggie-Next) to use this feature.
 
 > [!WARNING]\
 > Opening old levels with the new version of Reggie will work fine. However, levels created or saved with the new version of Reggie will not work with old versions of Reggie if they contain extended sprites. If they don't contain extended sprites, they should work fine with old versions of Reggie.
@@ -383,12 +383,18 @@ If there is a compilation or a game problem, ask Synel or Nin0, maybe we forgot 
 
 ## Changelog
 
+### v1.2.1
+
+#### Hotfix
+- Fixed `createExtended` and `createExtendedChild` blocks being deleted by the game due to the array being too small
+
+
 ### v1.2.0
 
 #### Hotfix
-- Using more than 1 block for the `createExtended` function only copy 1 block
+- The `createExtended` and `createExtendedChild` functions now can use more than 1 block => To fix this issue, we had to add a new `blockCount` parameter, meaning you have to set this argument to a value for all of your calls for these functions
 
 
-### v1.0
+### v1.0.0
 
 Official Release
