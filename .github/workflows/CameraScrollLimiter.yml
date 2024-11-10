@@ -1,4 +1,8 @@
 name: CameraScrollLimiter
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

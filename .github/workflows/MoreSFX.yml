@@ -1,4 +1,8 @@
 name: MoreSFX
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

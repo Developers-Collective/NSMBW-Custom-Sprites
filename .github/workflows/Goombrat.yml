@@ -1,4 +1,8 @@
 name: Goombrat
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

@@ -1,4 +1,8 @@
 name: BlockElectricity
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

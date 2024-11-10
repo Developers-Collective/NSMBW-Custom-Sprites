@@ -1,4 +1,8 @@
 name: Komboo
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

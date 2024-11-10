@@ -1,4 +1,8 @@
 name: Light
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

@@ -1,4 +1,5 @@
 name: BackgroundAnimPlayer
+
 permissions:
   contents: write
 

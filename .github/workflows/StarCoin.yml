@@ -1,4 +1,8 @@
 name: Star Coin
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

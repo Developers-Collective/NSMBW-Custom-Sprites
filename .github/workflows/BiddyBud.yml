@@ -1,4 +1,8 @@
 name: Biddybud
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

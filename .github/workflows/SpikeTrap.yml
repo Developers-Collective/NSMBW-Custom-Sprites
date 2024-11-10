@@ -1,4 +1,8 @@
 name: SpikeTrap
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

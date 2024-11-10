@@ -1,4 +1,8 @@
 name: Signboard
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

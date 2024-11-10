@@ -1,4 +1,8 @@
 name: CoinStack
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:

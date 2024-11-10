@@ -1,4 +1,8 @@
 name: PathController
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:
