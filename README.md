@@ -34,7 +34,7 @@ If you want to use some of this code, be sure to credit the corresponding author
 > [!WARNING]\
 > Some stuff can have some bugs, especially when they just get released. If you find one, you can report it to the corresponding author(s) while **staying calm and polite** and **wait patiently** for an update.
 
-> [!NOTE]\
+> [!TIP]\
 > It is recommended to keep track of the sprite / feature version(s) you're using so you can update when an update and / or a bugfix releases.
 
 
