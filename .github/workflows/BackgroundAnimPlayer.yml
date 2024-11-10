@@ -1,0 +1,33 @@
+name: BackgroundAnimPlayer
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/BackgroundAnimPlayer/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r BackgroundAnimPlayer.zip CustomSprites/BackgroundAnimPlayer
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Background Anim Player
+          tag: BackgroundAnimPlayer
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/BackgroundAnimPlayer/README.md
+          artifacts: BackgroundAnimPlayer.zip
+          artifactContentType: application/zip

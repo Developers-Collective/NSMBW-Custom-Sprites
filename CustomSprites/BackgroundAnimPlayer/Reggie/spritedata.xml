@@ -1,0 +1,230 @@
+<sprite id="AAA" name="Background Model Animation (CHR) Player" notes="Plays a CHR animation on the current background." advancednotes="CHR animations are set up by animating bone movement (translation, rotation, or scaling). This is the most commonly used format in NSMBW, underpinning most 3D animation.">
+	<value title="Triggering Event ID" idtype="Triggering Event" nybble="5-6"/>
+	<dualbox title1="Triggers when Event ID is On" title2="Triggers when Event ID is Off" nybble="9.3" comment="Triggers when the triggering event ID is activated or deactivated."/>
+	<dualbox title1="Background A" title2="Background B" nybble="7.1"/>
+	<checkbox title="Background Slot 1" nybble="7.2" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 2" nybble="7.3" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 3" nybble="7.4" comment="Slot number from top to bottom."/>
+	<list title="Animation Name" nybble="8">
+		<entry value="0">AnmCHR(NW4R)/00</entry>
+		<entry value="1">AnmCHR(NW4R)/01</entry>
+		<entry value="2">AnmCHR(NW4R)/02</entry>
+		<entry value="3">AnmCHR(NW4R)/03</entry>
+		<entry value="4">AnmCHR(NW4R)/04</entry>
+		<entry value="5">AnmCHR(NW4R)/05</entry>
+		<entry value="6">AnmCHR(NW4R)/06</entry>
+		<entry value="7">AnmCHR(NW4R)/07</entry>
+		<entry value="8">AnmCHR(NW4R)/08</entry>
+		<entry value="9">AnmCHR(NW4R)/09</entry>
+		<entry value="10">AnmCHR(NW4R)/10</entry>
+		<entry value="11">AnmCHR(NW4R)/11</entry>
+		<entry value="12">AnmCHR(NW4R)/12</entry>
+		<entry value="13">AnmCHR(NW4R)/13</entry>
+		<entry value="14">AnmCHR(NW4R)/14</entry>
+		<entry value="15">AnmCHR(NW4R)/15</entry>
+	</list>
+	<dualbox title1="Play Once" title2="Loop" nybble="9.1"/>
+	<checkbox title="Play an Animation after the First One is Done" requirednybble="9.1" requiredval="0" nybble="9.2"/>
+	<list title="Next Animation Name (Loop)" requirednybble="9.1,9.2" requiredval="0,1" nybble="10" comment="This animation will be played at the end of the first one.&lt;br/&gt;This animation will loop.">
+		<entry value="0">AnmCHR(NW4R)/00</entry>
+		<entry value="1">AnmCHR(NW4R)/01</entry>
+		<entry value="2">AnmCHR(NW4R)/02</entry>
+		<entry value="3">AnmCHR(NW4R)/03</entry>
+		<entry value="4">AnmCHR(NW4R)/04</entry>
+		<entry value="5">AnmCHR(NW4R)/05</entry>
+		<entry value="6">AnmCHR(NW4R)/06</entry>
+		<entry value="7">AnmCHR(NW4R)/07</entry>
+		<entry value="8">AnmCHR(NW4R)/08</entry>
+		<entry value="9">AnmCHR(NW4R)/09</entry>
+		<entry value="10">AnmCHR(NW4R)/10</entry>
+		<entry value="11">AnmCHR(NW4R)/11</entry>
+		<entry value="12">AnmCHR(NW4R)/12</entry>
+		<entry value="13">AnmCHR(NW4R)/13</entry>
+		<entry value="14">AnmCHR(NW4R)/14</entry>
+		<entry value="15">AnmCHR(NW4R)/15</entry>
+	</list>
+</sprite>
+<sprite id="BBB" name="Background Texture Animation (SRT) Player" notes="Plays a SRT animation on the current background." advancednotes="SRT animations are set up by animating texture transforms (translation, rotation, or scaling). This is used in NSMBW for effects such as moving water and clouds.">
+	<value title="Triggering Event ID" idtype="Triggering Event" nybble="5-6"/>
+	<dualbox title1="Triggers when Event ID is On" title2="Triggers when Event ID is Off" nybble="9.3" comment="Triggers when the triggering event ID is activated or deactivated."/>
+	<dualbox title1="Background A" title2="Background B" nybble="7.1"/>
+	<checkbox title="Background Slot 1" nybble="7.2" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 2" nybble="7.3" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 3" nybble="7.4" comment="Slot number from top to bottom."/>
+	<list title="Animation Name" nybble="8">
+		<entry value="0">AnmSRT(NW4R)/00</entry>
+		<entry value="1">AnmSRT(NW4R)/01</entry>
+		<entry value="2">AnmSRT(NW4R)/02</entry>
+		<entry value="3">AnmSRT(NW4R)/03</entry>
+		<entry value="4">AnmSRT(NW4R)/04</entry>
+		<entry value="5">AnmSRT(NW4R)/05</entry>
+		<entry value="6">AnmSRT(NW4R)/06</entry>
+		<entry value="7">AnmSRT(NW4R)/07</entry>
+		<entry value="8">AnmSRT(NW4R)/08</entry>
+		<entry value="9">AnmSRT(NW4R)/09</entry>
+		<entry value="10">AnmSRT(NW4R)/10</entry>
+		<entry value="11">AnmSRT(NW4R)/11</entry>
+		<entry value="12">AnmSRT(NW4R)/12</entry>
+		<entry value="13">AnmSRT(NW4R)/13</entry>
+		<entry value="14">AnmSRT(NW4R)/14</entry>
+		<entry value="15">AnmSRT(NW4R)/15</entry>
+	</list>
+	<dualbox title1="Play Once" title2="Loop" nybble="9.1"/>
+	<checkbox title="Play an Animation after the First One is Done" requirednybble="9.1" requiredval="0" nybble="9.2"/>
+	<list title="Next Animation Name (Loop)" requirednybble="9.1,9.2" requiredval="0,1" nybble="10" comment="This animation will be played at the end of the first one.&lt;br/&gt;This animation will loop.">
+		<entry value="0">AnmSRT(NW4R)/00</entry>
+		<entry value="1">AnmSRT(NW4R)/01</entry>
+		<entry value="2">AnmSRT(NW4R)/02</entry>
+		<entry value="3">AnmSRT(NW4R)/03</entry>
+		<entry value="4">AnmSRT(NW4R)/04</entry>
+		<entry value="5">AnmSRT(NW4R)/05</entry>
+		<entry value="6">AnmSRT(NW4R)/06</entry>
+		<entry value="7">AnmSRT(NW4R)/07</entry>
+		<entry value="8">AnmSRT(NW4R)/08</entry>
+		<entry value="9">AnmSRT(NW4R)/09</entry>
+		<entry value="10">AnmSRT(NW4R)/10</entry>
+		<entry value="11">AnmSRT(NW4R)/11</entry>
+		<entry value="12">AnmSRT(NW4R)/12</entry>
+		<entry value="13">AnmSRT(NW4R)/13</entry>
+		<entry value="14">AnmSRT(NW4R)/14</entry>
+		<entry value="15">AnmSRT(NW4R)/15</entry>
+	</list>
+</sprite>
+<sprite id="CCC" name="Background Texture Pattern (PAT) Player" notes="Plays a PAT animation on the current background." advancednotes="PAT animations are set up by animating textures. This is used in NSMBW for effects such as changing power-up outfits and facial expressions.">
+	<value title="Triggering Event ID" idtype="Triggering Event" nybble="5-6"/>
+	<dualbox title1="Triggers when Event ID is On" title2="Triggers when Event ID is Off" nybble="9.3" comment="Triggers when the triggering event ID is activated or deactivated."/>
+	<dualbox title1="Background A" title2="Background B" nybble="7.1"/>
+	<checkbox title="Background Slot 1" nybble="7.2" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 2" nybble="7.3" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 3" nybble="7.4" comment="Slot number from top to bottom."/>
+	<list title="Animation Name" nybble="8">
+		<entry value="0">AnmPAT(NW4R)/00</entry>
+		<entry value="1">AnmPAT(NW4R)/01</entry>
+		<entry value="2">AnmPAT(NW4R)/02</entry>
+		<entry value="3">AnmPAT(NW4R)/03</entry>
+		<entry value="4">AnmPAT(NW4R)/04</entry>
+		<entry value="5">AnmPAT(NW4R)/05</entry>
+		<entry value="6">AnmPAT(NW4R)/06</entry>
+		<entry value="7">AnmPAT(NW4R)/07</entry>
+		<entry value="8">AnmPAT(NW4R)/08</entry>
+		<entry value="9">AnmPAT(NW4R)/09</entry>
+		<entry value="10">AnmPAT(NW4R)/10</entry>
+		<entry value="11">AnmPAT(NW4R)/11</entry>
+		<entry value="12">AnmPAT(NW4R)/12</entry>
+		<entry value="13">AnmPAT(NW4R)/13</entry>
+		<entry value="14">AnmPAT(NW4R)/14</entry>
+		<entry value="15">AnmPAT(NW4R)/15</entry>
+	</list>
+	<dualbox title1="Play Once" title2="Loop" nybble="9.1"/>
+	<checkbox title="Play an Animation after the First One is Done" requirednybble="9.1" requiredval="0" nybble="9.2"/>
+	<list title="Next Animation Name (Loop)" requirednybble="9.1,9.2" requiredval="0,1" nybble="10" comment="This animation will be played at the end of the first one.&lt;br/&gt;This animation will loop.">
+		<entry value="0">AnmPAT(NW4R)/00</entry>
+		<entry value="1">AnmPAT(NW4R)/01</entry>
+		<entry value="2">AnmPAT(NW4R)/02</entry>
+		<entry value="3">AnmPAT(NW4R)/03</entry>
+		<entry value="4">AnmPAT(NW4R)/04</entry>
+		<entry value="5">AnmPAT(NW4R)/05</entry>
+		<entry value="6">AnmPAT(NW4R)/06</entry>
+		<entry value="7">AnmPAT(NW4R)/07</entry>
+		<entry value="8">AnmPAT(NW4R)/08</entry>
+		<entry value="9">AnmPAT(NW4R)/09</entry>
+		<entry value="10">AnmPAT(NW4R)/10</entry>
+		<entry value="11">AnmPAT(NW4R)/11</entry>
+		<entry value="12">AnmPAT(NW4R)/12</entry>
+		<entry value="13">AnmPAT(NW4R)/13</entry>
+		<entry value="14">AnmPAT(NW4R)/14</entry>
+		<entry value="15">AnmPAT(NW4R)/15</entry>
+	</list>
+</sprite>
+<sprite id="DDD" name="Background Visibility Sequence (VIS) Player" notes="Plays a VIS animation on the current background." advancednotes="VIS animations are set up by animating the visibility of bones. This is used in NSMBW for effects such as the clown car's varying 3D facial expressions.">
+	<value title="Triggering Event ID" idtype="Triggering Event" nybble="5-6"/>
+	<dualbox title1="Triggers when Event ID is On" title2="Triggers when Event ID is Off" nybble="9.3" comment="Triggers when the triggering event ID is activated or deactivated."/>
+	<dualbox title1="Background A" title2="Background B" nybble="7.1"/>
+	<checkbox title="Background Slot 1" nybble="7.2" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 2" nybble="7.3" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 3" nybble="7.4" comment="Slot number from top to bottom."/>
+	<list title="Animation Name" nybble="8">
+		<entry value="0">AnmVIS(NW4R)/00</entry>
+		<entry value="1">AnmVIS(NW4R)/01</entry>
+		<entry value="2">AnmVIS(NW4R)/02</entry>
+		<entry value="3">AnmVIS(NW4R)/03</entry>
+		<entry value="4">AnmVIS(NW4R)/04</entry>
+		<entry value="5">AnmVIS(NW4R)/05</entry>
+		<entry value="6">AnmVIS(NW4R)/06</entry>
+		<entry value="7">AnmVIS(NW4R)/07</entry>
+		<entry value="8">AnmVIS(NW4R)/08</entry>
+		<entry value="9">AnmVIS(NW4R)/09</entry>
+		<entry value="10">AnmVIS(NW4R)/10</entry>
+		<entry value="11">AnmVIS(NW4R)/11</entry>
+		<entry value="12">AnmVIS(NW4R)/12</entry>
+		<entry value="13">AnmVIS(NW4R)/13</entry>
+		<entry value="14">AnmVIS(NW4R)/14</entry>
+		<entry value="15">AnmVIS(NW4R)/15</entry>
+	</list>
+	<dualbox title1="Play Once" title2="Loop" nybble="9.1"/>
+	<checkbox title="Play an Animation after the First One is Done" requirednybble="9.1" requiredval="0" nybble="9.2"/>
+	<list title="Next Animation Name (Loop)" requirednybble="9.1,9.2" requiredval="0,1" nybble="10" comment="This animation will be played at the end of the first one.&lt;br/&gt;This animation will loop.">
+		<entry value="0">AnmVIS(NW4R)/00</entry>
+		<entry value="1">AnmVIS(NW4R)/01</entry>
+		<entry value="2">AnmVIS(NW4R)/02</entry>
+		<entry value="3">AnmVIS(NW4R)/03</entry>
+		<entry value="4">AnmVIS(NW4R)/04</entry>
+		<entry value="5">AnmVIS(NW4R)/05</entry>
+		<entry value="6">AnmVIS(NW4R)/06</entry>
+		<entry value="7">AnmVIS(NW4R)/07</entry>
+		<entry value="8">AnmVIS(NW4R)/08</entry>
+		<entry value="9">AnmVIS(NW4R)/09</entry>
+		<entry value="10">AnmVIS(NW4R)/10</entry>
+		<entry value="11">AnmVIS(NW4R)/11</entry>
+		<entry value="12">AnmVIS(NW4R)/12</entry>
+		<entry value="13">AnmVIS(NW4R)/13</entry>
+		<entry value="14">AnmVIS(NW4R)/14</entry>
+		<entry value="15">AnmVIS(NW4R)/15</entry>
+	</list>
+</sprite>
+<sprite id="EEE" name="Background Color Sequence (CLR) Player" notes="Plays a CLR animation on the current background." advancednotes="CLR animations are set up by animating the contents of certain color registers. These include the registers in lighting channels and the standard &amp; constant registers on every material. This is used in NSMBW for effects such as bosses flashing red when they take damage.">
+	<value title="Triggering Event ID" idtype="Triggering Event" nybble="5-6"/>
+	<dualbox title1="Triggers when Event ID is On" title2="Triggers when Event ID is Off" nybble="9.3" comment="Triggers when the triggering event ID is activated or deactivated."/>
+	<dualbox title1="Background A" title2="Background B" nybble="7.1"/>
+	<checkbox title="Background Slot 1" nybble="7.2" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 2" nybble="7.3" comment="Slot number from top to bottom."/>
+	<checkbox title="Background Slot 3" nybble="7.4" comment="Slot number from top to bottom."/>
+	<list title="Animation Name" nybble="8">
+		<entry value="0">AnmCLR(NW4R)/00</entry>
+		<entry value="1">AnmCLR(NW4R)/01</entry>
+		<entry value="2">AnmCLR(NW4R)/02</entry>
+		<entry value="3">AnmCLR(NW4R)/03</entry>
+		<entry value="4">AnmCLR(NW4R)/04</entry>
+		<entry value="5">AnmCLR(NW4R)/05</entry>
+		<entry value="6">AnmCLR(NW4R)/06</entry>
+		<entry value="7">AnmCLR(NW4R)/07</entry>
+		<entry value="8">AnmCLR(NW4R)/08</entry>
+		<entry value="9">AnmCLR(NW4R)/09</entry>
+		<entry value="10">AnmCLR(NW4R)/10</entry>
+		<entry value="11">AnmCLR(NW4R)/11</entry>
+		<entry value="12">AnmCLR(NW4R)/12</entry>
+		<entry value="13">AnmCLR(NW4R)/13</entry>
+		<entry value="14">AnmCLR(NW4R)/14</entry>
+		<entry value="15">AnmCLR(NW4R)/15</entry>
+	</list>
+	<dualbox title1="Play Once" title2="Loop" nybble="9.1"/>
+	<checkbox title="Play an Animation after the First One is Done" requirednybble="9.1" requiredval="0" nybble="9.2"/>
+	<list title="Next Animation Name (Loop)" requirednybble="9.1,9.2" requiredval="0,1" nybble="10" comment="This animation will be played at the end of the first one.&lt;br/&gt;This animation will loop.">
+		<entry value="0">AnmCLR(NW4R)/00</entry>
+		<entry value="1">AnmCLR(NW4R)/01</entry>
+		<entry value="2">AnmCLR(NW4R)/02</entry>
+		<entry value="3">AnmCLR(NW4R)/03</entry>
+		<entry value="4">AnmCLR(NW4R)/04</entry>
+		<entry value="5">AnmCLR(NW4R)/05</entry>
+		<entry value="6">AnmCLR(NW4R)/06</entry>
+		<entry value="7">AnmCLR(NW4R)/07</entry>
+		<entry value="8">AnmCLR(NW4R)/08</entry>
+		<entry value="9">AnmCLR(NW4R)/09</entry>
+		<entry value="10">AnmCLR(NW4R)/10</entry>
+		<entry value="11">AnmCLR(NW4R)/11</entry>
+		<entry value="12">AnmCLR(NW4R)/12</entry>
+		<entry value="13">AnmCLR(NW4R)/13</entry>
+		<entry value="14">AnmCLR(NW4R)/14</entry>
+		<entry value="15">AnmCLR(NW4R)/15</entry>
+	</list>
+</sprite>

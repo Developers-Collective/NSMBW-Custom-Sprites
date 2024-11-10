@@ -1,0 +1,76 @@
+--- # By Synel
+source_files: [
+  ../src/daFarBG_c.cpp,
+  ../src/BackgroundAnimCHRPlayer.cpp,
+  ../src/BackgroundAnimSRTPlayer.cpp,
+  ../src/BackgroundAnimPATPlayer.cpp,
+  ../src/BackgroundAnimVISPlayer.cpp,
+  ../src/BackgroundAnimCLRPlayer.cpp,
+  # ../src/BackgroundAnimSHPPlayer.cpp,
+  # ../src/BackgroundAnimSCNPlayer.cpp
+]
+hooks:
+  - name: BackgroundModelThingClassSize1
+    type: patch
+    addr_pal: 0x80117f60
+    data: '3860025C' # 240 + 4 + 4 + (4 * 5 = 20)
+
+  - name: BackgroundModelThingClassSize2
+    type: patch
+    addr_pal: 0x801180cc
+    data: '3860025C'
+
+  - name: daFarBGNewDoDelete
+    type: add_func_pointer
+    src_addr_pal: 0x80323e9c
+    target_func: 'daFarBGNewDoDelete(daFarBG_c *)'
+
+  - name: daFarBGNewPrepareIndividualBackgroundObject1
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80118010
+    target_func: 'daFarBGNewPrepareIndividualBackgroundObject(daFarBG_c *, unsigned short, daFarBG_c::BackgroundModelThing *, bool)'
+
+  - name: daFarBGNewPrepareIndividualBackgroundObject2
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80118030
+    target_func: 'daFarBGNewPrepareIndividualBackgroundObject(daFarBG_c *, unsigned short, daFarBG_c::BackgroundModelThing *, bool)'
+
+  - name: daFarBGNewPrepareIndividualBackgroundObject3
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80118050
+    target_func: 'daFarBGNewPrepareIndividualBackgroundObject(daFarBG_c *, unsigned short, daFarBG_c::BackgroundModelThing *, bool)'
+
+  - name: daFarBGNewPrepareIndividualBackgroundObject4
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8011815c
+    target_func: 'daFarBGNewPrepareIndividualBackgroundObject(daFarBG_c *, unsigned short, daFarBG_c::BackgroundModelThing *, bool)'
+
+  - name: daFarBGNewUpdateAnim(daFarBG_c *)
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80115f14
+    target_func: 'daFarBGNewUpdateAnim(daFarBG_c *)'
+
+  - name: dontPlayAnimChr
+    type: patch
+    addr_pal: 0x80118fc4
+    data: '4800001C' # -> b 0x1c | Original: '4182001c -> beq 0x1c'
+
+  - name: dontPlayAnimSrt1
+    type: patch
+    addr_pal: 0x80118ff8
+    data: '48000094' # -> b 0x94 | Original: '41820094 -> beq 0x94'
+
+  - name: dontPlayAnimSrt2
+    type: patch
+    addr_pal: 0x801190bc
+    data: '48000014' # -> b 0x14 | Original: '41820014 -> beq 0x14'
+
+  - name: dontPlayAnimClr
+    type: patch
+    addr_pal: 0x801190dc
+    data: '48000014' # -> b 0x14 | Original: '41820014 -> beq 0x14'
