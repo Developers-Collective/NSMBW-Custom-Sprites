@@ -20,6 +20,11 @@ class daBackgroundAnimPlayer_c : public dEn_c {
 	bool checkForEventTrigger(u8 lookForState);
 
 	protected:
+		enum BAPStep {
+			BAPStepSetup = 0,
+			BAPStepBind = 1,
+		};
+
 		int onCreate();
 		int onDelete();
 		int onExecute();
@@ -27,6 +32,10 @@ class daBackgroundAnimPlayer_c : public dEn_c {
 		mHeapAllocator_c allocator;
 		daFarBG_c* bg;
 		bool loop, isFirstAnimationDone, invert;
+
+		/// @brief Do some work with the animation for all models
+		/// @param step The step to execute
+		void doStepAnimations(BAPStep step);
 
 		/// @brief Setup the animation for all models.
 		void setupAnimations();
@@ -128,55 +137,26 @@ int daBackgroundAnimPlayer_c::onCreate() {
 	return true;
 }
 
-void daBackgroundAnimPlayer_c::setupAnimations() {
+void daBackgroundAnimPlayer_c::doStepAnimations(BAPStep step) {
 	char animName[4];
-	sprintf(animName, "%02d", (this->settings >> 16) & 0xF);
-
-	allocator.link(-1, GameHeaps[0], 0, 0x20);
+	sprintf(animName, "%02d", (this->settings >> (step == BAPStepSetup ? 16 : 8)) & 0xF);
 
 	daFarBG_c::BackgroundEntry* entry = this->bg->m_background_entries[this->bg->isBGB];
 
 	for (int i = 0; i < 3; i++) {
 		if (!isSlotAffected(i)) continue;
 
-		char resFileName[12], brresFileName[20];
-		short bgID = (i == 0 ? entry->file_id_1 : (i == 1 ? entry->file_id_2 : entry->file_id_3));
-		sprintf(resFileName, this->bg->isBGB ? "bgB_%04X" : "bgA_%04X", bgID);
-		sprintf(brresFileName, this->bg->isBGB ? "g3d/bgB_%04X.brres" : "g3d/bgA_%04X.brres", bgID);
-		nw4r::g3d::ResFile resFile;
-		resFile.data = getResource(resFileName, brresFileName);
-
-		for (int j = i * 9; j < (i * 9) + 9; j++) {
-			daFarBG_c::BackgroundModelThing* modelThing = this->bg->backgrounds[j];
-
-			m3d::mdl_c* model = modelThing->model;
-			nw4r::g3d::ResMdl mdl = resFile.GetResMdl(resFileName);
-
-			if (!doesAnimationExist(modelThing)) {
-				this->setupSingleAnimation(animName, &resFile, &mdl, model, modelThing);
-				continue;
-			}
-
-			this->setupSingleAnimation(animName, &resFile, &mdl, model, modelThing);
+		u16 bgID;
+		switch (i) {
+			case 0: bgID = entry->file_id_1; break;
+			case 1: bgID = entry->file_id_2; break;
+			case 2: bgID = entry->file_id_3; break;
 		}
-	}
-
-	allocator.unlink();
-}
-
-void daBackgroundAnimPlayer_c::bindAnimations() {
-	char animName[4];
-	sprintf(animName, "%02d", (this->settings >> 8) & 0xF);
-
-	daFarBG_c::BackgroundEntry* entry = this->bg->m_background_entries[this->bg->isBGB];
-
-	for (int i = 0; i < 3; i++) {
-		if (!isSlotAffected(i)) continue;
 
 		char resFileName[12], brresFileName[20];
-		short bgID = (i == 0 ? entry->file_id_1 : (i == 1 ? entry->file_id_2 : entry->file_id_3));
-		sprintf(resFileName, this->bg->isBGB ? "bgB_%04X" : "bgA_%04X", bgID);
-		sprintf(brresFileName, this->bg->isBGB ? "g3d/bgB_%04X.brres" : "g3d/bgA_%04X.brres", bgID);
+		sprintf(resFileName, "bg%c_%04X", this->bg->isBGB ? 'B' : 'A', bgID);
+		sprintf(brresFileName, "g3d/bg%c_%04X.brres", this->bg->isBGB ? 'B' : 'A', bgID);
+
 		nw4r::g3d::ResFile resFile;
 		resFile.data = getResource(resFileName, brresFileName);
 
@@ -191,10 +171,26 @@ void daBackgroundAnimPlayer_c::bindAnimations() {
 				continue;
 			}
 
-			this->bindSingleAnimation(animName, &resFile, model, modelThing);
+			if (step == BAPStepSetup) {
+				nw4r::g3d::ResMdl mdl = resFile.GetResMdl(resFileName);
+				this->setupSingleAnimation(animName, &resFile, &mdl, model, modelThing);
+			}
+
+			else {
+				this->bindSingleAnimation(animName, &resFile, model, modelThing);
+			}
 		}
 	}
+}
 
+void daBackgroundAnimPlayer_c::setupAnimations() {
+	allocator.link(-1, GameHeaps[0], 0, 0x20);
+	this->doStepAnimations(BAPStepSetup);
+	allocator.unlink();
+}
+
+void daBackgroundAnimPlayer_c::bindAnimations() {
+	this->doStepAnimations(BAPStepBind);
 	this->isFirstAnimationDone = true;
 	this->loop = true;
 }

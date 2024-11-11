@@ -1,4 +1,4 @@
-# Background Anim Player v1.0.0
+# Background Anim Player v1.1.0
 *by Synel*
 
 
@@ -48,6 +48,11 @@
 
 
 ## Changelog
+
+
+### v1.1.0
+
+Fixed BG IDs > 0x8000 causing a game crash due to some negative values when signed
 
 
 ### v1.0.0
