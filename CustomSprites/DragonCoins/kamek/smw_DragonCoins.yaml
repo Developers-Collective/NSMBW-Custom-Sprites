@@ -1,0 +1,5 @@
+---
+# DragonCoins custom sprite (By ReaZ0n23)
+
+source_files: [../src/smw_DragonCoins.cpp]
+hooks: []
