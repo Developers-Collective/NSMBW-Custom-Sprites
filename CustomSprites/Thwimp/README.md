@@ -1,4 +1,4 @@
-# Thwimp v1.2.1 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/new/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
+# Thwimp v1.2.1 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/blob/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
 *by ReaZ0n23*
 
 
@@ -13,6 +13,11 @@
 - Add `koton.yaml` in your `Kamek` folder
 - Reference the `koton.yaml` in your `NewerProject.yaml`
 - Add the code for the "more sprite stuff" using `koton` for the ProfileID and SpriteID
+- Add these addresses to your kamek_pal.x (or kamek_base.x):
+```
+	DisplayScoreAddPopup = 0x800B3540;
+	AddScore = 0x80060690;
+```
 - Compile your code
 
 
