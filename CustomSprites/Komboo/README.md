@@ -1,4 +1,4 @@
-# Komboo v1.0.4
+# Komboo v1.0.5
 *by Synel*
 
 
@@ -11,6 +11,11 @@
 
 
 ## Kamek
+- In `game.h`, add this method in the `dActor_c` class if you don't have it: `dAcPy_c* doSearchNearPlayer(Vec2 *distance, Vec2 *relative_pos);`
+- Add this address to your `kamek_pal.x`:
+```
+	doSearchNearPlayer__8dActor_cFP7Point2dP7Point2d = 0x80064790;
+```
 - If you already have a `Kamek/src/checkWater.S` file, remove the reference to this file in your `Kamek/konbu.yaml` file
 - Add `src/konbu.h`, `src/konbu.cpp`, `src/konbuSpawner.cpp` in your `src` folder
 - Add `konbu.yaml` in your `Kamek` folder
