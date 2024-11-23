@@ -1,0 +1,5 @@
+---
+# koton custom sprite (By ReaZ0n23)
+
+source_files: [../src/koton.cpp]
+hooks: []

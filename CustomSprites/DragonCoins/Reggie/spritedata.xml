@@ -1,0 +1,62 @@
+  <sprite id="489" name="smwDragonCoins" sizehacks="true" notes="Dragon Coins sprite from SMW.">
+    <list nybble="6" title="Style">
+      <entry value="0">2D texture (SMW original)</entry>
+      <entry value="1">Bukachell's model</entry>
+      <entry value="2">Microtransagolor's model</entry>
+    </list>
+    <list nybble="7" title="World number" comment="Select the number of the world where the level you are now editing is located.">
+      <entry value="0">0</entry>
+      <entry value="1">1</entry>
+      <entry value="2">2</entry>
+      <entry value="3">3</entry>
+      <entry value="4">4</entry>
+      <entry value="5">5</entry>
+      <entry value="6">6</entry>
+      <entry value="7">7</entry>
+      <entry value="8">8</entry>
+      <entry value="9">9</entry>
+      <entry value="10">10(A)</entry>
+      <entry value="11">11(B)</entry>
+      <entry value="12">12(C)</entry>
+      <entry value="13">13(D)</entry>
+      <entry value="14">14(E)</entry>
+      <entry value="15">15(F)</entry>
+    </list>
+    <list nybble="8" title="Level number" comment="Select the number of the level you are now editing is located. If the number you are looking for is not available, please choose one that does not overlap.">
+      <entry value="0">0</entry>
+      <entry value="1">1</entry>
+      <entry value="2">2</entry>
+      <entry value="3">3</entry>
+      <entry value="4">4</entry>
+      <entry value="5">5</entry>
+      <entry value="6">6</entry>
+      <entry value="7">7</entry>
+      <entry value="8">8</entry>
+      <entry value="9">9</entry>
+      <entry value="10">10</entry>
+      <entry value="11">11</entry>
+      <entry value="12">12</entry>
+      <entry value="13">13</entry>
+      <entry value="14">14</entry>
+      <entry value="15">15</entry>
+    </list>
+    <checkbox nybble="9.4" title="Rotation" comment="If checked : This sprite is start to rotate."/>
+    <list nybble="11" title="Doragin Coins ID" comment="Use numbers in order starting from 0. Please choose numbers without duplication.">
+      <entry value="0">0</entry>
+      <entry value="1">1</entry>
+      <entry value="2">2</entry>
+      <entry value="3">3</entry>
+      <entry value="4">4</entry>
+      <entry value="5">5</entry>
+      <entry value="6">6</entry>
+      <entry value="7">7</entry>
+      <entry value="8">8</entry>
+      <entry value="9">9</entry>
+      <entry value="10">10</entry>
+      <entry value="11">11</entry>
+      <entry value="12">12</entry>
+      <entry value="13">13</entry>
+      <entry value="14">14</entry>
+      <entry value="15">15</entry>
+    </list>
+  </sprite> <!-- #489: Dragon Coins -->
