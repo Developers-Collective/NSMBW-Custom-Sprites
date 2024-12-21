@@ -1,7 +1,10 @@
-# More Sprites v1.1.2
+# More Sprites v1.1.3
 *by AboodXD, updated by Nin0*
 
 *Original code can be found on the [New Super Mario Lost Worlds](https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds) repo*
+
+> [!IMPORTANT]\
+> The code needs to be compiled separately for the Korean (KR) and the Taiwanese (TW) versions as the actor IDs are not the same for them. PAL and the other ones (that are not KR or TW) can be compiled together without any problem.
 
 ## Kamek
 - Add `include/asm_setup.S` in your `include` folder
