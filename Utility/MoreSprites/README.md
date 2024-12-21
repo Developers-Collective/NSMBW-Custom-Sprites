@@ -1,4 +1,4 @@
-# More Sprites v1.1.1
+# More Sprites v1.1.2
 *by AboodXD, updated by Nin0*
 
 *Original code can be found on the [New Super Mario Lost Worlds](https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds) repo*
@@ -37,9 +37,16 @@ union {
 ```cpp
 static fBase_c *searchByProfileId(u16 profileId, fBase_c *previous = 0);
 ```
+- In your `include/game.h`, add this line under the `static dStageActor_c *createChild(Actors type, dStageActor_c *parent, u32 settings, Vec *pos, S16Vec *rot, u8 layer);` line:
+```cpp
+static dStageActor_c *create(u16 type, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
+static dStageActor_c *createChild(u16 type, dStageActor_c *parent, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
+```
 - Add these addresses to your `kamek_pal.x`:
 ```cpp
 	searchByProfileId__7fBase_cFUsP7fBase_c = 0x80162E90;
+	create__13dStageActor_cFUsUiP7Point3dP6S16VecUc = 0x80064610;
+	createChild__13dStageActor_cFUsP13dStageActor_cUiP7Point3dP6S16VecUc = 0x80064680;
 ```
 - Compile your code
 
