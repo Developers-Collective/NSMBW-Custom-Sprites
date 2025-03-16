@@ -1,4 +1,4 @@
-# Background Anim Player v1.1.0
+# Background Anim Player v1.1.1
 *by Synel*
 
 
@@ -27,6 +27,14 @@
 - Add `backgroundAnimPlayer.yaml` in your `Kamek` folder
 - Reference the `backgroundAnimPlayer.yaml` in your `NewerProject.yaml`
 - Add the code for the "more sprite stuff" using `BackgroundAnimCHRPlayer`, `BackgroundAnimSRTPlayer`, `BackgroundAnimPATPlayer`, `BackgroundAnimVISPlayer`, `BackgroundAnimCLRPlayer`, `BackgroundAnimSHPPlayer` and `BackgroundAnimSCNPlayer` for the ProfileIDs and SpriteIDs
+- Add this class under the `mHeapAllocator_c` class if it doesn't exist in `include/g3dhax.h`:
+```cpp
+class dHeapAllocator_c : public mHeapAllocator_c {
+    public:
+        dHeapAllocator_c();
+        ~dHeapAllocator_c();
+};
+```
 - Add these addresses to your `kamek_pal.x` if they don't exist:
 ```cpp
 	setFrameForEntry__Q23m3d8anmClr_cFfi = 0x80166430;
