@@ -1,17 +1,18 @@
-# More Sprites v1.1.3
-*by AboodXD, updated by Nin0*
+# More Sprites v1.1.4
+*by AboodXD, updated by CLF78, Nin0, Synel, and Ryguy*
 
 *Original code can be found on the [New Super Mario Lost Worlds](https://github.com/N-I-N-0/New-Super-Mario-Lost-Worlds) repo*
 
-> [!IMPORTANT]\
-> The code needs to be compiled separately for the Korean (KR) and the Taiwanese (TW) versions as the actor IDs are not the same for them. PAL and the other ones (that are not KR or TW) can be compiled together without any problem.
+## Note
+NSMBWer+ already comes packaged with more sprites. You do not need to install it unless using NewerSMBW as a base.
 
 ## Kamek
 - Add `include/asm_setup.S` in your `include` folder
 - Add `src/profile.cpp` in your `src` folder
-- Add `src/profileid.h` in your `src` folder
+- Add `include/profileid.h` in your `include` folder
 - Add `src/profile.S` in your `src` folder
 - Add `profile.yaml` in your `Kamek` folder
+- Replace `kamek_configs.yaml` in your `Kamek` folder
 - Add `include/profile.h` in your `include` folder
 - Add `include/asm_profiles.S` in your `include` folder
 - Don't forget to reference `profile.yaml` in `NewerProject.yaml` or whatever file you use to compile
@@ -22,9 +23,11 @@
 	ObjectProfileList = 0x8042a698;
 	spriteFiles = 0x8031ab4c;
 	profileNames = 0x80320b58;
-```
 
-### If you're using newer
+	searchByProfileId__7fBase_cFUsP7fBase_c = 0x80162E90;
+	create__13dStageActor_cFUsUiP7Point3dP6S16VecUc = 0x80064610;
+	createChild__13dStageActor_cFUsP13dStageActor_cUiP7Point3dP6S16VecUc = 0x80064680;
+```
 - In your `include/game.h`, replace this line in the `fBase_c` class:
 ```cpp
 	u16 name;
@@ -45,15 +48,24 @@ static fBase_c *searchByProfileId(u16 profileId, fBase_c *previous = 0);
 static dStageActor_c *create(u16 type, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
 static dStageActor_c *createChild(u16 type, dStageActor_c *parent, u32 settings, Vec *pos, S16Vec *rot, u8 layer);
 ```
-- Add these addresses to your `kamek_pal.x`:
-```cpp
-	searchByProfileId__7fBase_cFUsP7fBase_c = 0x80162E90;
-	create__13dStageActor_cFUsUiP7Point3dP6S16VecUc = 0x80064610;
-	createChild__13dStageActor_cFUsP13dStageActor_cUiP7Point3dP6S16VecUc = 0x80064680;
+- In your `tools/kamek.py`, replace these lines:
+```python
+for d in self._config.get('defines', []) + self.project.data.get('defines', []):
+    cc_command.append('-d')
+    cc_command.append(d)
+    as_command.append('-d')
+    as_command.append(d)
+    print(f'defined: {d}')
 ```
-- Compile your code
-
-### If you're not using newer
+with this:
+```python
+if 'defines' in self._config:
+    for d in self._config['defines']:
+        cc_command.append('-d')
+        cc_command.append(d)
+        as_command.append('-d')
+        as_command.append(d)
+```
 - Compile your code
 
 *Note that this code will not compile until you add your first new sprite, due to the list being empty if no custom sprites are found.*
@@ -97,17 +109,18 @@ so the end of the list should look like this:
 ```
 
 Now, let's add the actor ID. Go to the end of the actor IDs list and get the last actor ID of the list. In this case, because we never added an actor before, it's `LASTACTOR, // 749` so its actor ID is 749. So, our actor ID will be 750 (749 + 1).
+NOTE: because the actor IDs differ between game versions, we cannot assign a static value to the actor in the list. Use comments to keep track of actor IDs instead.
 
 So let's add our actor ID to the list by adding this line:
 ```cpp
-	MySprite = 750,
+	MySprite, // 750
 ```
 so the end of the list should look like this:
 ```cpp
 	LASTACTOR, // 749
 
 	// Beginning of new entries
-	MySprite = 750,
+	MySprite, // 750
 
 	Num
 };
@@ -195,12 +208,12 @@ Profile MySpriteProfile(&dMySprite_c::build, SpriteId::MySprite, &MySpriteSprite
 - `ProfileId::MySprite`: The drawing order of the sprite. It's the same as the actor ID we added to `profileid.h` (the `750`) but can be different if needed.
 - `"MySprite"`: The name of the sprite. It's the same as the sprite name we added to `profileid.h` (the `MySprite`).
 - `MySpriteFileList`: The filelist of the sprite.
-- `0`: Spawning flags. Here are the different flags you can add:
-  - `0x2`: Always draws the actor
-  - `0x4`: Supports kill combos ? (Not sure)
+- `0`: Actor flags. Here are the different flags you can add:
+  - `0x2`: Unknown, several profiles have this set
+  - `0x4`: Unknown, never used
   - `0x8`: Makes Mario look at the actor
-  - `0x10`: Killed by level clear
-  - `0x20`: Killed by level clear and awards score
+  - `0x10`: Killed by level clear and awards score
+  - `0x20`: Killed by level clear
   - `0x40`: Only set on balloons ? (Not sure)
   - `0x80`: Can be killed by iceballs (magic e.g. podoboos)
   - `0x200`: Bounces Penguin Mario back when sliding into the actor

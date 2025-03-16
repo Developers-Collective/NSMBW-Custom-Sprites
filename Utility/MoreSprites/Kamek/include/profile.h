@@ -1,7 +1,7 @@
 #ifndef __KAMEK_PROFILE_H
 #define __KAMEK_PROFILE_H
 
-#if defined(REGION_K) || defined(REGION_W) || defined(REGION_C)
+#if defined(REGION_KW) || defined(REGION_C)
 	#define ORIGINAL_PROFILES 752
 #else
 	#define ORIGINAL_PROFILES 750
@@ -37,18 +37,17 @@ struct SpriteData
 class Profile
 {
 public:
-    Profile(dActor_c* (*buildFunc)(), u32 spriteId, const SpriteData* spriteData, u16 executeOrderProfileId, u16 drawOrderProfileId, const char* name, const char** files=NULL, u32 flags = 0b0000110100);
+    Profile(dActor_c* (*buildFunc)(), u32 spriteId, const SpriteData* spriteData, u16 executeOrderProfileId, u16 drawOrderProfileId, const char* name, const char** files=NULL, u32 flags = 0);
 
     dActor_c* (*buildFunc)();
     u16 executeOrderProfileId;
     u16 drawOrderProfileId;
-	/* This field is only present in a few profiles, but having it here shouldn't hurt
-	Values:
-	0x2: always draws the actor
-	0x4: supports kill combos??
+	/* Values:
+	0x2: unknown, several profiles have this set
+	0x4: unknown, never used to my knowledge
 	0x8: makes Mario look at the actor
-	0x10: killed by level clear
-	0x20: killed by level clear and awards score
+	0x10: killed by level clear and awards score
+	0x20: killed by level clear
 	0x40: only set on balloons??
 	0x80: can be killed by iceballs (magic/podobooos/etc)
 	0x200: bounces Penguin Mario back when sliding into the actor

@@ -1,0 +1,36 @@
+---
+- friendly_name: "New Super Mario Bros. Wii (US, EU, JP v1/2)"
+  short_name: 'n'
+  include_dirs: ['include', 'src']
+  multi_build: {
+    pal: 'kamek_pal.x',
+    pal2: 'kamek_pal2.x',
+    ntsc: 'kamek_ntsc.x',
+    ntsc2: 'kamek_ntsc2.x',
+    jpn: 'kamek_jpn.x',
+    jpn2: 'kamek_jpn2.x',
+  }
+  dynamic_link: true
+  
+- friendly_name: "New Super Mario Bros. Wii (Korea, Taiwan)"
+  short_name: 'n'
+  include_dirs: ['include', 'src']
+  defines: {'REGION_KW'}
+  multi_build: {
+    kor: 'kamek_kor.x',
+    twn: 'kamek_twn.x'
+  }
+  dynamic_link: true
+
+#- friendly_name: "New Super Mario Bros. Wii (China)"
+#  short_name: 'n'
+#  include_dirs: ['include', 'src']
+#  defines: {'REGION_C'}
+#  multi_build: {
+#    chn: 'kamek_chn.x',
+#  }
+#  dynamic_link: true
+
+#  rel_area_start: 0x807684C0
+#  rel_area_end: 0x80B75CA8
+  

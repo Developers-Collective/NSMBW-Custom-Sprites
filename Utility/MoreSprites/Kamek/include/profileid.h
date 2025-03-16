@@ -1,7 +1,7 @@
 #ifndef __KAMEK_PROFILEID_H
 #define __KAMEK_PROFILEID_H
 
-#if defined(REGION_K) || defined(REGION_W)
+#if defined(REGION_KW)
     #define PROFCNT 752
 #else
     #define PROFCNT 750
@@ -1218,7 +1218,7 @@ enum
 	EVENT_OPENING_TITLE = 699,
 	SELECT_PLAYER = 700,
 	MULTI_COURSE_SELECT = 701,
-	#if defined(REGION_K) || defined(REGION_W) // The Korean and Taiwanese versions have two extra profiles here. Who thought this was a good idea?
+	#if defined(REGION_KW) // The Korean and Taiwanese versions have two extra profiles here. Who thought this was a good idea?
 	MULTI_COURSE_SELECT_TOURNAMENT = 702,
 	MULTI_COURSE_SELECT_TOURNAMENT_BUTTON = 703,
 	#endif
