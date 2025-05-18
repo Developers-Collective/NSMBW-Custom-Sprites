@@ -1,0 +1,13 @@
+  <sprite id="XXX" name="SMW BossBigBoo" notes="Boss Big Boo from Super Mario World. By ReaZ0n">
+    <dependency notes="This sprite requires:">
+      <required sprite="61"/>
+    </dependency>
+    <value nybble="11-12" title="Target Event ID ON" comment="Turn ON the light."/>
+    <value nybble="9-10" title="Target Event ID OFF" comment="Turn OFF the light. Execute this Event ID when any players are damage the Boo."/>
+    <value nybble="7-8" title="Target Event ID DEFEAT" comment="Execute this Event ID when defeated the Boo."/>
+    <list nybble="6" title="Style">
+      <entry value="0">Normal</entry>
+      <entry value="1">Black</entry>
+    </list>
+    <dualbox nybble="5.1" title1="Exit as normal" title2="Exit as secret" />
+  </sprite> <!-- #XXX: SMW BossBigBoo -->
