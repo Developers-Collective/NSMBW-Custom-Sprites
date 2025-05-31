@@ -4,7 +4,6 @@
 #include <sfx.h>
 #include <profile.h>
 #include "boss.h"
-#include <wakanalib.h>
 
 // Thwimp (koton) sprite by ReaZ0n23
 
