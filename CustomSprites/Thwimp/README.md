@@ -1,4 +1,4 @@
-# Thwimp v1.2.1 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/blob/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
+# Thwimp v1.2.2 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/blob/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
 *by wakanameko*
 
 
@@ -43,6 +43,8 @@
  - v1.2.1  
    Fixed an issue where koton would slide sideways when the jump height was 0.  
    Changed codes that check Reggie settings to be enabled only in debug mode.  
+ - v1.2.2  
+   Deleted the line "#inlude <wakanalib.h>"
   
   
 *If I forgot some stuff or if you find a bug, be free to let me know*
