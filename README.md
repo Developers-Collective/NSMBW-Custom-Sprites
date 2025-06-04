@@ -133,6 +133,14 @@ This utility contains a set of tools to help you create sprite data.
 
 </details>
 
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/TileFeatures/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/TileFeatures">Tile Features</a></summary>
+  <p></p>
+
+This utility allows to add new custom flowers and bushes to tilesets loaded from models or make tiles spawn actors similar to the donut block.
+
+</details>
+
 <!-- <details>
   <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Layer0Lava/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/Layer0Lava">Layer 0 Lava</a></summary>
   <p></p>
