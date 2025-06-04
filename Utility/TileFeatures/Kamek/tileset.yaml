@@ -127,7 +127,7 @@ hooks:
     src_addr_pal: 0x80876420
     target_func: 'flower5Texture(nw4r::g3d::ResFile *, char const *)'
 
-# same as with rail.arc -> loading.S in NSMLW
+# same as with rail.arc -> loading.S
 # Load custom flower/grass files at boot (replaces checkered spring blocks and ledge donuts)
 # kmWritePointer(0x8098C488, FLOWERFILE);
 # kmWritePointer(0x8098C490, GRASSFILE);
