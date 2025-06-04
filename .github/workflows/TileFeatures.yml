@@ -28,7 +28,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: Sprite Data Utils
+          name: Tile Features
           tag: TileFeatures
           allowUpdates: true
           replacesArtifacts: true
