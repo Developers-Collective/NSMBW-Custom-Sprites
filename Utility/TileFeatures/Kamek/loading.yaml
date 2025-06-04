@@ -1,0 +1,13 @@
+---
+source_files: [../src/loading.S]
+hooks:
+  - name: LoadThisShit
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x8091EC74
+    target_func: 'LoadThisShit'                     #Done!
+
+  - name: LoadThisShittyCount
+    type: patch
+    addr_pal: 0x8091EC6C
+    data: '38c00029' #original: 38c00023            #Done!

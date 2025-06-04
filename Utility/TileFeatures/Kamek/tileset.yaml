@@ -1,0 +1,133 @@
+---
+
+source_files: [../src/tileset/common.cpp, ../src/tileset/profoverride.cpp, ../src/tileset/profoverride.S, ../src/tileset/grass.cpp, ../src/tileset/grass.S]
+hooks:
+# anim.cpp
+  # same patch also in animtiles.yaml
+  # - name: expandTilesetAllocation
+    # type: patch
+    # addr_pal: 0x80087544
+    # data: '38801000'
+
+  # - name: actualAnimTilesCode
+    # type: branch_insn
+    # branch_type: bl
+    # src_addr_pal: 0x80087840
+    # target_func: 'actualAnimTilesCode(dBgTexMng_c *, int, u16, char *, u8 *, bool)'
+
+
+# common.cpp
+  - name: LoadBins1
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80081718
+    target_func: 'LoadBins(dBgUnit_c *, EGG::Heap *, int, int)'
+
+  - name: LoadBins2
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x800817C4
+    target_func: 'LoadBins(dBgUnit_c *, EGG::Heap *, int, int)'
+
+  - name: destroyTilesetDataFiles
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80154E84
+    target_func: 'destroyTilesetDataFiles(void)'
+
+
+# profoverride.S
+  - name: profoverride1
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x8007E30C
+    target_func: 'hookAt8007E30C'
+
+  - name: profoverride2
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x8007E270
+    target_func: 'hookAt8007E270'
+
+  - name: profoverride3
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x808B2A40
+    target_func: 'hookAt808B2A40'
+
+  - name: profoverride4
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x808B2AE0
+    target_func: 'hookAt808B2AE0'
+
+  - name: forceRailsToBeLoadedByDefault
+    type: patch
+    addr_pal: 0x8091FCC4
+    data: '48000058'
+
+# overwrites always loaded teresa.arc with rail.arc - NSMLW replaces that list altogether though
+# kmWritePointer(0x8098C464, "rail");
+
+
+# rand.S
+  # - name: rand1
+    # type: branch_insn
+    # branch_type: bl
+    # src_addr_pal: 0x80086B60
+    # target_func: 'hookAt80086B60'
+
+
+# grass.S
+  - name: grass1
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80077F88
+    target_func: 'hookAt80077F88'
+
+  - name: grass2
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8007803C
+    target_func: 'hookAt8007803C'
+
+  - name: grass3
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x808762CC
+    target_func: 'hookAt808762CC'
+
+  - name: grass4
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80876364
+    target_func: 'hookAt80876364'
+
+  - name: grass5
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x808763C8
+    target_func: 'hookAt808763C8'
+
+  - name: grass6
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8087657C
+    target_func: 'hookAt8087657C'
+
+  - name: grass7
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80876410
+    target_func: 'flower4Texture(nw4r::g3d::ResFile *, char const *)'
+
+  - name: grass8
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x80876420
+    target_func: 'flower5Texture(nw4r::g3d::ResFile *, char const *)'
+
+# same as with rail.arc -> loading.S in NSMLW
+# Load custom flower/grass files at boot (replaces checkered spring blocks and ledge donuts)
+# kmWritePointer(0x8098C488, FLOWERFILE);
+# kmWritePointer(0x8098C490, GRASSFILE);
