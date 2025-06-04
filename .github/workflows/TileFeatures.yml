@@ -1,0 +1,37 @@
+name: TileFeatures
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/TileFeatures/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r TileFeatures.zip Utility/TileFeatures
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Sprite Data Utils
+          tag: TileFeatures
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/TileFeatures/README.md
+          artifacts: TileFeatures.zip
+          artifactContentType: application/zip
