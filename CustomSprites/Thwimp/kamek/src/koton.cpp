@@ -187,15 +187,15 @@ int dakoton_c::onCreate() {
 
 	/////////////////////////////
 	// Hit me baby
-	HitMeBaby.xDistToCenter = 0.0;		// 当たり判定をスプライトの中心からどれだけ離すか(x軸)
+	HitMeBaby.xDistToCenter = 0.0;		// distance of sprite and hitbox (x axis)
 	HitMeBaby.yDistToCenter = 9.0;
-	HitMeBaby.xDistToEdge = 7.0;		// x軸方向の大きさ
+	HitMeBaby.xDistToEdge = 7.0;		// scale of x axis
 	HitMeBaby.yDistToEdge = 7.0;
 
 	HitMeBaby.category1 = 0x3;
 	HitMeBaby.category2 = 0x0;
 	HitMeBaby.bitfield1 = 0x4F;
-	HitMeBaby.bitfield2 = 0b1111111110110000101011001011110;	// 右のバイトから、0unk,1ファイア,2アイス,3スター,4unk,5滑り(坂),6unk,7ヒップドロップ,8フェンス,9甲羅,10滑り(ペンギン),11スピン,12unk,13SpinFall(謎),14Fire(No FireBall, but like an explosion),15ヨッシー可食,16ヨッシーが勝手に食うかどうか,17大砲,18持ち上げ,19YoshiBullet,20ファイア(ヨッシー),21アイス(ヨッシー),残りは0
+	HitMeBaby.bitfield2 = 0b1111111110110000101011001011110;	// from right, 0unk, 1fire, 2ice, 3star, 4unk, 5slip(slope), 6unk, 7ground pounds, 8fence, 9shell, 10slip(penguin), 11spin, 12unk, 13SpinFall?, 14Fire(No FireBall, but like an explosion), 15edible, 16auto edible, 17cannon, 18lift up, 19YoshiBullet, 20fire(Yoshi), 21ice(Yoshi), remains are 0
 
 	//HitMeBaby.unkShort1C = 0x0100;
 	HitMeBaby.unkShort1C = 0;
@@ -205,11 +205,11 @@ int dakoton_c::onCreate() {
 	this->aPhysics.addToList();
 
 
-	// 座標ずれを修正するにょ
+	// fix position
 	pos.x += 8.0;
 	pos.y += -18.0;
 
-	// Reggieで設定できるようにするやつ
+	// Reggie configs
 	this->color = this->settings >> 28 & 0xF;		// 0000 "0"000 0000 0000	// nybble 5
 	this->timewait = this->settings >> 24 & 0xF;	// 0000 0"0"00 0000 0000	// nybble 6
 	this->jumphight = this->settings >> 20 & 0xF;	// 0000 00"0"0 0000 0000	// nybble 7
@@ -231,7 +231,7 @@ int dakoton_c::onCreate() {
 		OSReport("jumpingDistance : %02d\n", this->jumpingDistance);
 	}
 
-	// 初期化ってやつ？
+	// initialize?
 	this->timer = 0;
 	this->dying = 0;
 	this->baseground = this->pos.y;
@@ -240,12 +240,12 @@ int dakoton_c::onCreate() {
 	}
 	else {this->firstDirection = 1;}
 
-	// モデルの読み込み // Model creation
+	// Model creation
 	allocator.link(-1, GameHeaps[0], 0, 0x20);
 
-	char resName[16]; // バッファサイズを適切に確保
+	char resName[16]; // allocate buffer
 	sprintf(resName, "g3d/t%02d.brres", this->color);
-	resName[strlen(resName)] = 0; // これは必要ありません。文字列は既にNULL終端されています。
+	resName[strlen(resName)] = 0;
 
 	resFile.data = getResource("koton", resName);
 	//resFile.data = getResource("koton", "g3d/t00.brres");	// Without color option
@@ -354,7 +354,7 @@ void dakoton_c::endState_jumpkoton(){}
 
 // die
 void dakoton_c::beginState_diekoton(){
-	this->removeMyActivePhysics();	// 当たり判定を削除 // remove collision
+	this->removeMyActivePhysics();	// remove collision
 
 	this->timer = 0;
 	this->dying = 0;
