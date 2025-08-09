@@ -45,7 +45,7 @@
    Changed codes that check Reggie settings to be enabled only in debug mode.  
  - v1.2.2  
    Deleted the line "#inlude <wakanalib.h>"
- - v1.2.3
+ - v1.2.3  
    Replaced Japanese comments with English comments has same meaning.  
   
 *If I forgot some stuff or if you find a bug, be free to let me know*
