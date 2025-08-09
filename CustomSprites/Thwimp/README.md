@@ -1,5 +1,5 @@
 # Thwimp v1.2.3 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/blob/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
-*Made by ReaZ0n23, Proxy pushing by wakanameko*
+*Made by **ReaZ0n23**, 3DModel by **B1 Gaming**, Proxy pushing by wakanameko*
 
 
 ## Requirements
