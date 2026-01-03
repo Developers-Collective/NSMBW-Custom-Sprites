@@ -281,6 +281,12 @@ A spike that comes out from the ground to damage every player who would adventur
 
 Water Geysers from New Super Mario Bros. U.
 
+https://github.com/user-attachments/assets/72070223-acb3-4b91-8c07-83bb7f9eee72
+
+https://github.com/user-attachments/assets/2f7b5b0d-5637-4682-8cf0-b649143e62c6
+
+https://github.com/user-attachments/assets/ba078b28-3900-4b50-8eac-f7155d405997
+
 </details>
 
 
