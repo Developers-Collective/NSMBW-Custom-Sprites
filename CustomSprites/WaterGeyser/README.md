@@ -1,4 +1,4 @@
-# Water Geyser v1.0.0
+# Water Geyser v1.0.1
 *by Synel & LucasD10*
 
 
@@ -85,6 +85,18 @@ class levelEffect_c : public effect_c {
 };
 ```
 if it doesn't exist yet
+- Add these addresses to your `kamek_pal.x` if they don't exist:
+```cpp
+	left__13ActivePhysicsFv = 0x8008c550;
+	right__13ActivePhysicsFv = 0x8008c530;
+	FUN_808027f0 = 0x808027f0;
+	setFunsui__10daPlBase_cFv = 0x8004a210;
+	removeFromList__13BasicColliderFv = 0x800DAFC0;
+	top__13ActivePhysicsFv = 0x8008c4d0;
+	FUN_80802d30 = 0x80802d30;
+	FUN_8008fba0 = 0x8008fba0;
+	FUN_808025b0 = 0x808025b0;
+```
 - Compile your code
 
 
