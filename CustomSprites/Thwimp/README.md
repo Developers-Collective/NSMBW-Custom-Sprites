@@ -1,5 +1,5 @@
-# Thwimp v1.2.2 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/blob/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
-*by wakanameko*
+# Thwimp v1.2.3 <img src="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/blob/main/CustomSprites/Thwimp/Reggie/sprites/Koton_0.png" width="32" align="center" />
+*Made by **ReaZ0n23**, 3DModel by **B1 Gaming**, Proxy pushing by wakanameko*
 
 
 ## Requirements
@@ -45,6 +45,7 @@
    Changed codes that check Reggie settings to be enabled only in debug mode.  
  - v1.2.2  
    Deleted the line "#inlude <wakanalib.h>"
-  
+ - v1.2.3  
+   Replaced Japanese comments with English comments has same meaning.  
   
 *If I forgot some stuff or if you find a bug, be free to let me know*
