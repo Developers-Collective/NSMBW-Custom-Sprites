@@ -1,0 +1,13 @@
+--- # By Synel
+source_files: [../src/waterGeyser.cpp]
+hooks:
+  - name: replaceSandPillarParticles
+    type: branch_insn
+    src_addr_pal: 0x8004a54c
+    branch_type: bl
+    target_func: 'replaceSandPillarParticles(int, mEf::levelEffect_c *, char *, unsigned int, Point3d *, S16Vec *, Point3d *)'
+
+  - name: replaceSandPillarParticles
+    type: add_func_pointer
+    src_addr_pal: 0x80937558
+    target_func: 'newSandPillarCallback(ActivePhysics *, ActivePhysics *)'

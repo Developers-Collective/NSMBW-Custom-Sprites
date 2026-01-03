@@ -275,6 +275,15 @@ A spike that comes out from the ground to damage every player who would adventur
 </details>
 
 
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/WaterGeyser/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/WaterGeyser">Water Geyser</a></summary>
+  <p></p>
+
+Water Geysers from New Super Mario Bros. U.
+
+</details>
+
+
 ## Sprite Tex
 
 <details>

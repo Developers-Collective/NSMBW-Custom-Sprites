@@ -1,0 +1,37 @@
+name: WaterGeyser
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/WaterGeyser/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r WaterGeyser.zip CustomSprites/WaterGeyser
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: WaterGeyser
+          tag: WaterGeyser
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/WaterGeyser/README.md
+          artifacts: WaterGeyser.zip
+          artifactContentType: application/zip

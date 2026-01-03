@@ -1,0 +1,73 @@
+  <sprite id="XXX" name="Water Geyser" asmhacks="true" notes="Water Geyser from NSMBU with some added features.">
+    <list title="Color" nybble="7">
+      <entry value="0">Normal</entry>
+    </list>
+    <value title="Group ID" idtype="Group" nybble="5-6" comment="This pairs the geyser to a matching Group Controller for spawn synchronization with other Group controlled sprites."/>
+    <list title="Width" nybble="8" comment="The width of the geyser.">
+      <entry value="0">6.5 Blocks</entry>
+      <entry value="1">3.25 Blocks</entry>
+      <entry value="2">4.875 Blocks</entry>
+      <entry value="3">6.5 Blocks</entry>
+      <entry value="4">8.125 Blocks</entry>
+      <entry value="5">9.75 Blocks</entry>
+      <entry value="6">11.375 Blocks</entry>
+      <entry value="7">13 Blocks</entry>
+      <entry value="8">14.625 Blocks</entry>
+      <entry value="9">16.25 Blocks</entry>
+      <entry value="10">17.875 Blocks</entry>
+      <entry value="11">19.5 Blocks</entry>
+      <entry value="12">21.125 Blocks</entry>
+      <entry value="13">22.75 Blocks</entry>
+      <entry value="14">24.375 Blocks</entry>
+      <entry value="15">26 Blocks</entry>
+    </list>
+    <value title="Height" nybble="9-10" comment="The height of the geyser in tiles."/>
+    <dualbox title1="Time Controlled" title2="Event ID Controlled" nybble="4.1-4.1"/>
+    <list title="Initial Rise Delay" nybble="1">
+      <entry value="0">0 seconds</entry>
+      <entry value="1">1/6 seconds</entry>
+      <entry value="2">2/6 seconds</entry>
+      <entry value="3">3/6 seconds</entry>
+      <entry value="4">4/6 seconds</entry>
+      <entry value="5">5/6 seconds</entry>
+      <entry value="6">1 second</entry>
+    </list>
+    <list title="Rise Delay" nybble="2" comment="If nybble 9-10 (Height) is bigger than 14, the delay is 90 frames (1.5 seconds). Otherwise, you get the delay from this list: { 0 = 125, 1 = 123, 2 = 121, 3 = 124, 4 = 118, 5 = 112, 6 = 109, 7 = 113, 8 = 110, 9 = 107, 10 = 104, 11 = 104, 12 = 101, 13 = 97, 14 = 94 }. 60 frames = 1 second.">
+      <entry value="0">Depends on height*</entry>
+      <entry value="1">31 frames (~0.5 seconds)</entry>
+      <entry value="2">32 frames</entry>
+      <entry value="3">33 frames</entry>
+      <entry value="4">34 frames</entry>
+      <entry value="5">35 frames</entry>
+      <entry value="6">36 frames</entry>
+      <entry value="7">37 frames</entry>
+      <entry value="8">38 frames</entry>
+      <entry value="9">39 frames</entry>
+      <entry value="10">40 frames</entry>
+      <entry value="11">41 frames</entry>
+      <entry value="12">42 frames</entry>
+      <entry value="13">43 frames</entry>
+      <entry value="14">44 frames</entry>
+      <entry value="15">45 frames (0.75 seconds)</entry>
+    </list>
+    <list title="Rise Time" requirednybble="4.1-4.1" requiredval="0" nybble="3" comment="This is the time the geyser is risen.">
+      <entry value="0">6 seconds</entry>
+      <entry value="1">1 second</entry>
+      <entry value="2">2 seconds</entry>
+      <entry value="3">3 seconds</entry>
+      <entry value="4">4 seconds</entry>
+      <entry value="5">5 seconds</entry>
+      <entry value="6">6 seconds</entry>
+      <entry value="7">7 seconds</entry>
+      <entry value="8">8 seconds</entry>
+      <entry value="9">9 seconds</entry>
+      <entry value="10">10 seconds</entry>
+      <entry value="11">11 seconds</entry>
+      <entry value="12">12 seconds</entry>
+      <entry value="13">13 seconds</entry>
+      <entry value="14">14 seconds</entry>
+      <entry value="15">15 seconds</entry>
+    </list>
+    <dualbox title1="On when Event, Off Otherwise" title2="Off when Event, On otherwise" requirednybble="4.1-4.1" requiredval="1" nybble="4.2-4.2"/>
+    <value title="Triggering Event ID" idtype="Triggering Event" requirednybble="4.1-4.1" requiredval="1" nybble="11-12"/>
+  </sprite> <!-- #XXX: Water Geyser -->

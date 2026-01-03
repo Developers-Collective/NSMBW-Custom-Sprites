@@ -24,7 +24,7 @@
 ## Reggie
 - Add the content of `spritedata.xml` into your `spritedata.xml` like every other sprites (replace XXX by the sprite ID)
 - Add the content of `sprites.py` into your `sprites.py` like every other sprites (replace XXX by the sprite ID)
-	> ⚠️ and don't forget to reference the 2 new classes in the list at the end ⚠️
+	> ⚠️ and don't forget to reference the new class in the list at the end ⚠️
 - Add the images in the `sprites` folder into your `sprites` folder
 - Restart reggie to apply the changes
 
