@@ -1,4 +1,4 @@
-# Water Geyser v1.0.1
+# Water Geyser v1.0.2
 *by Synel & LucasD10*
 
 
