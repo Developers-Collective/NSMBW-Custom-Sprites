@@ -22,7 +22,7 @@ class SpriteImage_WaterGeyser(SLib.SpriteImage_StaticMultiple):  # XXX
         middle = ImageCache[f'WaterGeyserMiddle{color}']
 
         image = QtGui.QPixmap(top.width(), height * 24)
-        image.fill(QtCore.Qt.transparent)
+        image.fill(QtCore.Qt.GlobalColor.transparent)
         for i in range(height):
             image_painter = QtGui.QPainter(image)
             image_painter.drawPixmap(0, i * 24, middle)
