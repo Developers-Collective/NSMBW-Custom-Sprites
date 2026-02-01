@@ -1,4 +1,4 @@
-# New Signboard v1.0.2
+# New Signboard v1.1.0
 *by Synel*
 
 
