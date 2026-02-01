@@ -1,4 +1,4 @@
-# Tile Features v1.0.0
+# Tile Features v1.0.1
 *by CLF78 & Nin0*
 
 ## Explanation
@@ -232,9 +232,9 @@ namespace EGG {
 	class FrmHeap : public Heap {};
 }
 ```
-If no such code part exists, put the entire above block right under the line:
+If no such code part exists, put the entire above block right above the line:
 ```cpp
-namespace EGG {
+struct BGBuffer {
 ```
 
 Next, open `src/linegod.cpp` and remove this code block from it:
@@ -254,6 +254,20 @@ BgActor *ac = &dBgActorManager->array[i];
 to this:
 ```cpp
 BgActor *ac = (BgActor*)&dBgActorManager->objects[i];
+```
+
+
+Open `src/levelspecial.cpp` and add this at the very end of the file:
+```cpp
+#undef time
+```
+
+It should something look like this:
+```cpp
+	self->lastEvState = newEvState;
+}
+
+#undef time
 ```
 
 
@@ -283,7 +297,10 @@ Add these addresses to your `kamek_pal.x`:
 	objHanaBrres = 0x8097267C;
 	objHanaDaishizen = 0x809726BC;
 	objHanaDaishizenBrres = 0x8097269C;
-	GetResTex__Q34nw4r3g3d7ResFileCFPCc = 0x8023a060
+	GetResTex__Q34nw4r3g3d7ResFileCFPCc = 0x8023a060;
+	isEntryAnimationDone__Q23m3d11anmTexPat_cFi = 0x80167060;
+	instance__10dScStage_c = 0x8042a4a8;
+	ContinueFromLoadingCRSIN = 0x8091EC78;
 ```
 
 <br>
@@ -292,6 +309,7 @@ Add these addresses to your `kamek_pal.x`:
 - Further, copy the `tileset` folder with all its files into the `Kamek\src` folder, so you have a `Kamek\src\tileset` folder with multiple `.cpp` and `.h` files inside.
 - Also copy `loading.S` (or adjust your `loading.S` if you already have one) into `Kamek\src`
 - Copy `loading.yaml` into the `Kamek` folder if you did not have a `loading.S` file before this already
+- Copy `timekeeper.h` and `dMultiMng_c.h` into the `Kamek\include` folder
 - Add `tileset.yaml` and eventually `loading.yaml` in your main `.yaml` file, e.g. `NewerProject.yaml`
 - Remove `tilesetfixer.yaml` from your main `.yaml` file.
 
@@ -304,6 +322,8 @@ Copy the files in the `Riivolution Patch` folder into your riivolution patch so 
 
 ## Editing Tilesets
 To use the new features introduced by this code, you can use the newest source version of [Puzzle Next](https://github.com/Developers-Collective/Puzzle-Next/tree/master) to directly edit the new subfile types inside tilesets. Alternatively you can use the scripts that can be found in the [NSMASR-v2 repo](https://github.com/CLF78/NSMASR-v2/tree/master/tools/tilesettools).
+
+Using Puzzle Next to add More Flowers and Grasses: Open your tileset, then go to PlantTiles tab and click Add Entry. Your Tilenum is the tile that your flower or bush will replace. For Example: Tilenum 0 is the first tile in the tileset which is in the top left corner. Tilenum 15 would be the end of the row in the top right corner. The first tile on row 2 would be Tilenum 16. The FlowerType will be the color of the Flower. There are only 3 colors per flower. For Example: 1=Color 1, 2=Color 2, and 3=Color 3. The GrassType represents which part of the grass the tile is. For Example: 1=Start Piece, 5=End Piece. FlowerFile is which flower model will be loaded. For Example: 0=Overworld, 1=Jungle, and 2=Custom Flower. GrassType is the type of grass that will be loaded. For Example: 0-1=Normal Grass, 2=Custom Grass. Once you are finished, just save your tileset and your done!
 
 <br><br>
 
