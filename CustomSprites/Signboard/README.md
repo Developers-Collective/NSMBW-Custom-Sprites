@@ -1,5 +1,5 @@
 # New Signboard v1.1.0
-*by Synel*
+*by Synel, model by LucasD10*
 
 
 ## Requirements
