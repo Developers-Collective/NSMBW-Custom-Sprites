@@ -1,0 +1,13 @@
+--- # GreenRing manifest
+source_files: [../src/GreenRingManager.cpp]
+hooks:
+  - name: GreenRingItemFallEffectHook
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80A28FD0
+    target_func: 'GreenRingItemFallEffectHook'
+  - name: GreenRingPopupColorHook
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80015580
+    target_func: 'GreenRing_setNormalOrBlueColor'
