@@ -187,20 +187,20 @@ _not19:
 	cmplwi r4, 6
 	bnelr
 
-        mr r6, r3
-        lwz r0, 0xDB0(r3)
-        cmpwi r0, 0
-        bne _setHammer
+	mr r6, r3
+	lwz r0, 0xDB0(r3)
+	cmpwi r0, 0
+	bne _setHammer
 
-        lwz r3, 0xD90(r6)
-        bl GetHammerPowerupRelatedValue
-        cmpwi r3, 1
-        bnelr
+	lwz r3, 0xD90(r6)
+	bl GetHammerPowerupRelatedValue
+	cmpwi r3, 1
+	bnelr
 
 _setHammer:
-        li r0, 5
-        sth r0, 0xDCA(r6)
-        blr
+	li r0, 5
+	sth r0, 0xDCA(r6)
+	blr
 ```
 
 </details>
