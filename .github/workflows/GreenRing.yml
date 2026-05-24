@@ -1,0 +1,37 @@
+name: GreenRing
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - CustomSprites/GreenRing/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r GreenRing.zip CustomSprites/GreenRing
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: GreenRing
+          tag: GreenRing
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: CustomSprites/GreenRing/README.md
+          artifacts: GreenRing.zip
+          artifactContentType: application/zip

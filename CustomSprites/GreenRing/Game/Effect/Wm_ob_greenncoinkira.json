@@ -1,0 +1,790 @@
+{
+  "emitter": {
+    "commonFlags": {
+      "syncChildrenLifetime": false,
+      "invisible": false,
+      "infiniteLifetime": false,
+      "inheritParticleScale": true,
+      "inheritParticleRotate": false,
+      "inheritChildEmitterScale": false,
+      "inheritChildEmitterRotate": false,
+      "disableEmitterCalculations": false,
+      "inheritParticlePivot": false,
+      "inheritChildPivot": false,
+      "inheritChildParticleScale": false,
+      "inheritChildParticleRotate": false,
+      "relocateComplete": true
+    },
+    "typeSpecificFlags": {},
+    "emitFlags": {
+      "lodEnabled": false,
+      "unk4": false,
+      "billboardY": false,
+      "billboard": false,
+      "fixedInterval": false,
+      "fixedPosition": false,
+      "instance": false
+    },
+    "shape": "Point",
+    "emitLifetime": 1,
+    "particleLifetime": 19,
+    "particleLifetimeRandomness": 0,
+    "inheritChildParticleTranslate": 0,
+    "emissionIntervalRandomness": 0,
+    "emissionVolumeRandomness": 0,
+    "emissionVolume": 1.0,
+    "emissionStartTime": 0,
+    "emissionPast": 0,
+    "emissionInterval": 0,
+    "inheritParticleTranslate": 0,
+    "inheritChildEmitTranslate": 0,
+    "shapeParams": 0,
+    "shapeDivisions": 0,
+    "initialVelocityRandomness": 30,
+    "initialMomentumRandomness": 0,
+    "speed": 0.0,
+    "yDiffusionSpeed": 0.0,
+    "randomDirSpeed": 0.0,
+    "normalDirSpeed": 0.0,
+    "normalDirDiffusionAngle": 0.0,
+    "specifiedDirEmissionSpeed": 2.5,
+    "specifiedDirDiffusionAngle": 0.0,
+    "specifiedDir": {
+      "x": 0.0,
+      "y": 1.5707963705062866,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "translation": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "nearLodPlane": 0,
+    "farLodPlane": 0,
+    "minLodEmitRate": 0,
+    "lodAlpha": 0,
+    "randomSeed": 0,
+    "userData": 0,
+    "drawFlags": {
+      "zCompareEnabled": true,
+      "zUpdateEnabled": false,
+      "zCompareBeforeTex": true,
+      "clippingDisabled": false,
+      "useTexture1": true,
+      "useTexture2": true,
+      "useIndirectTexture": false,
+      "isTexture1Projection": false,
+      "isTexture2Projection": false,
+      "isIndirectTextureProjection": false,
+      "invisible": false,
+      "reverseDrawOrder": false,
+      "fogEnabled": false,
+      "xYLinkSize": true,
+      "xYLinkScale": true
+    },
+    "alphaCompare1": "Always",
+    "alphaCompare2": "Always",
+    "alphaCompareOperator": "And",
+    "flagClamp": true,
+    "indirectTargetStages": 0,
+    "tevStages": [
+      {
+        "texture": 0,
+        "colorSelectionA": "ConstantColorSelection",
+        "colorSelectionB": "Color0",
+        "colorSelectionC": "TextureColor",
+        "colorSelectionD": "Zero",
+        "colorOperation": "Add",
+        "colorBias": "Zero",
+        "colorScale": "MultiplyBy1",
+        "colorClamp": true,
+        "colorRegister": "Color2",
+        "alphaSelectionA": "Zero",
+        "alphaSelectionB": "Alpha0",
+        "alphaSelectionC": "TextureAlpha",
+        "alphaSelectionD": "Zero",
+        "alphaOperation": "Add",
+        "alphaBias": "Zero",
+        "alphaScale": "MultiplyBy1",
+        "alphaClamp": true,
+        "alphaRegister": "Alpha2",
+        "constantColorSelection": "ConstantColor0RGB",
+        "constantAlphaSelection": "Constant1_1"
+      },
+      {
+        "texture": 1,
+        "colorSelectionA": "ConstantColorSelection",
+        "colorSelectionB": "Color1",
+        "colorSelectionC": "TextureColor",
+        "colorSelectionD": "Zero",
+        "colorOperation": "Add",
+        "colorBias": "Zero",
+        "colorScale": "MultiplyBy1",
+        "colorClamp": true,
+        "colorRegister": "OutputColor",
+        "alphaSelectionA": "Zero",
+        "alphaSelectionB": "Alpha1",
+        "alphaSelectionC": "TextureAlpha",
+        "alphaSelectionD": "Zero",
+        "alphaOperation": "Add",
+        "alphaBias": "Zero",
+        "alphaScale": "MultiplyBy1",
+        "alphaClamp": true,
+        "alphaRegister": "OutputAlpha",
+        "constantColorSelection": "ConstantColor1RGB",
+        "constantAlphaSelection": "Constant1_1"
+      },
+      {
+        "texture": 255,
+        "colorSelectionA": "Color2",
+        "colorSelectionB": "Zero",
+        "colorSelectionC": "Zero",
+        "colorSelectionD": "OutputColor",
+        "colorOperation": "Add",
+        "colorBias": "Zero",
+        "colorScale": "MultiplyBy1",
+        "colorClamp": true,
+        "colorRegister": "OutputColor",
+        "alphaSelectionA": "Alpha2",
+        "alphaSelectionB": "Zero",
+        "alphaSelectionC": "Zero",
+        "alphaSelectionD": "OutputAlpha",
+        "alphaOperation": "Add",
+        "alphaBias": "Zero",
+        "alphaScale": "MultiplyBy1",
+        "alphaClamp": true,
+        "alphaRegister": "OutputAlpha",
+        "constantColorSelection": "Constant1_1",
+        "constantAlphaSelection": "Constant1_1"
+      }
+    ],
+    "blendType": "Blend",
+    "blendSrcFactor": "SourceAlpha",
+    "blendDstFactor": "InverseSourceAlpha",
+    "blendOperation": "Clear",
+    "colorInput": {
+      "rasColor": "Null",
+      "tevColor1": "Color1Primary",
+      "tevColor2": "Color2Primary",
+      "tevColor3": "Null",
+      "tevKColor1": "Color1Secondary",
+      "tevKColor2": "Color2Secondary",
+      "tevKColor3": "Null",
+      "tevKColor4": "Null"
+    },
+    "alphaInput": {
+      "rasColor": "Null",
+      "tevColor1": "Color1Primary",
+      "tevColor2": "Color2Primary",
+      "tevColor3": "Null",
+      "tevKColor1": "Null",
+      "tevKColor2": "Null",
+      "tevKColor3": "Null",
+      "tevKColor4": "Null"
+    },
+    "zCompareFunc": "Equal",
+    "alphaSwing": {
+      "type": "NoSwing",
+      "cyclePeriod": 0,
+      "randomness": 0,
+      "amplitude": 0
+    },
+    "lighting": {
+      "mode": "Off",
+      "type": "NoLighting",
+      "ambientColor": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 255
+      },
+      "diffuseColor": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+      },
+      "radius": 50.0,
+      "position": {
+        "x": 0.0,
+        "y": 10.0,
+        "z": 0.0
+      }
+    },
+    "indirectTextureMatrix": [
+      0.0,
+      -0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "indirectTextureScale": -17,
+    "pivotX": 0,
+    "pivotY": 0,
+    "particleType": "Billboard",
+    "particleOptions": {
+      "expression": "Normal",
+      "yDirection": "Speed",
+      "rotationalAxis": "XOnly",
+      "speedBasedVertical": false
+    },
+    "zOffset": 0.0
+  },
+  "particle": {
+    "color1Primary": {
+      "r": 245,
+      "g": 255,
+      "b": 240,
+      "a": 255
+    },
+    "color1Secondary": {
+      "r": 170,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "color2Primary": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "color2Secondary": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "particleSize": {
+      "x": 12.0,
+      "y": 12.0
+    },
+    "particleScale": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "particleRotation": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "alphaCompareValue0": 0,
+    "alphaCompareValue1": 0,
+    "texture1": {
+      "name": "wmy_anm_kira01",
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 0.0,
+      "translation": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "wrapS": "Clamp",
+      "wrapT": "Clamp",
+      "reverseMode": "NoReverse",
+      "rotationOffsetRandom": 0,
+      "rotationOffset": 0.0
+    },
+    "texture2": {
+      "name": "wmy_kira02",
+      "scale": {
+        "x": 5.0,
+        "y": 5.0
+      },
+      "rotation": 0.0,
+      "translation": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "wrapS": "Clamp",
+      "wrapT": "Clamp",
+      "reverseMode": "NoReverse",
+      "rotationOffsetRandom": 0,
+      "rotationOffset": 0.0
+    },
+    "textureInd": {}
+  },
+  "animations": [
+    {
+      "target": "Color1Primary",
+      "subTargets": {
+        "r": true,
+        "g": true,
+        "b": true
+      },
+      "isInit": true,
+      "isBaked": false,
+      "processFlag": {
+        "syncRand": false,
+        "stop": false,
+        "emitterTiming": false,
+        "loopInfinitely": false,
+        "loopByRepeating": false,
+        "fitting": false
+      },
+      "loopCount": 0,
+      "randomSeed": 23409,
+      "frameCount": 1,
+      "keyFrames": [
+        {
+          "frame": 0,
+          "valueType": "Random",
+          "r": {
+            "interpolation": "Linear"
+          },
+          "g": {
+            "interpolation": "Linear"
+          },
+          "b": {
+            "interpolation": "Linear"
+          }
+        }
+      ],
+      "randomPool": [
+        {
+          "r": [
+            245,
+            0
+          ],
+          "g": [
+            255,
+            0
+          ],
+          "b": [
+            240,
+            0
+          ],
+          "t": []
+        },
+        {
+          "r": [
+            235,
+            0
+          ],
+          "g": [
+            255,
+            0
+          ],
+          "b": [
+            230,
+            0
+          ],
+          "t": []
+        }
+      ]
+    },
+    {
+      "target": "Color1Secondary",
+      "subTargets": {
+        "r": true,
+        "g": true,
+        "b": true
+      },
+      "isInit": true,
+      "isBaked": false,
+      "processFlag": {
+        "syncRand": false,
+        "stop": false,
+        "emitterTiming": false,
+        "loopInfinitely": false,
+        "loopByRepeating": false,
+        "fitting": false
+      },
+      "loopCount": 0,
+      "randomSeed": 23409,
+      "frameCount": 1,
+      "keyFrames": [
+        {
+          "frame": 0,
+          "valueType": "Random",
+          "r": {
+            "interpolation": "Linear"
+          },
+          "g": {
+            "interpolation": "Linear"
+          },
+          "b": {
+            "interpolation": "Linear"
+          }
+        }
+      ],
+      "randomPool": [
+        {
+          "r": [
+            170,
+            0
+          ],
+          "g": [
+            255,
+            0
+          ],
+          "b": [
+            0,
+            0
+          ],
+          "t": []
+        },
+        {
+          "r": [
+            150,
+            0
+          ],
+          "g": [
+            235,
+            0
+          ],
+          "b": [
+            0,
+            0
+          ],
+          "t": []
+        }
+      ]
+    },
+    {
+      "target": "FieldGravity",
+      "subTargets": {
+        "power": false,
+        "xRot": false,
+        "yRot": false,
+        "zRot": false
+      },
+      "isInit": false,
+      "isBaked": false,
+      "processFlag": {
+        "syncRand": false,
+        "stop": false,
+        "emitterTiming": false,
+        "loopInfinitely": false,
+        "loopByRepeating": false,
+        "fitting": false
+      },
+      "loopCount": 0,
+      "randomSeed": 39797,
+      "frameCount": 1,
+      "info": {
+        "space": "Emitter",
+        "addTarget": "Velocity",
+        "option": {
+          "randomSaveVelocity": false,
+          "randomAllDirection": false,
+          "randomEnableX": false,
+          "randomEnableY": false,
+          "randomEnableZ": false
+        },
+        "power": 0.15000000596046448,
+        "rotation": {
+          "x": 3.1415927410125732,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "target": "Texture1",
+      "isInit": false,
+      "isBaked": false,
+      "processFlag": {
+        "syncRand": false,
+        "stop": false,
+        "emitterTiming": false,
+        "loopInfinitely": false,
+        "loopByRepeating": false,
+        "fitting": false
+      },
+      "loopCount": 0,
+      "randomSeed": 557,
+      "frameCount": 19,
+      "frames": [
+        {
+          "frame": 0,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira01",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 2,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira02",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 4,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira03",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 6,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira04",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 8,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira05",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 10,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira06",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 12,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira07",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 14,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira08",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 16,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira09",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        },
+        {
+          "frame": 18,
+          "valueType": "Fixed",
+          "textureName": "wmy_anm_kira10",
+          "wrapS": "Clamp",
+          "wrapT": "Clamp",
+          "reverseMode": "NoReverse"
+        }
+      ],
+      "randomPool": []
+    },
+    {
+      "target": "ParticleScale",
+      "subTargets": {
+        "x": true,
+        "y": true
+      },
+      "isInit": false,
+      "isBaked": true,
+      "processFlag": {
+        "syncRand": true,
+        "stop": false,
+        "emitterTiming": false,
+        "loopInfinitely": false,
+        "loopByRepeating": false,
+        "fitting": false
+      },
+      "loopCount": 0,
+      "randomSeed": 4798,
+      "frames": [
+        {
+          "x": 0.5,
+          "y": 0.5
+        },
+        {
+          "x": 0.666700005531311,
+          "y": 0.666700005531311
+        },
+        {
+          "x": 0.833299994468689,
+          "y": 0.833299994468689
+        },
+        {
+          "x": 1.0,
+          "y": 1.0
+        },
+        {
+          "x": 1.0333000421524048,
+          "y": 1.0333000421524048
+        },
+        {
+          "x": 1.0666999816894531,
+          "y": 1.0666999816894531
+        },
+        {
+          "x": 1.100000023841858,
+          "y": 1.100000023841858
+        },
+        {
+          "x": 1.1332999467849731,
+          "y": 1.1332999467849731
+        },
+        {
+          "x": 1.166700005531311,
+          "y": 1.166700005531311
+        },
+        {
+          "x": 1.2000000476837158,
+          "y": 1.2000000476837158
+        },
+        {
+          "x": 1.233299970626831,
+          "y": 1.233299970626831
+        },
+        {
+          "x": 1.266700029373169,
+          "y": 1.266700029373169
+        },
+        {
+          "x": 1.2999999523162842,
+          "y": 1.2999999523162842
+        },
+        {
+          "x": 1.333299994468689,
+          "y": 1.333299994468689
+        },
+        {
+          "x": 1.3667000532150269,
+          "y": 1.3667000532150269
+        },
+        {
+          "x": 1.399999976158142,
+          "y": 1.399999976158142
+        },
+        {
+          "x": 1.4333000183105469,
+          "y": 1.4333000183105469
+        },
+        {
+          "x": 1.4666999578475952,
+          "y": 1.4666999578475952
+        },
+        {
+          "x": 1.5,
+          "y": 1.5
+        }
+      ]
+    },
+    {
+      "target": "Texture2Scale",
+      "subTargets": {
+        "x": true,
+        "y": true
+      },
+      "isInit": false,
+      "isBaked": true,
+      "processFlag": {
+        "syncRand": false,
+        "stop": false,
+        "emitterTiming": false,
+        "loopInfinitely": false,
+        "loopByRepeating": false,
+        "fitting": false
+      },
+      "loopCount": 0,
+      "randomSeed": 22311,
+      "frames": [
+        {
+          "x": 5.0,
+          "y": 5.0
+        },
+        {
+          "x": 4.5,
+          "y": 4.5
+        },
+        {
+          "x": 4.0,
+          "y": 4.0
+        },
+        {
+          "x": 3.5,
+          "y": 3.5
+        },
+        {
+          "x": 3.0,
+          "y": 3.0
+        },
+        {
+          "x": 2.5,
+          "y": 2.5
+        },
+        {
+          "x": 2.0,
+          "y": 2.0
+        },
+        {
+          "x": 1.5,
+          "y": 1.5
+        },
+        {
+          "x": 1.0,
+          "y": 1.0
+        },
+        {
+          "x": 1.142899990081787,
+          "y": 1.142899990081787
+        },
+        {
+          "x": 1.2856999635696411,
+          "y": 1.2856999635696411
+        },
+        {
+          "x": 1.4285999536514282,
+          "y": 1.4285999536514282
+        },
+        {
+          "x": 1.5714000463485718,
+          "y": 1.5714000463485718
+        },
+        {
+          "x": 1.7143000364303589,
+          "y": 1.7143000364303589
+        },
+        {
+          "x": 1.857100009918213,
+          "y": 1.857100009918213
+        },
+        {
+          "x": 2.0,
+          "y": 2.0
+        },
+        {
+          "x": 3.0,
+          "y": 3.0
+        },
+        {
+          "x": 4.0,
+          "y": 4.0
+        },
+        {
+          "x": 5.0,
+          "y": 5.0
+        }
+      ]
+    }
+  ]
+}
