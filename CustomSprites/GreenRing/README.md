@@ -34,7 +34,7 @@
 ```cpp
 #undef time
 ```
-- If you would like to add the Hammer Suit as an option for an item reward then choose which base you are using and procced with that guide. If you do not want the Hammer Suit as an option for an item reward then ignore this and procced on.
+- If you would like to add the Hammer Suit as an option for an item reward then choose which base you are using and proceed with that guide. If you do not want the Hammer Suit as an option for an item reward then ignore this and proceed on.
 
 
 <details>
