@@ -1,7 +1,7 @@
-# Green Ring v1.0.1
+# Green Ring v1.0.2
 *by SilverBuckeye, TheMarioMan, & LucasD10*
 
-*Credits to NSMLW Team for some of the code and spritedata. Thank you MandyIGuess & Ryguy for the help*
+*Credits to NSMLW Team for some of the code and spritedata. Thank you MandyIGuess, Ryguy, & Smecko Geck for the help*
 
 
 ## Requirements
@@ -44,11 +44,11 @@
 - Open `poweruphax.cpp` and add this above `void ThwompHammer(dEn_c *thwomp, ActivePhysics *apThis, ActivePhysics *apOther) {`
 ```cpp
 extern "C" int GetHammerPowerupRelatedValue(int playerID) {
-	dAcPy_c player = dAcPy_c::findByID(playerID);
+	dAcPy_c *player = dAcPy_c::findByID(playerID);
 	if (!player)
 		return 0;
 
-	int powerup =(int)((u8)player + 0x1090);
+	int powerup = *(int*)((u8*)player + 0x1090);
 	if (powerup != 0 && powerup != 3)
 		return 1;
 	if (powerup == 3)
@@ -83,6 +83,10 @@ SetHammerToEnItemDCA:
 	bl GetHammerPowerupRelatedValue
 	cmpwi r3, 1
 	bne DontSetHammer
+
+_setHammerDCA:
+	li r0, 5
+	sth r0, 0xDCA(r31)
 ```
 - Still In `poweruphax.S` replace
 ```cpp
