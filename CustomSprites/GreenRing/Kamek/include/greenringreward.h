@@ -52,8 +52,8 @@ inline u16 makeChildSettings(u32 rawSettings) {
     return (u16)rawSettings;
 }
 
-inline u32 makeGreenRingRewardSettings(u32 rewardId, int collectorPlayerId) {
-    return (rewardId << kGreenRingRewardPlayerIdShift) |
+inline u32 makeGreenRingRewardSettings(u32 baseRewardId, int collectorPlayerId) {
+    return (baseRewardId << kGreenRingRewardPlayerIdShift) |
            ((u32)collectorPlayerId & kGreenRingRewardPlayerIdMask);
 }
 
@@ -69,7 +69,7 @@ static const u32 kPlayerModelHandlerOffset = 0x2A60;
 static const u32 kPlayerPowerupOffset = 0x1090;
 static const u8 kFirePowerupId = 2;
 static const u8 kIcePowerupId = 6;
-static const u8 kPropellerPowerupId = 3;
+static const u8 kPropellerPowerupId = 4;
 static const u8 kPenguinPowerupId = 5;
 static const u8 kHammerPowerupId = 7;
 
@@ -137,7 +137,7 @@ inline int collectGreenRingRewardCandidates(GreenRingRewardCandidate* buffer, in
 
 inline dStageActor_c* spawnRewardItem(u32 rewardId, const Vec& spawnPos, dAc_Py_c* player, int playerIndex) {
     (void)player;
-    u16 childSettings = makeChildSettings(rewardId);
+	u16 childSettings = makeChildSettings(rewardId);
     S16Vec zeroRot = {0, 0, 0};
 
     u32 playerFlag = 0;
@@ -152,6 +152,7 @@ inline dStageActor_c* spawnRewardItem(u32 rewardId, const Vec& spawnPos, dAc_Py_
         return NULL;
 
     *(int*)((u8*)realItem + 0xDB0) = 0;
+
     realItem->speed = (Vec){0.0f, kRewardDropReleaseSpeedY, 0.0f};
     realItem->max_speed = (Vec){0.0f, kRewardDropReleaseMaxSpeedY, 0.0f};
 

@@ -247,6 +247,15 @@ Green Ring from New Super Mario Bros. U that spawns 5 coins in order and rewards
 
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Grrrol/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/Grrrol">Grrrol</a></summary>
+  <p></p>
+
+A rolling enemy based on NSMBU's Grrrol. It rolls along the ground, reverses when it hits walls, hurts players on contact, cannot be stomped, and crushes enemies in its path.
+
+</details>
+
+
+<details>
   <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/CustomSprites/Komboo/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/Komboo">Komboo</a></summary>
   <p></p>
 

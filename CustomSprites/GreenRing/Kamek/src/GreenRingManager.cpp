@@ -947,7 +947,7 @@ void daGreenRing_c::grantReward(int playerID) {
     if (!player)
         return;
 
-    u32 rewardId = playerHasThirdStagePowerup(player) ? kRewardOneUpItemId : kRewardSettings[rewardType];
+    u32 rewardId = kRewardSettings[rewardType];
 
     Vec rewardSpawnPos = pos;
     rewardSpawnPos.y += kRewardHoldOffsetY;

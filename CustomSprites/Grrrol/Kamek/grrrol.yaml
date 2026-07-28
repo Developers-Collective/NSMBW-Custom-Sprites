@@ -1,0 +1,8 @@
+---
+source_files: [../src/grrrol.cpp]
+hooks:
+  - name: GrrrolSpriteFileInfo
+    type: add_func_pointer
+    src_addr_pal: 0x8031B354
+    target_func: 'GrrrolArcNameList'
+
