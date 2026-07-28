@@ -1,0 +1,46 @@
+<sprite id="XXX" name="Grrrol" asmhacks="True" notes="A rolling enemy based on NSMBU's Grrrol. It rolls along the ground, reverses when it hits walls, hurts players on contact, cannot be stomped, and crushes enemies in its path." yoshinotes="Yoshi cannot eat Grrrol. Contact with it will still hurt Yoshi.">
+    <value nybble="3-4" title="No-spawn Triggering Event ID" comment="This determines which event prevents the Grrrol from spawning. A value of 0 disables this behavior." idtype="Triggering Event"/>
+    <checkbox nybble="8.2" title="No slow wall bounce" comment="When enabled, the Grrrol keeps its normal bounce timing instead of using a slower wall bounce."/>
+    <checkbox nybble="8.3" title="Only spawns when facing player" comment="When enabled, the Grrrol only spawns if its starting direction faces the player."/>
+    <list nybble="11.3-11.4" title="Direction" comment="This determines which direction the Grrrol begins rolling in.">
+      <entry value="0">Left</entry>
+      <entry value="1">Right</entry>
+      <entry value="2">Face Player</entry>
+    </list>
+    <list nybble="12.3-12.4" title="Speed" comment="This determines how fast the Grrrol rolls.">
+      <entry value="0">Slow</entry>
+      <entry value="1">Normal</entry>
+      <entry value="2">Fast</entry>
+    </list>
+    <list nybble="5" title="Size" comment="This determines whether the Grrrol uses its normal size or its larger Mega variant.">
+      <entry value="0">Normal</entry>
+      <entry value="1">Mega</entry>
+    </list>
+  </sprite> <!-- #XXX: Grrrol -->
+
+<sprite id="YYY" name="Grrrol Spawner" notes="Spawns Grrrols from the NSMBU-style Grrrol pipe spawner.">
+    <list nybble="5" title="Spawn Frequency">
+      <entry value="0">Use spawn delay</entry>
+      <entry value="1">Slow</entry>
+      <entry value="2">Normal</entry>
+      <entry value="3">Fast</entry>
+    </list>
+    <value nybble="6" title="Pipe Length"/>
+    <list nybble="7.3-7.4" title="Spawn Direction">
+      <entry value="0">Left</entry>
+      <entry value="1">Right</entry>
+      <entry value="2">Down</entry>
+    </list>
+    <list nybble="8.3-8.4" title="Grrrol Speed">
+      <entry value="0">Slow</entry>
+      <entry value="1">Normal</entry>
+      <entry value="2">Fast</entry>
+    </list>
+    <list nybble="9.3-9.4" title="Grrrol Direction">
+      <entry value="0">Left</entry>
+      <entry value="1">Right</entry>
+      <entry value="2">Toward nearest player</entry>
+    </list>
+    <value nybble="10" title="Max Grrrol Count"/>
+    <value nybble="11-12" title="Spawn Delay" comment="Used when Spawn Frequency is 0. The max delay is only 255 frames (60 frames is equal to roughly 1 second)."/>
+  </sprite> <!-- #YYY: Grrrol Spawner -->

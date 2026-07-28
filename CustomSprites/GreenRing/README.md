@@ -1,7 +1,12 @@
-# Green Ring v1.0.1
+# Green Ring v1.0.2
 *by SilverBuckeye, TheMarioMan, & LucasD10*
 
 *Credits to NSMLW Team for some of the code and spritedata. Thank you MandyIGuess & Ryguy for the help*
+
+
+## Changelog
+- Fixed Green Ring's reward system
+- Fixed Hammer Suit Multiplayer Block Crash
 
 
 ## Requirements
@@ -30,7 +35,7 @@
 - Add the code for the "more sprite stuff" using `EN_GREENRING` and `EN_GREENCOINU` for the ProfileID and SpriteID
 - Add the code for the "more sprite stuff" using `GreenRingReward` for ONLY the ProfileID
 
-- Open `src/levelspecial.cpp` and add this at the very end of the file:
+- Open `src/levelspecial.cpp` and add this at the very end of the file if it doesn't exist:
 ```cpp
 #undef time
 ```
@@ -44,19 +49,22 @@
 - Open `poweruphax.cpp` and add this above `void ThwompHammer(dEn_c *thwomp, ActivePhysics *apThis, ActivePhysics *apOther) {`
 ```cpp
 extern "C" int GetHammerPowerupRelatedValue(int playerID) {
-	dAcPy_c player = dAcPy_c::findByID(playerID);
+	if (playerID < 0 || playerID >= 4)
+		return 0;
+
+	dAcPy_c *player = dAcPy_c::findByID(playerID);
 	if (!player)
 		return 0;
 
-	int powerup =(int)((u8)player + 0x1090);
-	if (powerup != 0 && powerup != 3)
-		return 1;
+	u8 powerup = *(u8*)((u8*)player + 0x1090);
 	if (powerup == 3)
 		return 2;
+	if (powerup != 0)
+		return 1;
 	return 0;
 }
 ```
-- Open `poweruphax.S` and add this below `.extern returnFromPowerupSoundChange`
+- Open `poweruphax.S` and add this below `.extern draw__21dPlayerModelHandler_cFv`
 ```cpp
 .extern GetHammerPowerupRelatedValue
 ```
@@ -83,6 +91,10 @@ SetHammerToEnItemDCA:
 	bl GetHammerPowerupRelatedValue
 	cmpwi r3, 1
 	bne DontSetHammer
+
+_setHammerDCA:
+	li r0, 5
+	sth r0, 0xDCA(r31)
 ```
 - Still In `poweruphax.S` replace
 ```cpp
@@ -113,15 +125,9 @@ _checkHammer:
 	cmplwi r4, 6
 	bnelr
 
-	mr r6, r3
-	lwz r0, 0xDB0(r3)
-	cmpwi r0, 0
-	bne _setHammer
-
-	lwz r3, 0xD90(r6)
-	bl GetHammerPowerupRelatedValue
-	cmpwi r3, 1
-	bnelr
+	li r0, 5
+	sth r0, 0xDCA(r3)
+	blr
 
 _setHammer:
 	li r0, 5
@@ -139,6 +145,9 @@ _setHammer:
 - Open `poweruphax.cpp` and add this above `void ThwompHammer(dEn_c *thwomp, ActivePhysics *apThis, ActivePhysics *apOther) {`
 ```cpp
 extern "C" int GetHammerPowerupRelatedValue(int playerID) {
+	if (playerID < 0 || playerID >= 4)
+		return 0;
+
 	dAcPy_c *player = dAcPy_c::findByID(playerID);
 	if (!player)
 		return 0;
@@ -179,11 +188,7 @@ _setHammerDCA:
 	li r0, 5
 	sth r0, 0xDCA(r31) #So basically DCA is the value in EN_ITEM that stores the internal powerup type
 ```
-- In `poweruphax.S` after the line
-```cpp
-.extern returnFromWMSubPlayerDraw
-```
-- Add This
+- In `poweruphax.S` add this below `.extern returnFromWMSubPlayerDraw`
 ```cpp
 .extern GetHammerPowerupRelatedValue
 ```
@@ -203,16 +208,6 @@ _not19:
 	bnelr
 
 	mr r6, r3
-	lwz r0, 0xDB0(r3)
-	cmpwi r0, 0
-	bne _setHammer
-
-	lwz r3, 0xD90(r6)
-	bl GetHammerPowerupRelatedValue
-	cmpwi r3, 1
-	bnelr
-
-_setHammer:
 	li r0, 5
 	sth r0, 0xDCA(r6)
 	blr
