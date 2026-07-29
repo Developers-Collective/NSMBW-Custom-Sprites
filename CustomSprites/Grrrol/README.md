@@ -1,5 +1,10 @@
-# Grrrol v1.0.0
+# Grrrol v1.0.1
 *by SilverBuckeye, LucasD10, and TheMarioMan*
+
+
+## Changelog
+- Fixed Grrrol Landing Effects
+- Fixed Spawner Grrrols not dying
 
 
 ## Requirements
@@ -25,35 +30,6 @@
 - Open `src/levelspecial.cpp` and add this at the very end of the file if it doesn't exist:
 ```cpp
 #undef time
-```
-- In `include/game.h`, under
-```cpp
-class daPlBase_c : public dStageActor_c {
-	public:
-```
-add this enum if it doesn't exist:
-```cpp
-enum FootNoteEnum {
-	FOOTNOTE_ROCK = 0,
-	FOOTNOTE_SNOW = 1,
-	FOOTNOTE_SAND = 2,
-	FOOTNOTE_ROCK_2 = 3,
-	FOOTNOTE_DIRT = 4,
-	FOOTNOTE_WATER = 5,
-	FOOTNOTE_CLOUD = 6,
-	FOOTNOTE_BLOWSAND = 7,
-	FOOTNOTE_MANTA = 8,
-	FOOTNOTE_SAND_2 = 9,
-	FOOTNOTE_ROCK_3 = 10,
-	FOOTNOTE_LEAF = 11,
-	FOOTNOTE_ROCK_4 = 12
-};
-```
-- Still in this file, still in the `daPlBase_c` class, replace `u8 data2[0x1418 - 0x1008];` with
-```cpp
-u8 data2[0x111c - 0x1008];
-FootNoteEnum footnote_type;
-u8 data7[0x1418 - 0x1120];
 ```
 The next few parts only have to be done for Newer 1.3.X
 - In `src/grrrol.cpp`, replace `if (!block || block->isDeleted)` with this:

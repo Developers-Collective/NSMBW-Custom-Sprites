@@ -201,12 +201,6 @@ static bool GrrrolBreakBlockSprite(daGrrrol_c *source, dStageActor_c *block, u8 
 	return true;
 }
 
-static bool GrrrolUsesSandLandSmoke(u8 footnote) {
-	return footnote == daPlBase_c::FOOTNOTE_SAND
-		|| footnote == daPlBase_c::FOOTNOTE_BLOWSAND
-		|| footnote == daPlBase_c::FOOTNOTE_SAND_2;
-}
-
 static bool GrrrolShouldIgnoreSprite(u16 profileId) {
 	return profileId == EN_COIN || profileId == EN_EATCOIN || profileId == AC_BLOCK_COIN
 		|| profileId == EN_COIN_JUGEM || profileId == EN_COIN_ANGLE || profileId == EN_COIN_JUMP
@@ -644,12 +638,15 @@ bool daGrrrol_c::calculateTileCollisions() {
 					}
 				}
 
-				this->pipeDropSpawn = false;
-				this->pipeDropWaitingForGround = false;
-				this->setEyeRotationFrozen(false);
-				this->suppressLandingBounce = true;
-				this->suppressMicroBounceLanding = false;
-				this->speed.x = this->direction ? -this->moveSpeed : this->moveSpeed;
+					this->pipeDropSpawn = false;
+					this->pipeDropWaitingForGround = false;
+					this->setEyeRotationFrozen(false);
+					this->suppressLandingBounce = true;
+					this->suppressMicroBounceLanding = false;
+					this->spawnLandingEffects();
+					Vec crashSoundPos = this->pos;
+					GrrrolPlayCrashSoundAt(this, &crashSoundPos);
+					this->speed.x = this->direction ? -this->moveSpeed : this->moveSpeed;
 				this->max_speed.x = this->speed.x;
 				this->x_speed_inc = GrrrolAcceleration;
 			} else {
@@ -1018,7 +1015,7 @@ int daGrrrol_c::onCreate() {
 	this->suppressLandingBounce = false;
 	this->suppressMicroBounceLanding = false;
 	this->spawnedFromSpawner = spawnedFromPipe;
-	this->deleteForever = spawnedFromPipe;
+	this->deleteForever = false;
 	this->pipeDropSpawn = spawnedFromPipe && pipeSpawnDirection == 2;
 	this->pipeDropWaitingForGround = this->pipeDropSpawn;
 	this->pipeDropSpawnStartY = this->pos.y;
@@ -1168,7 +1165,7 @@ int daGrrrol_c::onDelete() {
 
 int daGrrrol_c::onExecute() {
 	if (GrrrolShouldDespawnFromCamera(this->pos)) {
-		this->Delete(this->deleteForever);
+		this->Delete(this->spawnedFromSpawner);
 		return true;
 	}
 
@@ -1253,7 +1250,13 @@ void daGrrrol_c::spawnLandingEffects() {
 	S16Vec effectRot = {0, 0, 0};
 	float scaleValue = this->isMega ? 2.0f : 1.0f;
 	Vec effectScale = {scaleValue, scaleValue, scaleValue};
-	const char *effectName = GrrrolUsesSandLandSmoke(this->collMgr.tileBelowSubType)
+	float groundY = this->pos.y - 8.0f;
+	u32 tileType = this->collMgr.getTileBehaviour1At(this->pos.x, groundY, this->currentLayerID);
+	u32 tileKind = this->collMgr.getTileBehaviour2At(this->pos.x, groundY, this->currentLayerID);
+	u8 footAttr = (this->collMgr.tileBelowProps >> 16) & 0xFF;
+	bool isSand = footAttr == 0xC
+		|| ((tileType & SOLID_ON_TOP) != 0 && ((tileKind >> 16) & 0xFF) == 3);
+	const char *effectName = isSand
 		? "Wm_en_sndlandsmk_s"
 		: "Wm_en_landsmoke_s";
 	SpawnEffect(effectName, 0, &effectPos, &effectRot, &effectScale);
