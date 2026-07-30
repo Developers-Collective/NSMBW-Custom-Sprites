@@ -1,8 +1,12 @@
-# Grrrol v1.0.1
+# Grrrol v1.0.2
 *by SilverBuckeye, LucasD10, and TheMarioMan*
 
 
 ## Changelog
+v1.0.2
+- Fixed Grrrol Eye Animation Bug
+- Fixed Grrrol Collision with Slopes
+v1.0.1
 - Fixed Grrrol Landing Effects
 - Fixed Spawner Grrrols not dying
 
