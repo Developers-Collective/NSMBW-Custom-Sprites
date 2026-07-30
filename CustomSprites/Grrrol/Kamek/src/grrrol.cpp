@@ -42,9 +42,12 @@ class daGrrrol_c : public dEn_c {
 	bool pipeDropSpawn;
 	bool pipeDropWaitingForGround;
 	float pipeDropSpawnStartY;
+	float slopeVisualYOffset;
+	float baseHurtCenterY;
 	bool freezeEyeRotation;
 	bool rollingOnSpawnerGuide;
 	bool activatedByView;
+	bool wasOnSlope;
 	u8 crashEffectTimer;
 	u8 rollEffectTimer;
 	u16 rollTimer;
@@ -120,7 +123,7 @@ static const int GrrrolNormalSideSensorAbove = 20;
 static const int GrrrolNormalSideSensorDistance = 15;
 static const int GrrrolMegaSideSensorBelow = 4;
 static const int GrrrolMegaSideSensorAbove = 60;
-static const int GrrrolMegaSideSensorDistance = 26;
+static const int GrrrolMegaSideSensorDistance = 27;
 static const float GrrrolMegaBlockSpriteBehindSensor = 16.0f;
 static const float GrrrolMegaBlockSpriteAheadSensor = 17.0f;
 static const u32 GrrrolMegaWallSensorFlags =
@@ -609,9 +612,17 @@ bool daGrrrol_c::calculateTileCollisions() {
 			collMgr.outputMaybe = 0;
 			collMgr.onGround_maybe = 0;
 			this->pos.y = posBeforeCollision.y;
-		}
-	}
+		} else if (wasOnGround || this->suppressMicroBounceLanding) {
+        float maxYStep = GrrrolAbsSpeed(this->speed.x) + 1.0f;
+        float yDelta = this->pos.y - posBeforeCollision.y;
+        if (yDelta > maxYStep) {
+            this->pos.y = posBeforeCollision.y + maxYStep;
+        }
+    }
+}
+	
 	bool isOnGround = (!ignoredSpawnerBelow && collMgr.isOnTopOfTile()) || this->rollingOnSpawnerGuide;
+
 	if (isBouncing) {
 		stuffRelatingToCollisions(0.1875f, 1.0f, 0.5f);
 		if (speed.y != 0.0f)
@@ -666,6 +677,7 @@ bool daGrrrol_c::calculateTileCollisions() {
 		if (!wasOnGround && !this->rollingOnSpawnerGuide && !waitingForRelease) {
 			if (this->suppressMicroBounceLanding) {
 				this->suppressMicroBounceLanding = false;
+				this->suppressLandingBounce = false;
 			} else if (this->suppressLandingBounce) {
 				this->suppressLandingBounce = false;
 			} else {
@@ -677,8 +689,12 @@ bool daGrrrol_c::calculateTileCollisions() {
 			}
 		}
 
-		if (this->speed.y <= 0.0f)
+		if (this->speed.y <= 0.0f) {
 			speed.y = 0.0f;
+		}
+		if (this->speed.y == 0.0f) {
+			this->isBouncing = false;
+		}
 		if (!waitingForRelease)
 			max_speed.x = direction ? -moveSpeed : moveSpeed;
 	} else {
@@ -1010,6 +1026,8 @@ int daGrrrol_c::onCreate() {
 	float hurtRadiusX = this->isMega ? 26.0f : 14.0f;
 	float hurtRadiusY = this->isMega ? 25.0f : 13.0f;
 	float hurtCenterY = hurtRadiusY + 2.0f;
+	this->baseHurtCenterY = hurtCenterY;
+	this->slopeVisualYOffset = 0.0f;
 	this->modelLoaded = false;
 	this->srtLoaded = false;
 	this->suppressLandingBounce = false;
@@ -1022,6 +1040,7 @@ int daGrrrol_c::onCreate() {
 	this->freezeEyeRotation = this->pipeDropSpawn;
 	this->rollingOnSpawnerGuide = false;
 	this->activatedByView = spawnedFromPipe;
+	this->wasOnSlope = false;
 	this->crashEffectTimer = 0;
 	this->rollEffectTimer = 0;
 
@@ -1113,11 +1132,11 @@ int daGrrrol_c::onCreate() {
 	this->_324 = this->isMega ? 34.0f : 18.0f;
 	this->_36D = 0;
 
-	static const lineSensor_s belowNormal(13 << 12, -(9 << 12), (0 << 12));
+	static const lineSensor_s belowNormal(12 << 12, -(12 << 12), (0 << 12));
 	static const pointSensor_s aboveNormal(0 << 12, 13 << 12);
 	static const lineSensor_s adjacentNormal(SENSOR_BREAK_BRICK | SENSOR_80000000, GrrrolNormalSideSensorBelow << 12, GrrrolNormalSideSensorAbove << 12, GrrrolNormalSideSensorDistance << 12);
 
-	static const lineSensor_s belowMega(22 << 12, -(24 << 12), (0 << 12));
+	static const lineSensor_s belowMega(18 << 12, -(18 << 12), (0 << 12));
 	static const pointSensor_s aboveMega(0 << 12, 24 << 12);
 	static const lineSensor_s adjacentMega(
 		GrrrolMegaWallSensorFlags,
@@ -1162,7 +1181,10 @@ int daGrrrol_c::onDelete() {
 	this->stopRollSound();
 	return true;
 }
-
+static const float GrrrolSlopeOffsetEaseRate = 0.4f;
+static const float GrrrolMegaSlopeYOffset = 4.0f;
+static const float GrrrolNormalSlopeYOffset = 2.0f;
+static const u8 GrrrolSlopeDirUp = 0;
 int daGrrrol_c::onExecute() {
 	if (GrrrolShouldDespawnFromCamera(this->pos)) {
 		this->Delete(this->spawnedFromSpawner);
@@ -1175,23 +1197,30 @@ int daGrrrol_c::onExecute() {
 
 		this->activatedByView = true;
 	}
+	bool onSlope = (this->collMgr.currentSlopeAngle != 0 || this->collMgr.currentFlippedSlopeAngle != 0);
+	float slopeOffsetMagnitude = this->isMega ? GrrrolMegaSlopeYOffset : GrrrolNormalSlopeYOffset;
+	float targetSlopeOffset = onSlope ? slopeOffsetMagnitude : 0.0f;
+
+	if (this->slopeVisualYOffset < targetSlopeOffset) {
+		this->slopeVisualYOffset += GrrrolSlopeOffsetEaseRate;
+		if (this->slopeVisualYOffset > targetSlopeOffset)
+			this->slopeVisualYOffset = targetSlopeOffset;
+	} else if (this->slopeVisualYOffset > targetSlopeOffset) {
+		this->slopeVisualYOffset -= GrrrolSlopeOffsetEaseRate;
+		if (this->slopeVisualYOffset < targetSlopeOffset)
+			this->slopeVisualYOffset = targetSlopeOffset;
+	}
+
+	this->aPhysics.info.yDistToCenter = this->baseHurtCenterY + this->slopeVisualYOffset;
 
 	acState.execute();
 	if (this->acState.getCurrentState()->isEqual(&dEn_c::StateID_DieFall)) {
 		this->rot.z += -0x0800;
 	}
 	if (this->speed.x == 0.0f) {
-		this->freezeEyeRotation = true;
-	
-		if (this->srtLoaded) {
-			this->srtAnimation.setUpdateRate(0.0f);
-		}
+    this->freezeEyeRotation = true;
 	} else {
-		this->freezeEyeRotation = false;
-    
-		if (this->srtLoaded) {
-			this->srtAnimation.setUpdateRate(1.0f);
-		}
+    this->freezeEyeRotation = false;
 	}
 
 	if (this->modelLoaded) {
@@ -1318,24 +1347,22 @@ void daGrrrol_c::stopCrashEffect() {
 
 void daGrrrol_c::updateRollEffect() {
 	bool shouldRoll = (this->collMgr.isOnTopOfTile() || this->rollingOnSpawnerGuide || this->suppressMicroBounceLanding)
-		&& !this->suppressLandingBounce
+		&& (!this->suppressLandingBounce || this->suppressMicroBounceLanding)
 		&& GrrrolAbsSpeed(this->speed.x) > 0.05f;
 
 	if (!shouldRoll) {
-		this->stopRollEffect();
+		this->rollEffectTimer = 0;
 		return;
 	}
 
 	if (this->rollEffectTimer > 0) {
-		--this->rollEffectTimer;
-		if (this->rollEffectTimer == 0)
-			this->stopRollEffect();
-		return;
-	}
+        --this->rollEffectTimer;
+        return; 
+    }
 
 	Vec effectPos = {
 		this->pos.x,
-		this->pos.y + 2.0f,
+		this->pos.y + 2.0f + this->slopeVisualYOffset,
 		this->pos.z + 500.0f
 	};
 	S16Vec effectRot = {0, 0, 0};
@@ -1355,6 +1382,15 @@ void daGrrrol_c::updateModelMatrices() {
 	static const s16 modelYaw = 0x7FE0;
 	float hitRadius = this->isMega ? 15.0f : 9.0f;
 	float modelYOffset = this->isMega ? 14.0f : 7.0f;
+	modelYOffset += this->slopeVisualYOffset;
+	float totalSlopeOffset = this->slopeVisualYOffset;
+	if (this->collMgr.currentSlopeAngle != 0 || this->collMgr.currentFlippedSlopeAngle != 0) {
+		float slopeFactor = GrrrolAbsSpeed((float)this->collMgr.currentSlopeAngle) / 0x6000;
+		float extraMagnitude = this->isMega ? 4.0f : GrrrolNormalSlopeYOffset;
+		modelYOffset += extraMagnitude * slopeFactor;
+		totalSlopeOffset += extraMagnitude * slopeFactor;
+	}
+	this->aPhysics.info.yDistToCenter = this->baseHurtCenterY + totalSlopeOffset;
 	s16 modelRotX = this->rot.z;
 	s16 modelRotY = modelYaw;
 	s16 modelRotZ = -this->rot.x;
@@ -1408,22 +1444,42 @@ void daGrrrol_c::executeState_Roll() {
         if (!this->pipeDropSpawn)
             this->breakMegaTopBlock(movementDirection);
     }
-if (this->calculateTileCollisions() && !this->pipeDropSpawn) {
+	bool hitWall = this->calculateTileCollisions() && !this->pipeDropSpawn;
+	if (hitWall) {
 		bool hitRightWall = (this->collMgr.outputMaybe & 0x15) != 0;
 		bool hitLeftWall  = (this->collMgr.outputMaybe & 0x2A) != 0;
-		if ((hitRightWall && this->speed.x >= 0.0f) || (hitLeftWall && this->speed.x <= 0.0f)) {
-			this->reverseDirection(this->collMgr.isOnTopOfTile() || this->suppressMicroBounceLanding, true);
+		bool onSlope = (this->collMgr.currentSlopeAngle != 0 ||
+						this->collMgr.currentFlippedSlopeAngle != 0);
+
+		if ((hitRightWall && this->speed.x >= 0.0f) ||
+			(hitLeftWall  && this->speed.x <= 0.0f)) {
+
+			bool doHop =
+				(this->collMgr.isOnTopOfTile() || this->suppressMicroBounceLanding)
+				&& !onSlope;
+
+			this->reverseDirection(doHop, true);
 		}
 	}
+
+	bool onSlope = (this->collMgr.currentSlopeAngle != 0 ||
+					this->collMgr.currentFlippedSlopeAngle != 0);
+	bool justLeftSlope = (this->wasOnSlope && !onSlope);
 
 	if ((this->collMgr.isOnTopOfTile() || this->rollingOnSpawnerGuide)
 			&& GrrrolAbsSpeed(this->speed.x) > 0.05f
 			&& !this->isBouncing
 			&& this->speed.y == 0.0f
-			&& (this->rollTimer % GrrrolRollingBounceInterval) == 0) {
+			&& !onSlope
+			&& (justLeftSlope || (this->rollTimer % GrrrolRollingBounceInterval == 0))) {
 		this->speed.y = GrrrolRollingBounceSpeed;
 		this->suppressMicroBounceLanding = true;
+		this->suppressLandingBounce = true;
+		if (justLeftSlope) {
+			this->rollTimer = 0;
+		}
 	}
+	this->wasOnSlope = onSlope;
 
 	float rollSpeed = GrrrolAbsSpeed(this->speed.x);
 
