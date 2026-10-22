@@ -1,0 +1,37 @@
+name: KoopatlasMovementFix
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Utility/KoopatlasMovementFix/**.*
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compress
+        run: zip -r KoopatlasMovementFix.zip Utility/KoopatlasMovementFix
+
+      - name: Create / Edit Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Koopatlas Movement Fix
+          tag: KoopatlasMovementFix
+          allowUpdates: true
+          replacesArtifacts: true
+          bodyFile: Utility/KoopatlasMovementFix/README.md
+          artifacts: KoopatlasMovementFix.zip
+          artifactContentType: application/zip

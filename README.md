@@ -81,6 +81,15 @@ When you have a sprite that uses the Group Controller, it won't spawn at all if 
 
 
 <details>
+  <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/KoopatlasMovementFix/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/KoopatlasMovementFix">Koopatlas Movement Fix</a></summary>
+  <p></p>
+
+This utility fixes the movement stutter happening at every node of the Koopatlas world map, as well as the rotation glitch happening on nodes placed on the same spot.
+
+</details>
+
+
+<details>
   <summary><img src="https://raw.githubusercontent.com/Developers-Collective/Assets/main/NSMBW-Custom-Sprites/readme/Utilities/Light/Icon.png" width="24" align="center" />&nbsp;&nbsp;<a href="https://github.com/Developers-Collective/NSMBW-Custom-Sprites/releases/tag/Light">Light & Light Path</a></summary>
   <p></p>
 
